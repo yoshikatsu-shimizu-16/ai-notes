@@ -1,0 +1,2277 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>日本国内toCサービス 撤退パターンカタログ 2015–2025</title>
+<style>
+:root{
+  --bg:#f7f6f3; --panel:#ffffff; --ink:#1a1a18; --ink2:#55534d; --ink3:#8a877f;
+  --line:#e2dfd8; --line2:#cfcbc2;
+  --accent:#8c2f20; --accent2:#b8553f;
+  --gA:#1f6b4a; --gAbg:#e4f2ea; --gB:#8a6512; --gBbg:#f8efd8; --gC:#5b5952; --gCbg:#ebe9e4;
+  --t1:#8c2f20; --t2:#1f5f7a; --t3:#6b4a1f; --t4:#4a3a7a; --t5:#2a6b3f; --t6:#7a2a5f; --t7:#7a4a1f; --t8:#3a5a6b;
+  --mono:ui-monospace,SFMono-Regular,Menlo,"Courier New",monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#15161a; --panel:#1c1e23; --ink:#e8e6e1; --ink2:#a8a49c; --ink3:#78746c;
+    --line:#2c2f36; --line2:#3a3e46;
+    --accent:#e08a72; --accent2:#c9705a;
+    --gA:#7fd3a8; --gAbg:#12301f; --gB:#e6c471; --gBbg:#332711; --gC:#a8a49c; --gCbg:#26282d;
+    --t1:#e08a72; --t2:#7cc2e0; --t3:#dfb673; --t4:#a99ae8; --t5:#7fd3a8; --t6:#e08ac0; --t7:#dba36d; --t8:#8fb8cc;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",YuGothic,"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:15px; line-height:1.85; letter-spacing:.01em;
+}
+.wrap{max-width:1120px; margin:0 auto; padding:0 20px}
+h1,h2,h3,h4{line-height:1.4; letter-spacing:.005em}
+a{color:var(--accent); text-decoration:none; border-bottom:1px solid rgba(140,47,32,.28)}
+a:hover{border-bottom-color:currentColor}
+@media (prefers-color-scheme:dark){a{border-bottom-color:rgba(224,138,114,.3)}}
+
+/* ---------- cover ---------- */
+.cover{padding-block:64px 40px; border-bottom:3px double var(--line2)}
+.eyebrow{font-size:11px; letter-spacing:.22em; color:var(--accent); font-weight:700; margin:0 0 14px}
+.cover h1{font-size:clamp(26px,4.6vw,42px); margin:0 0 10px; font-weight:800}
+.cover .sub{font-size:clamp(14px,1.7vw,17px); color:var(--ink2); margin:0 0 26px; font-weight:400}
+.cover-meta{display:flex; flex-wrap:wrap; gap:8px 28px; font-size:12.5px; color:var(--ink3); border-top:1px solid var(--line); padding-top:16px}
+.cover-meta b{color:var(--ink2); font-weight:700}
+
+/* ---------- nav ---------- */
+nav.toc{position:sticky; top:0; z-index:20; background:var(--bg); border-bottom:1px solid var(--line); padding-block:10px; margin-bottom:8px}
+nav.toc .wrap{display:flex; gap:4px; overflow-x:auto; -webkit-overflow-scrolling:touch}
+nav.toc a{white-space:nowrap; font-size:12.5px; padding:5px 11px; border-radius:999px; border:1px solid var(--line2); color:var(--ink2); background:var(--panel)}
+nav.toc a:hover{color:var(--accent); border-color:var(--accent)}
+
+/* ---------- section ---------- */
+section.blk{padding-block:44px; border-top:1px solid var(--line)}
+section.blk:first-of-type{border-top:none}
+.sec-no{font-family:var(--mono); font-size:11px; color:var(--accent); letter-spacing:.16em; font-weight:700}
+section.blk>.wrap>h2{font-size:clamp(20px,2.8vw,27px); margin:6px 0 8px; font-weight:800}
+.lead{color:var(--ink2); font-size:14.5px; margin:0 0 26px; max-width:76ch}
+
+/* ---------- panels ---------- */
+.panel{background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:20px 22px; margin:16px 0}
+.panel h3{margin:0 0 10px; font-size:16px}
+.grid2{display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:14px}
+.grid3{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px}
+
+/* ---------- kpi ---------- */
+.kpis{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin:18px 0 6px}
+.kpi{background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:14px 16px}
+.kpi .n{font-size:clamp(22px,3.4vw,30px); font-weight:800; line-height:1.15; font-family:var(--mono); letter-spacing:-.02em}
+.kpi .l{font-size:11.5px; color:var(--ink3); margin-top:5px; line-height:1.5}
+
+/* ---------- badges ---------- */
+.g{display:inline-block; font-family:var(--mono); font-size:10px; font-weight:700; padding:1px 6px; border-radius:4px; vertical-align:2px; margin-right:6px; letter-spacing:.04em}
+.gA{color:var(--gA); background:var(--gAbg); border:1px solid var(--gA)}
+.gB{color:var(--gB); background:var(--gBbg); border:1px solid var(--gB)}
+.gC{color:var(--gC); background:var(--gCbg); border:1px solid var(--gC)}
+.tag{display:inline-block; font-size:10.5px; font-weight:700; padding:2px 8px; border-radius:999px; border:1px solid currentColor; opacity:.95; white-space:nowrap}
+.p1{color:var(--t1)} .p2{color:var(--t2)} .p3{color:var(--t3)} .p4{color:var(--t4)}
+.p5{color:var(--t5)} .p6{color:var(--t6)} .p7{color:var(--t7)} .p8{color:var(--t8)}
+
+/* ---------- pattern card ---------- */
+.pat{background:var(--panel); border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:8px; padding:22px 24px; margin:18px 0}
+.pat.cand{border-left-style:dashed; border-left-color:var(--ink3)}
+.pat-hd{display:flex; flex-wrap:wrap; align-items:baseline; gap:10px; margin-bottom:4px}
+.pat-hd .id{font-family:var(--mono); font-size:12px; font-weight:700; color:var(--accent)}
+.pat-hd h3{margin:0; font-size:19px; font-weight:800}
+.pat-hd .st{font-size:11px; font-weight:700; padding:2px 9px; border-radius:999px; background:var(--gAbg); color:var(--gA); border:1px solid var(--gA)}
+.pat-hd .st.c{background:var(--gCbg); color:var(--gC); border-color:var(--gC)}
+.pat dl{display:grid; grid-template-columns:88px 1fr; gap:7px 14px; margin:14px 0 0; font-size:14px}
+.pat dt{font-size:11.5px; font-weight:700; color:var(--accent); letter-spacing:.06em; padding-top:4px}
+.pat dd{margin:0; color:var(--ink)}
+.pat dd.mut{color:var(--ink2)}
+@media (max-width:560px){.pat dl{grid-template-columns:1fr; gap:2px 0} .pat dt{padding-top:10px}}
+.cases-line{font-size:12.5px; color:var(--ink2); font-family:var(--mono)}
+
+/* ---------- case card ---------- */
+.case{background:var(--panel); border:1px solid var(--line); border-radius:10px; margin:20px 0; overflow:hidden}
+.case-hd{display:flex; flex-wrap:wrap; gap:10px 14px; align-items:flex-start; padding:18px 22px; border-bottom:1px solid var(--line); background:linear-gradient(180deg,rgba(0,0,0,.015),transparent)}
+.case-no{font-family:var(--mono); font-size:24px; font-weight:800; color:var(--line2); line-height:1; padding-top:2px}
+.case-ttl{flex:1 1 240px; min-width:0}
+.case-ttl h3{margin:0 0 3px; font-size:19px; font-weight:800}
+.case-ttl .meta{margin:0; font-size:12px; color:var(--ink3); font-family:var(--mono)}
+.case-tags{display:flex; flex-wrap:wrap; gap:5px; align-items:center}
+.case-body{padding:0 22px 22px}
+.shot{margin:18px 0 4px; border:1px solid var(--line); border-radius:8px; overflow:hidden; background:var(--bg)}
+.shot img{display:block; width:100%; height:auto; max-height:330px; object-fit:contain; background:#fff}
+.shot figcaption{font-size:11px; color:var(--ink3); padding:7px 12px; border-top:1px solid var(--line); background:var(--panel)}
+.shot .ph{display:none; padding:26px 16px; text-align:center; font-size:12px; color:var(--ink3); line-height:1.7}
+.shot.fail img{display:none}
+.shot.fail .ph{display:block}
+.shots2{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:12px}
+.shots2 .shot{margin:18px 0 4px}
+
+.case h4{font-size:12px; letter-spacing:.1em; color:var(--accent); margin:22px 0 8px; padding-bottom:5px; border-bottom:1px solid var(--line); font-weight:800}
+.case p{margin:0 0 10px}
+.case ul{margin:0; padding-left:1.15em}
+.case li{margin-bottom:5px}
+blockquote.omote{margin:0; padding:14px 18px; background:var(--bg); border-left:3px solid var(--accent2); border-radius:0 6px 6px 0; font-size:14.5px}
+blockquote.omote p{margin:0 0 8px; font-weight:600}
+blockquote.omote cite{display:block; font-size:11.5px; color:var(--ink3); font-style:normal; font-family:var(--mono)}
+.tl{list-style:none; margin:0; padding:0; font-size:13.5px}
+.tl li{display:grid; grid-template-columns:108px 1fr; gap:12px; padding:4px 0; border-bottom:1px dotted var(--line)}
+.tl li:last-child{border-bottom:none}
+.tl .d{font-family:var(--mono); font-size:12px; color:var(--ink3); white-space:nowrap; padding-top:2px}
+.tl li.hi .d{color:var(--accent); font-weight:700}
+.tl li.hi{background:linear-gradient(90deg,rgba(140,47,32,.055),transparent); font-weight:600}
+@media (max-width:560px){.tl li{grid-template-columns:1fr; gap:0} .tl .d{padding-top:0}}
+.ev{list-style:none; padding:0; margin:0; font-size:14px}
+.ev li{padding:6px 0; border-bottom:1px dotted var(--line)}
+.ev li:last-child{border-bottom:none}
+.warn{list-style:none; padding:0; margin:0; font-size:13.8px; counter-reset:w}
+.warn li{position:relative; padding:5px 0 5px 34px; border-bottom:1px dotted var(--line)}
+.warn li:last-child{border-bottom:none}
+.warn li::before{counter-increment:w; content:"T–" counter(w); position:absolute; left:0; top:5px; font-family:var(--mono); font-size:10px; color:var(--ink3)}
+.warn li[data-lead]::before{content:attr(data-lead); font-weight:700; color:var(--accent)}
+.num{font-family:var(--mono); font-weight:700}
+.hl{background:linear-gradient(transparent 62%,rgba(184,85,63,.28) 62%); font-weight:700}
+
+/* ---------- table ---------- */
+.tblwrap{overflow-x:auto; margin:16px 0; border:1px solid var(--line); border-radius:8px; background:var(--panel)}
+table{border-collapse:collapse; width:100%; font-size:13px; min-width:560px}
+th,td{padding:9px 12px; text-align:left; border-bottom:1px solid var(--line); vertical-align:top}
+th{background:var(--bg); font-size:11.5px; letter-spacing:.06em; color:var(--ink2); font-weight:800; white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+td.n{font-family:var(--mono); white-space:nowrap}
+
+/* ---------- misc ---------- */
+.callout{border:1px solid var(--accent2); border-radius:8px; background:linear-gradient(180deg,rgba(184,85,63,.07),transparent); padding:16px 20px; margin:16px 0}
+.callout h4{margin:0 0 7px; font-size:13.5px; color:var(--accent); letter-spacing:.04em}
+.callout p:last-child{margin-bottom:0}
+.note{font-size:12.5px; color:var(--ink3); line-height:1.75}
+footer{border-top:3px double var(--line2); padding-block:34px 60px; font-size:12.5px; color:var(--ink3)}
+hr.sp{border:none; border-top:1px solid var(--line); margin:28px 0}
+</style>
+</head>
+<body>
+
+<header class="cover">
+  <div class="wrap">
+    <p class="eyebrow">FAILURE PATTERN CATALOG / JAPAN CONSUMER SERVICES</p>
+    <h1>日本国内toCサービス<br>撤退パターンカタログ 2015–2025</h1>
+    <p class="sub">27サービスの終了を一次資料で解剖し、7つのアンチパターンを認定。対照群5件で反証。</p>
+    <div class="cover-meta">
+      <span><b>対象</b> 日本国内toCアプリ・Webサービス（ゲーム除く）</span>
+      <span><b>収録</b> 失敗22カード／27サービス＋対照群5件</span>
+      <span><b>認定パターン</b> 9（うち仮説7すべて認定）</span>
+      <span><b>作成</b> 2026年9月</span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <a href="#summary">01 要旨</a>
+    <a href="#method">02 方法・凡例</a>
+    <a href="#patterns">03 パターンカタログ</a>
+    <a href="#cases">04 事例カタログ</a>
+    <a href="#control">05 対照群（反証）</a>
+    <a href="#signals">06 早期警告指標</a>
+    <a href="#lexicon">07 終了告知の語彙</a>
+    <a href="#checklist">08 実務チェックリスト</a>
+    <a href="#limits">09 制約・出典</a>
+  </div>
+</nav>
+
+<section class="blk" id="summary">
+  <div class="wrap">
+    <p class="sec-no">01</p>
+    <h2>要旨</h2>
+    <p class="lead">仮説7分類はすべてパターン認定（各3件以上）。加えて、仮説になかった<b>「機能吸収型」</b>と<b>「サイレント消滅型」</b>を新規パターンとして認定。最大の発見は、<b>撤退トリガーが「業績の悪化」ではない</b>こと——収録22カードのうち複数が、成長中・黒字転換直後・新規エリア拡大直後に終了している。</p>
+
+    <div class="kpis">
+      <div class="kpi"><div class="n">27</div><div class="l">収録サービス数</div></div>
+      <div class="kpi"><div class="n">9</div><div class="l">認定パターン（仮説7＋新規2）</div></div>
+      <div class="kpi"><div class="n">1</div><div class="l">候補どまり（レガシー採算割れ）</div></div>
+      <div class="kpi"><div class="n">6</div><div class="l">前提訂正した件数</div></div>
+      <div class="kpi"><div class="n">18–19<span style="font-size:14px">ヶ月</span></div><div class="l">最良の早期警告指標のリードタイム</div></div>
+    </div>
+
+    <h3 style="margin-top:34px;font-size:17px">主要な発見 5点</h3>
+    <div class="grid2">
+      <div class="panel">
+        <h3>① 「成長しているのに終了する」が常態</h3>
+        <p>メルカリ カウルは終了告知時点で<span class="hl">取引数 前年比170%</span>、LINE LIVEは<span class="hl">月間売上 前年比195%</span>、DiDi Foodは<span class="hl">終了3ヶ月前に静岡へ新規エリア拡大</span>、LINE Payは<span class="hl">終了直前期に初の黒字化（+11.8億円）</span>。撤退トリガーはトレンドではなく<b>絶対規模と機会費用</b>。事業KPIの改善を安全シグナルと読むのは誤り。</p>
+      </div>
+      <div class="panel">
+        <h3>② 最も信頼できる兆候は「周辺の剥落」</h3>
+        <p>本体の数値より、<b>サードパーティ連携・スキル・提携サービスが一つずつ消えていく</b>ほうが早い。LINE CLOVAは終了の<span class="num">19ヶ月前</span>にABEMAスキルが終了、<span class="num">18ヶ月前</span>に市場シェアが26.3%→1%台へ崩壊。外部の実売データ（BCN等）で観測可能だった。</p>
+      </div>
+      <div class="panel">
+        <h3>③ 料金ページの改定は2〜3年前の予告</h3>
+        <p>LINE Payは加盟店手数料を<span class="num">0%→2.45%</span>に改定（2021年10月）した<span class="num">33ヶ月後</span>に終了。「獲得フェーズの終了＝投資の引き上げ」の宣言。Wayback Machineでの料金ページ差分監視が、最も低コストで効く定点観測。</p>
+      </div>
+      <div class="panel">
+        <h3>④ 外資子会社は現地兆候がほぼ役に立たない</h3>
+        <p>foodpandaは発表から終了まで<span class="num">約40日</span>、DiDi Foodは<span class="num">35日</span>。現地の活動は直前まで正常、むしろ拡大する。見るべきは<b>親会社の株価・規制・上場ステータス・他国での同時撤退</b>。DiDiの場合は<span class="num">10ヶ月前</span>から中国当局の審査という公開情報があった。</p>
+      </div>
+      <div class="panel">
+        <h3>⑤ 「表の理由」の情報量は健全性と反比例</h3>
+        <p>Origami Pay・LINE CLOVA・グノシーQは<b>終了理由を一切説明していない</b>（日程の羅列、あるいは告知自体が存在しない）。逆にゆうちょPayは「強みと考えていた機能を活かせず」と自認、Chompyはピボット先を明示。<b>語られない撤退ほど、内部の毀損が深い。</b></p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <h4>調査の過程で判明した前提の訂正</h4>
+      <p>当初リストの6件で事実関係が異なっていた。カタログ本体は訂正後の事実で構成している。</p>
+      <ul style="margin:8px 0 0;padding-left:1.2em;font-size:13.5px">
+        <li><b>Adam byGMO</b>：終了していない。2026年9月現在も稼働中。NFT投機からリアル体験の権利証へピボットして<b>生存した側</b>のため、対照群へ移動。</li>
+        <li><b>ゆうちょPay</b>：終了告知は2025年12月15日、終了日は<b>2026年12月20日</b>（予定）。2025年終了ではない。参考事例として収録。</li>
+        <li><b>グノシーQ</b>：終了は2019年ではなく<b>2021年8月31日</b>。2019年終了は競合のワイキュー／JAMライブ。</li>
+        <li><b>Chompy</b>：デリバリー事業終了は2024年ではなく<b>2023年5月15日</b>。</li>
+        <li><b>J.Score</b>：2022年12月13日は発表日。新規停止は2023年1月16日、AIスコア終了は<b>2023年1月31日</b>。</li>
+        <li><b>LINEヘルスケア</b>：2022年12月は告知。健康相談終了は<b>2023年2月2日</b>、後継のLINEドクターも<b>2025年6月10日</b>に全機能停止し、同社は全事業消滅。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="method">
+  <div class="wrap">
+    <p class="sec-no">02</p>
+    <h2>方法と凡例</h2>
+    <p class="lead">「表の理由」は終了告知の原文を逐語採取。「裏の理由」は証拠グレードを付す。パターン認定は3事例以上、2件以下は「候補」として区別。</p>
+
+    <div class="grid2">
+      <div class="panel">
+        <h3>証拠グレード</h3>
+        <p><span class="g gA">A</span>有価証券報告書・決算説明資料・適時開示・公式リリース・官報決算公告・行政処分公表文・第三者委員会報告書</p>
+        <p><span class="g gB">B</span>当事者の発言・登壇記事・note・信頼できる報道（一次発表の逐語引用を含む）</p>
+        <p><span class="g gC">C</span>分析者の推論。事実として扱わない</p>
+      </div>
+      <div class="panel">
+        <h3>情報源</h3>
+        <ul style="margin:0;padding-left:1.2em;font-size:13.5px">
+          <li>有報・決算説明資料・適時開示（メルカリ第6/7期有報、PayPay F-1 等）</li>
+          <li>官報決算公告（Origami、LINE Pay、タイムバンク、LINEヘルスケア）</li>
+          <li>金融庁・証券取引等監視委員会・関東財務局・個人情報保護委員会の公表文</li>
+          <li>第三者委員会調査報告書（DeNA、SBIソーシャルレンディング）</li>
+          <li>当事者のnote・インタビュー（VALU小川氏、ソウゾウ原田氏・松本氏、Chompy大見氏）</li>
+          <li>プレスリリース原文（PR TIMES／@Press／各社IR）</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>アンチパターン分類タグ</h3>
+      <p style="font-size:13.5px;color:var(--ink2);margin-bottom:12px">各事例カードの右上に付す。複数タグの併記は、複合要因で倒れたことを意味する。</p>
+      <p style="line-height:2.4">
+        <span class="tag p1">P1 資本力勝負</span>
+        <span class="tag p2">P2 UE不成立</span>
+        <span class="tag p3">P3 規制未整備</span>
+        <span class="tag p4">P4 組織・ガバナンス</span>
+        <span class="tag p5">P5 親会社の戦略転換</span>
+        <span class="tag p6">P6 ブーム依存</span>
+        <span class="tag p7">P7 ブランド毀損</span>
+        <span class="tag p8">P8 機能吸収</span>
+        <span class="tag p8">P9 サイレント消滅</span>
+        <span class="tag p8" style="opacity:.55">P10 レガシー採算割れ（候補）</span>
+      </p>
+    </div>
+
+    <div class="callout">
+      <h4>画像について</h4>
+      <p class="note" style="margin:0">各カードの画像は、各社公式プレスリリース・IR・報道記事の画像を<b>外部URLから直接参照</b>している（ライセンス上の理由で再配布はしない）。オフライン環境や画像URLの失効時は、代替のテキストブロックが表示される。Wayback Machineのアーカイブ画像は調査環境からの到達性を検証できなかったため採用していない。</p>
+    </div>
+  </div>
+</section>
+<section class="blk" id="patterns">
+  <div class="wrap">
+    <p class="sec-no">03</p>
+    <h2>パターンカタログ</h2>
+    <p class="lead">仮説7分類はすべて3事例以上で認定。加えて新規2パターンを認定、1パターンを候補どまりとした。各パターンは「文脈／症状／根本原因／兆候／回避策／該当事例」の6項目で記述する。</p>
+
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>ID</th><th>パターン名</th><th>該当</th><th>判定</th><th>最良の先行指標</th><th>リードタイム</th></tr></thead>
+        <tbody>
+          <tr><td class="n">P1</td><td><span class="tag p1">資本力勝負</span></td><td class="n">6件</td><td>認定</td><td>最終調達からの経過時間／親会社の他国同時撤退</td><td class="n">18ヶ月／3–10ヶ月</td></tr>
+          <tr><td class="n">P2</td><td><span class="tag p2">UE不成立</span></td><td class="n">6件</td><td>認定</td><td>1取引の変動費÷平均単価が40%超</td><td class="n">起点から観測可</td></tr>
+          <tr><td class="n">P3</td><td><span class="tag p3">規制未整備</span></td><td class="n">8件</td><td>認定</td><td>監視委の勧告公表（処分の約1週間前）／法改正の可決</td><td class="n">7–8ヶ月</td></tr>
+          <tr><td class="n">P4</td><td><span class="tag p4">組織・ガバナンス</span></td><td class="n">7件</td><td>認定</td><td>質的ゲートのない量的KPI／法務照会ゼロ</td><td class="n">12–24ヶ月</td></tr>
+          <tr><td class="n">P5</td><td><span class="tag p5">親会社の戦略転換</span></td><td class="n">11件</td><td>認定</td><td>本体アプリへの競合機能実装／終了サービス一覧の一括公表</td><td class="n">17ヶ月／4–5ヶ月</td></tr>
+          <tr><td class="n">P6</td><td><span class="tag p6">ブーム依存</span></td><td class="n">7件</td><td>認定</td><td>累計DLは伸びているのにMAUが減る</td><td class="n">1–2ヶ月で顕在化</td></tr>
+          <tr><td class="n">P7</td><td><span class="tag p7">ブランド毀損</span></td><td class="n">5件</td><td>認定</td><td>「本人に説明できるか」テストの不通過</td><td class="n">ローンチ前に判定可</td></tr>
+          <tr><td class="n">P8</td><td><span class="tag p8">機能吸収</span></td><td class="n">4件</td><td>認定（新規）</td><td>中核機能が本体アプリに実装される</td><td class="n">6–17ヶ月</td></tr>
+          <tr><td class="n">P9</td><td><span class="tag p8">サイレント消滅</span></td><td class="n">4件</td><td>認定（新規）</td><td>終了理由が語られない／名称変更で処理</td><td class="n">—（事後）</td></tr>
+          <tr><td class="n">P10</td><td><span class="tag p8" style="opacity:.55">レガシー採算割れ</span></td><td class="n">2件</td><td>候補</td><td>有料プラン受付停止／刷新βの打ち切り</td><td class="n">2–24ヶ月</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- P1 -->
+    <article class="pat">
+      <div class="pat-hd"><span class="id">P1</span><h3>資本力勝負（Burn Rate War）</h3><span class="st">認定 · 6件</span></div>
+      <dl>
+        <dt>文脈</dt><dd>両面ネットワーク効果が強く、勝者総取りに近い市場。決済、フードデリバリー、スマートスピーカー。先行者利益ではなく<b>規模の閾値</b>が勝敗を決める。</dd>
+        <dt>症状</dt><dd>売上に対して桁違いの営業赤字。Origami Payは<span class="hl">売上2.98億円に対し営業損失41.7億円（売上の14倍）</span>。LINE Payは「300億円祭」の年に<span class="hl">純損失208億円</span>。還元キャンペーンの規模だけが競合との唯一の差別化変数になっている。</dd>
+        <dt>根本原因</dt><dd>ユーザー獲得コストを、手数料収入で回収するまでの期間が資本の残存期間を超えている。独立系スタートアップは<b>バランスシートの深さ</b>で負け、外資子会社は<b>本社のポートフォリオ判断</b>で切られる。どちらも自社の努力で解けない。</dd>
+        <dt>兆候</dt><dd class="mut">最終ラウンドから18ヶ月の調達途絶／官報の減資公告／大型還元キャンペーンの消滅／人員の大量離脱／親会社の他国での同時撤退</dd>
+        <dt>回避策</dt><dd>①「勝者総取り市場に、2番手の資本で入らない」を投資判断の門にする。②還元の設計を<b>1回上限の引き下げ×期間の引き延ばし</b>に振る（PayPay第2弾の1回上限1,000円）。③決済単体で儲けず、隣接の高テイクレート領域へ収益源をずらす（PayPayのカード・銀行・証券）。</dd>
+        <dt>該当事例</dt><dd class="cases-line">Origami Pay / LINE Pay / LINE CLOVA / foodpanda日本 / DiDi Food日本 / Chompy</dd>
+      </dl>
+    </article>
+
+    <!-- P2 -->
+    <article class="pat">
+      <div class="pat-hd"><span class="id">P2</span><h3>ユニットエコノミクス不成立</h3><span class="st">認定 · 6件</span></div>
+      <dl>
+        <dt>文脈</dt><dd>需要に比例して変動費が増える事業。配達員報酬、賞金、医師報酬、無料提供の原価。伸びるほど赤字が拡大し、伸びを止めると存在価値が消える。</dd>
+        <dt>症状</dt><dd>Chompyは<span class="hl">配達員報酬800円/配達に対しユーザー送料300円＋店舗手数料30%</span>——損益分岐の客単価は1,667円、送料無料の「らくとく便」では2,667円。グノシーQは<span class="hl">視聴40–50万人に対し参加1.5万人（3%）</span>で、広告枠は1日数百万円が上限。LINEヘルスケアは<b>資本金1.7億円に対し累積損失12.58億円</b>で債務超過。</dd>
+        <dt>根本原因</dt><dd>①収益機構が実装されないまま成長させる（メルカリ アッテは「使用料は無料」のまま2年で終了）。②変動費の引き受け手（ユーザー／供給側）に請求できる上限が、市場慣行で固定されている。③品質保証コストと単価がトレードオフになる（医師報酬を払えば赤字、払わなければ炎上）。</dd>
+        <dt>兆候</dt><dd class="mut">1取引の変動費÷平均注文額が40%超／「送料無料」「手数料無料」を成長施策の中心に置く／無料提供の終了と同時に利用量が落ちる／単独KPIが決算資料に一度も昇格しない</dd>
+        <dt>回避策</dt><dd>①ローンチ前に<b>損益分岐の客単価</b>を1本の式で書き、市場の実勢単価と比較する。②変動費を密度で下げる設計（ハブアンドスポーク）は、<b>密度が出る前に大手に塗りつぶされる</b>前提で期限を切る。③収益機構の実装期限を、成長KPIと同格のマイルストーンに置く。</dd>
+        <dt>該当事例</dt><dd class="cases-line">メルカリ アッテ / Chompy / グノシーQ / LINEヘルスケア / LINE Pay / Origami Pay</dd>
+      </dl>
+    </article>
+
+    <!-- P3 -->
+    <article class="pat">
+      <div class="pat-hd"><span class="id">P3</span><h3>規制未整備（グレーゾーン先行）</h3><span class="st">認定 · 8件</span></div>
+      <dl>
+        <dt>文脈</dt><dd>既存業法のどれにも明確に当てはまらない設計で先行者利益を取る。疑似株式、時間の証券化、貸付型ファンド、NFT。<b>「禁止されていない」を「許されている」と読み替えた</b>時点で時限爆弾が起動する。</dd>
+        <dt>症状</dt><dd>3段階で進行する。<b>T+12〜30ヶ月</b>で当局の見解表明（「監督対象ではないが、まったく無関係とも言えない」型の担当者コメント）、<b>T+α</b>で監視委の勧告または法改正の可決、<b>T+6〜18ヶ月</b>でモデル崩壊。VALUは改正資金決済法の可決（2019年5月31日）から<span class="hl">7.5ヶ月後</span>に終了告知。</dd>
+        <dt>根本原因</dt><dd>①規制対応コストが調達可能額を超える（VALU：交換業ライセンス取得コストが<span class="hl">1億円→20億円</span>に高騰）。②規制回避のために中核価値を自主的に削り、プロダクトが空洞化する（VALUの「優待」廃止）。③規制が要求した匿名化が、そのまま不正の温床になる（ソーシャルレンディングの借り手匿名化）。</dd>
+        <dt>兆候</dt><dd class="mut">利用規約に該当業法の位置づけが書かれていない／顧客資産を自社で預かる設計で分別管理の説明が公開されていない／中核機能を規制回避目的で自主的に削り始める／同業他社に処分が出る／業界横断の法改正が国会審議入り（可決→施行まで約10ヶ月）</dd>
+        <dt>回避策</dt><dd><b>グレーを利用するのではなく、埋めに行く。</b>LUUPは規制のサンドボックス（2019）→新事業特例（2020）→道交法改正（2022成立・2023施行）と<b>3段階の公的な制度階段</b>を登り、規制所管の国家公安委員会・国土交通省を実証の当事者に引き込んだ。自社の利益ではなく<b>立法事実の供給者</b>として立つのが要諦。</dd>
+        <dt>該当事例</dt><dd class="cases-line">VALU / タイムバンク / みんなのクレジット / ラッキーバンク / maneoマーケット / SBIソーシャルレンディング / LINE NFT / リクナビDMPフォロー</dd>
+      </dl>
+    </article>
+
+    <!-- P4 -->
+    <article class="pat">
+      <div class="pat-hd"><span class="id">P4</span><h3>組織・ガバナンス不全</h3><span class="st">認定 · 7件</span></div>
+      <dl>
+        <dt>文脈</dt><dd>質的なゲートを持たない量的KPIが、現場に「最も安価な達成手段」を選ばせる。M&Aで取得した事業を、リスク評価なしに全社展開するときに最も起きやすい。</dd>
+        <dt>症状</dt><dd>DeNA第三者委員会が認定した通り、<b>「買収によりキュレーション事業へと新規参入する段階で、同事業に関する分析・議論が尽くされず、事業リスクが適切に把握されなかった」</b>。WELQ含む10サイトで調査対象376,671記事、著作権侵害の可能性1.9〜5.6%、画像は474万個中74万個以上。ソーシャルレンディング4社は<b>全社が「虚偽表示・誤解を生ぜしめる表示」で処分</b>され、全社が関係会社・親族会社への集中貸付という同一構造を持つ。</dd>
+        <dt>根本原因</dt><dd>①評価基準に品質・適法性の項目がない（報告書「設定された目標・評価基準の問題」）。②法務部が事業実態に関与せず、チェックが制度として存在しない。③「"反・大企業病"に対する行きすぎた称揚」——慎重さをスティグマ化する文化が内部警告を封じる。④プラットフォーム型は「営業者に一任」で責任を分散できると誤認する（maneoは自ら貸付先を選んでいないのに処分された）。</dd>
+        <dt>兆候</dt><dd class="mut">記事単価・外注単価が検証工数を構造的に不可能にする水準／生産量の伸び率が監修体制の増員率を大きく上回る／法務部への事業部からの照会件数がほぼゼロ／第三者委員会の設置公表（SBI SLは設置から撤退まで4ヶ月）／上場親会社の開示に「連結業績への影響は軽微」と書かれる</dd>
+        <dt>回避策</dt><dd>①量的KPIには必ず<b>同格の質的ゲート</b>を置く（監修者1人あたり生産量の上限）。②M&Aのデューデリジェンスに「取得するビジネスモデルの違法性リスク」を独立項目として入れる。③法務照会件数を<b>牽制機能の稼働指標</b>として経営が見る。</dd>
+        <dt>該当事例</dt><dd class="cases-line">WELQ / リクナビDMPフォロー / みんなのクレジット / ラッキーバンク / maneoマーケット / SBIソーシャルレンディング / LINEヘルスケア</dd>
+      </dl>
+    </article>
+
+    <!-- P5 -->
+    <article class="pat">
+      <div class="pat-hd"><span class="id">P5</span><h3>親会社の戦略転換</h3><span class="st">認定 · 11件（最多）</span></div>
+      <dl>
+        <dt>文脈</dt><dd>単体の事業KPIとは無関係に、グループの資本配分判断で終了が決まる。経営統合後の重複整理、合弁の解消、上場直後のポートフォリオ再編。<b>本カタログで最多の死因。</b></dd>
+        <dt>症状</dt><dd>赤字が改善していても終了する。LINE Payは<span class="hl">終了直前期（2025年3月期）に初の黒字転換（+11.8億円）</span>。LINE LIVEは<span class="hl">月間売上 前年比195%</span>を発表した17ヶ月後に終了告知。J.ScoreとLINEヘルスケアは合弁解消により消滅。告知の語彙は「経営資源の集中／再配置」「選択と集中」「一本化」に収斂する。</dd>
+        <dt>根本原因</dt><dd>①グループ内カニバリゼーション（PayPay×LINE Pay、GYAO!×LINE LIVE、J.Score×LINE Credit）。②<b>配布チャネルの割り当て変更</b>——LINEアプリ本体内の一等地がLINE VOOMに与えられた時点で、独立アプリのLINE LIVEはチャネル劣位に落ちた。③親会社のKPI設計：メルカリは単一セグメント開示のため、新規事業の損益はそもそも開示されず、評価は「絶対規模とグループ親和性」で行われる。</dd>
+        <dt>兆候</dt><dd class="mut">本体アプリ内に競合機能が実装される（17ヶ月前）／親会社の経営統合完了（24ヶ月前）／「終了するアプリ／サービス一覧」の一括公表（4–5ヶ月前）／有報「事業の内容」本文からサービス名が消える／KPI定義注記で「〜は含んでおりません」と過去形で一括除外される／事業系統図から「影響僅少」として省略される</dd>
+        <dt>回避策</dt><dd>①新規事業の立ち上げ時に<b>撤退基準を数値で先に決める</b>（ソウゾウ元代表・原田氏「どこまで赤字事業を続け、どのような状態になれば撤退するか、明確に決めていなかった。辞め時を見失っていた」）。②親会社のKPIが「単独採算」か「経済圏のリテンション装置」かを確認する——ラクマは後者だから10年生き残っている。③取引先としては、親会社の統合発表を<b>自社の契約見直しトリガー</b>に設定する。</dd>
+        <dt>該当事例</dt><dd class="cases-line">LINE Pay / LINE LIVE / LINE CLOVA / メルカリNOW・カウル・メゾンズ・teacha / Yahoo!ブログ / Yahoo!ジオシティーズ / J.Score / LINEヘルスケア・LINEドクター / LINE NFT / foodpanda日本 / DiDi Food日本</dd>
+      </dl>
+    </article>
+
+    <!-- P6 -->
+    <article class="pat">
+      <div class="pat-hd"><span class="id">P6</span><h3>ブーム依存</h3><span class="st">認定 · 7件</span></div>
+      <dl>
+        <dt>文脈</dt><dd>カテゴリ自体が一過性の熱狂で立ち上がり、熱狂とともに消える。ライブクイズ、音声SNS、仮想通貨・ICO、NFT、スマートスピーカー、高利回り投資。</dd>
+        <dt>症状</dt><dd>決定的な数値はClubhouse。<span class="hl">日本MAUは2021年2月の約108万人から4月に約21万人（−81%）</span>へ落ちた一方、<span class="hl">日本累計DLは83万→170万（+104.8%）と増え続けていた</span>。つまり<b>新規獲得は効いていて、リテンションがゼロに近かった</b>。LINE CLOVAは市場シェア26.3%（2020年11月）→1%未満（2021年4月以降）。</dd>
+        <dt>根本原因</dt><dd>①希少性（招待制・順番待ち）を獲得エンジンにすると、希少性が消えた瞬間に価値が消える。②コンテンツが非蓄積型で再訪理由がない。③在宅需要という外部要因への依存。④打ち手が遅行指標に反応する——Clubhouseは<b>MAU−81%の5ヶ月後</b>に招待制を廃止し、<b>8ヶ月後</b>に日本語対応を「検討中」と発表した。</dd>
+        <dt>兆候</dt><dd class="mut">累計DLは伸びているのにMAUが減る（獲得＞離脱の逆転）／「ランキング1位」と「認知2割」の乖離（Clubhouseは日本1位の週に認知19%・実利用2%）／メディア露出のピークアウト／カテゴリ内の他社が先に撤退する／配信頻度・提供頻度の削減（グノシーQは終了14ヶ月前に毎日→週4）</dd>
+        <dt>回避策</dt><dd>①ブーム期の資金・人員は<b>「ブーム後に残る資産」への転換にだけ使う</b>。Adam byGMOは投機的NFTからリアル体験の権利証へ転換して生存。②リテンション指標をDL数より上位のNo.1 KPIに置く。③ブーム発生から<b>90日以内</b>にローカライズ・課金・蓄積性のいずれかを実装する期限を切る。</dd>
+        <dt>該当事例</dt><dd class="cases-line">Clubhouse（日本） / グノシーQ / VALU / タイムバンク / LINE NFT / LINE CLOVA / ソーシャルレンディング</dd>
+      </dl>
+    </article>
+
+    <!-- P7 -->
+    <article class="pat">
+      <div class="pat-hd"><span class="id">P7</span><h3>ブランド毀損</h3><span class="st">認定 · 5件</span></div>
+      <dl>
+        <dt>文脈</dt><dd>「本人が気づかない」ことを前提にした設計、あるいは供給側の品質を統制できない構造。発覚・炎上の瞬間に、事業の前提そのものが失われる。</dd>
+        <dt>症状</dt><dd>リクナビDMPフォローは、個人情報保護委員会の勧告2回（2019年8月26日・12月4日）と厚生労働省の職業安定法に基づく行政指導（9月6日）という<b>二重の規制違反</b>が認定され、サービス廃止。Yahoo!スコアは行政処分に至る前に世論だけで<b>オプトアウト→オプトイン転換（3ヶ月後）→終了（14ヶ月）</b>。LINEヘルスケアは登録医師の暴言で炎上。</dd>
+        <dt>根本原因</dt><dd>①<b>同意設計の後付け変更が事業前提を破壊する</b>——スコア商品の価値は母集団の網羅性にあり、オプトインへの転換は「仕様変更」ではなく「事業モデルの消滅」。②プラットフォームが供給側（医師・ライター）を雇用していないため、1人の逸脱が全体のブランドを毀損する。③個人情報該当性を形式的に回避するスキーム（PPCが認定した「Cookie突合による特定回避の試み」）は、発覚時に「事務ミス」では済まない。</dd>
+        <dt>兆候</dt><dd class="mut"><b>サービス内容を対象者本人向けに平易に説明した文書が存在しない／作れない</b>／法務照会の内容が「適法性」ではなく「法の網の外に出る方法」に集中している／ローンチ前に外部専門家から同意設計への批判が出ている（Yahoo!スコアは提供開始の3週間以上前に批判が出揃っていた）／供給側の1人あたり処理数・所要時間の分布に異常値がある</dd>
+        <dt>回避策</dt><dd><b>「本人に説明できるか」テストをローンチゲートに置く。</b>対象者本人向けの説明文を書き、書けないなら作らない。加えて、同意設計は<b>最も保守的な形（オプトイン）で事業が成立するか</b>をローンチ前に検証する——後から変更すると事業が消える。</dd>
+        <dt>該当事例</dt><dd class="cases-line">WELQ / リクナビDMPフォロー / Yahoo!スコア / VALU（ヒカル騒動） / LINEヘルスケア</dd>
+      </dl>
+    </article>
+
+    <!-- P8 -->
+    <article class="pat">
+      <div class="pat-hd"><span class="id">P8</span><h3>機能吸収（本体への一本化）<span style="font-size:12px;color:var(--ink3);font-weight:400"> ／ 仮説になかった新規パターン</span></h3><span class="st">認定 · 4件</span></div>
+      <dl>
+        <dt>文脈</dt><dd>本体サービスの周辺に立てた垂直特化アプリ・独立アプリが、その中核機能を本体に実装された瞬間に存在意義を失う。社内に「勝つ側」がいる点が、外部競合に負けるP1と決定的に違う。</dd>
+        <dt>症状</dt><dd>公式リリース自身が原因を明記する稀な型。メルカリ カウルは<b>「バーコード出品や新刊の販売等、『メルカリ カウル』の機能の大部分が『メルカリ』にも追加されたことから、『メルカリ カウル』の提供を終了し『メルカリ』に一本化する」</b>。しかも終了告知時点で<span class="hl">取引数は前年比170%</span>だった。</dd>
+        <dt>根本原因</dt><dd>①手数料体系が本体と同一（カウル・メゾンズとも販売価格の10%）なら、GMVは本体との共食いにしかならない。②独立アプリは配布チャネルを自前で買う必要があり、本体内実装にCAC で勝てない。③そもそも<b>事業ではなくR&Dビークル</b>だった場合（メゾンズのAI査定）、技術の本体実装が完了した時点で役割が終わる。</dd>
+        <dt>兆候</dt><dd class="mut">中核機能が本体アプリに実装される（カウル：6ヶ月前、LINE LIVE→VOOM：17ヶ月前）／本体と手数料体系が同一／本体アプリ内の導線が縮小する／社内の人員が本体・新主力（メルペイ等）へ移動し始める</dd>
+        <dt>回避策</dt><dd>①垂直特化アプリは<b>「本体に実装されたら終わる機能」を中核に置かない</b>。独自の供給側ネットワーク、規制ライセンス、オフライン資産など、コピーに時間がかかる資産を中核にする。②R&Dビークルとして立てるなら、最初からそう定義し、成功の定義を「本体への実装完了」に置く（＝終了は成功）。</dd>
+        <dt>該当事例</dt><dd class="cases-line">メルカリ カウル / メルカリ メゾンズ / LINE LIVE（→LINE VOOM） / LINE NFT（→DOSI）</dd>
+      </dl>
+    </article>
+
+    <!-- P9 -->
+    <article class="pat">
+      <div class="pat-hd"><span class="id">P9</span><h3>サイレント消滅<span style="font-size:12px;color:var(--ink3);font-weight:400"> ／ 仮説になかった新規パターン</span></h3><span class="st">認定 · 4件</span></div>
+      <dl>
+        <dt>文脈</dt><dd>終了の「理由」が最後まで語られない型。日程だけの告知、名称変更での処理、告知そのものの不在。<b>公式の説明量が、内部の毀損の深さと反比例する。</b></dd>
+        <dt>症状</dt><dd>Origami Payの終了告知は<b>日程の羅列のみで、事業上の理由説明が存在しない</b>（同時期に1株1円・総額約259万円での譲渡、社員9割リストラ、翌年に72億円規模の減資公告）。LINE CLOVAも理由の説明なし。グノシーQは<b>公式の終了告知そのものが存在しない</b>（上場企業が3年半続けた番組を、IR開示も終了リリースもなく畳んだ）。タイムバンクは「提供サービスに関しましては変更の予定はございません」として<b>社名・サービス名の変更で処理</b>（同年度の純損失31.6億円は総資産15.6億円を上回る）。</dd>
+        <dt>根本原因</dt><dd>①説明すれば債務超過・破綻・不正のいずれかに触れざるを得ない。②既存ユーザーの資産・債権の管理義務が残るため、破産・終了の宣言を避けたい（maneoは募集停止のまま延滞債権一覧だけを稼働させる「ランオフ」状態）。③そもそも社内でその事業のKPIが一度も公式化されていない（グノシーQは単独KPIがIRに一度も出ていない）。</dd>
+        <dt>兆候</dt><dd class="mut">公式リリースが「コラボの告知」ばかりで実績数値を一度も出さない／決算資料の記述が「実施しています」という活動報告のままKPI表に昇格しない／サービス名変更が「提供内容に変更はありません」とセットで告知される／官報で減資・大規模欠損填補の公告が出る</dd>
+        <dt>回避策</dt><dd>取引先・パートナーの立場では、<b>「単独KPIが一度も公表されていないサービス」を依存先にしない</b>。自社の立場では、撤退時に理由を明示することがブランドと再挑戦の資産になる（Chompyは終了リリースでピボット先まで明示し、B2B SaaSで存続）。</dd>
+        <dt>該当事例</dt><dd class="cases-line">Origami Pay / LINE CLOVA / グノシーQ / タイムバンク（→Let）</dd>
+      </dl>
+    </article>
+
+    <!-- P10 candidate -->
+    <article class="pat cand">
+      <div class="pat-hd"><span class="id">P10</span><h3>レガシー採算割れ</h3><span class="st c">候補 · 2件（認定に1件不足）</span></div>
+      <dl>
+        <dt>文脈</dt><dd>10年以上運用された無料・広告モデルのサービス。技術的負債の保守コストが、スマホシフト後の広告単価を上回る。</dd>
+        <dt>症状</dt><dd>Yahoo!ジオシティーズは<b>「採算面や、今後システムを維持するためのテクノロジーに関する複数の課題などを総合的に判断した結果、これ以上の継続は難しい」</b>と、本カタログで<b>唯一「採算面」を第一の理由に挙げた</b>。Yahoo!ブログではこの「採算面」が消え、「市場環境」「技術的な運用課題」「今後の事業方針」に置き換わっている。</dd>
+        <dt>根本原因</dt><dd>①レガシースタック（旧HTML、独自FTP基盤、Wiki文法、トラックバック）の保守不能。②本家の先行終了による孤立（米GeoCitiesは2009年に終了、日本版のみ10年運営）。③刷新の失敗——Yahoo!ブログは2017年に開始したリニューアル版βを、終了告知の直後に真っ先に打ち切っている（＝投資回収の断念）。</dd>
+        <dt>兆候</dt><dd class="mut">有料プランの購入・変更受付終了（収益動線の停止、2.5ヶ月前）／刷新版βが本移行しないまま停滞する（24ヶ月前）／新規開設の停止（7ヶ月前）／投稿・編集機能の停止＝read-only化（3.5ヶ月前）／親会社が「終了するサービス一覧」を一括公表（4–5ヶ月前）</dd>
+        <dt>回避策</dt><dd>移行先を自社内に用意できるかを早期に判定する。Yahoo!ブログは他社ブログ（Ameba／ライブドア／Seesaa／はてな）への移行ツールを提供した——<b>移行先が社外であることは、カテゴリからの完全撤退のシグナル</b>。カウルやLINE LIVEの「内部吸収」とは逆。</dd>
+        <dt>該当事例</dt><dd class="cases-line">Yahoo!ジオシティーズ / Yahoo!ブログ　※3件目の候補としてYahoo!スコアやiモード系を追加検証すれば認定可能</dd>
+      </dl>
+    </article>
+  </div>
+</section>
+<section class="blk" id="cases">
+  <div class="wrap">
+    <p class="sec-no">04</p>
+    <h2>事例カタログ</h2>
+    <p class="lead">22カード／27サービス。各カードは「概要・提供価値・収益モデル／年表／表の理由（原文逐語）／裏の理由（証拠グレード付き）／早期警告指標」で構成。年表の<b>強調行</b>は終了に直結した転換点。</p>
+
+<!-- ========== 01 Origami Pay ========== -->
+<article class="case" id="c01">
+  <div class="case-hd">
+    <div class="case-no">01</div>
+    <div class="case-ttl"><h3>Origami Pay</h3><p class="meta">株式会社Origami ／ 2016.05 – 2020.06.30 ／ QRコード決済</p></div>
+    <div class="case-tags"><span class="tag p1">P1 資本力勝負</span><span class="tag p2">P2 UE不成立</span><span class="tag p8">P9 サイレント消滅</span></div>
+  </div>
+  <div class="case-body">
+    <figure class="shot">
+      <img src="https://www.watch.impress.co.jp/img/ipw/list/1237/780/o2.jpg" alt="Origami Pay サービス終了の報道画像" loading="lazy" onerror="this.closest('.shot').classList.add('fail')">
+      <div class="ph">［画像：Origami Pay サービス終了告知］<br>出典 Impress Watch「Origami Pay、サービス終了。6月に全機能」</div>
+      <figcaption>Origami Pay サービス終了の報道画像／出典：<a href="https://www.watch.impress.co.jp/docs/news/1237780.html">Impress Watch</a>（公式ドメイン about.origami.com は失効済み）</figcaption>
+    </figure>
+
+    <h4>概要・提供価値・収益モデル・資金源</h4>
+    <p>日本のQRコード決済の草分け。差別化は後日ポイント還元ではなく<b>その場で効く即時値引き</b>。収益は加盟店決済手数料。VC調達に依存した先行投資型で、判明分だけで<b>約87.6億円</b>を調達（2013年5億／2015年16億／2018年シリーズC 66.6億円）。主要投資家は三井住友カード、デジタルガレージ、トヨタファイナンス、銀聯国際。2019年9月時点の調達後評価額 435.57億円。</p>
+
+    <h4>年表</h4>
+    <ul class="tl">
+      <li><span class="d">2012.02</span><span>株式会社Origami 設立</span></li>
+      <li><span class="d">2016.05</span><span>Origami Pay 正式開始（当初Bluetooth方式、2017.02にQR方式へ転換）</span></li>
+      <li class="hi"><span class="d">2018.09</span><span>シリーズC 66.6億円調達 ← <b>以後、新規調達は途絶</b></span></li>
+      <li><span class="d">2018.12</span><span>競合PayPayが「100億円あげちゃうキャンペーン」を開始</span></li>
+      <li><span class="d">2019.06</span><span>加盟店 約2万店（松屋フーズ・吉野家・ローソン等）</span></li>
+      <li><span class="d">2019.09</span><span>推定時価総額 435.57億円（最後の評価額更新）</span></li>
+      <li class="hi"><span class="d">2020.01.23</span><span>メルペイによる全株式取得を発表 ／ 1月末に社員185人中 約9割をリストラ</span></li>
+      <li class="hi"><span class="d">2020.02.28</span><span>サービス終了スケジュールを発表</span></li>
+      <li><span class="d">2020.06.30</span><span>Origamiアプリ 全機能停止</span></li>
+      <li><span class="d">2020.07.27</span><span>官報で大規模減資公告（資本金50.45億円・資本準備金21.75億円の減少）</span></li>
+    </ul>
+
+    <h4>表の理由（終了告知の原文）</h4>
+    <blockquote class="omote">
+      <p>「4月28日22時より、クレジットカードやデビットカードの新規登録および支払い、金融機関口座を指定したコード支払いを停止」</p>
+      <p>「6月30日22時に、Origamiアプリ全機能を終了。」</p>
+      <cite>出典：<a href="https://ascii.jp/elem/000/004/004/4004529/">ASCII.jp</a>／<a href="https://www.watch.impress.co.jp/docs/news/1237780.html">Impress Watch</a>（公式発表の引用）</cite>
+    </blockquote>
+    <p style="margin-top:10px;font-size:13.5px;color:var(--ink2)"><b>注記：終了理由そのものが語られていない。</b>告知は日程の羅列のみ。これ自体が P9 サイレント消滅の典型であり、実質破綻案件では理由が語られないという法則の最良の例。</p>
+
+    <h4>裏の理由</h4>
+    <ul class="ev">
+      <li><span class="g gA">A</span><b>売上に対する損失の桁違いの大きさ</b>。2019年12月期は売上高2億9,800万円に対し<span class="hl">営業損失41億6,700万円・最終損失44億8,300万円</span>（官報決算公告）。売上の約14倍の営業赤字。</li>
+      <li><span class="g gB">B</span><b>実質的な経営破綻</b>。譲渡価格は1株1円×259万株＝<span class="hl">総額約259万円</span>。時価総額400億円超からの事実上のゼロ評価（ダイヤモンド・オンライン）。</li>
+      <li><span class="g gA">A</span><b>資本の毀損</b>。2020年7月に資本金・資本準備金あわせて72億円規模の減資（欠損填補）を官報公告。</li>
+      <li><span class="g gB">B</span><b>買収の狙いはサービスでなく加盟店網</b>。「狙いはOrigamiが開拓してきた加盟店にあり、統合ではなくサービス終了が決定した」（BCN+R）。</li>
+      <li><span class="g gB">B</span><b>資金力競争での敗北</b>。PayPayの100億円キャンペーン以降、独立系スタートアップは資本コストで還元合戦に追随できなかった（日経「対PayPayで消耗した企業価値」）。</li>
+      <li><span class="g gC">C</span>加盟店2万店規模ではネットワーク効果が働かず、獲得コストを手数料収入で回収できない構造。</li>
+    </ul>
+
+    <h4>早期警告指標</h4>
+    <ul class="warn">
+      <li data-lead="T–17ヶ月">最終調達（2018年9月）以降、新規ラウンドの記録が消える。<b>最終ラウンドから18ヶ月</b>が観測窓。</li>
+      <li data-lead="T–14ヶ月">競合の大型還元キャンペーンに対し、自社側の大型施策が消失する。</li>
+      <li data-lead="T–1ヶ月">子会社化の発表＝独立での資金調達断念のシグナル。</li>
+      <li data-lead="T–1ヶ月">社員の約9割リストラ（ほぼ手遅れの段階）。</li>
+      <li data-lead="継続">官報の決算公告で、売上に対する営業損失の倍率を毎年チェックできる。</li>
+    </ul>
+  </div>
+</article>
+
+<!-- ========== 02 LINE Pay ========== -->
+<article class="case" id="c02">
+  <div class="case-hd">
+    <div class="case-no">02</div>
+    <div class="case-ttl"><h3>LINE Pay</h3><p class="meta">LINE Pay株式会社／LINEヤフー ／ 2014.12 – 2025.04.30 ／ コード決済・個人間送金</p></div>
+    <div class="case-tags"><span class="tag p5">P5 親会社の戦略転換</span><span class="tag p1">P1 資本力勝負</span><span class="tag p2">P2 UE不成立</span></div>
+  </div>
+  <div class="case-body">
+    <figure class="shot">
+      <img src="https://www.lycorp.co.jp/ja/news/jp/common/linepaythumnailnew%20%281%29.png" alt="LINE Pay サービス終了に関するお知らせ" loading="lazy" onerror="this.closest('.shot').classList.add('fail')">
+      <div class="ph">［画像：LINE Pay サービス終了告知］<br>出典 LINEヤフー公式リリース（2024年6月13日）</div>
+      <figcaption>LINEヤフー公式リリースのキービジュアル／出典：<a href="https://www.lycorp.co.jp/ja/news/release/008628/">LINEヤフー</a></figcaption>
+    </figure>
+
+    <h4>概要・提供価値・収益モデル・資金源</h4>
+    <p>LINEアプリ内から使えるコード決済・送金。最大の差別化は<b>LINEの友だちへの個人間送金・割り勘</b>。収益は加盟店決済手数料だが、<b>2018年8月〜2021年9月の3年2ヶ月、店舗用アプリ経由のQR決済は手数料0円</b>。資金源は外部VCではなく<b>親会社の内部資本による赤字補填</b>。</p>
+
+    <h4>年表</h4>
+    <ul class="tl">
+      <li><span class="d">2014.12</span><span>サービス開始</span></li>
+      <li><span class="d">2018.08.01</span><span>加盟店決済手数料0円施策を開始（当時 加盟店約9.4万カ所、年内100万カ所目標）</span></li>
+      <li><span class="d">2019.05.20</span><span>「LINE Pay 300億円祭」山分けキャンペーン</span></li>
+      <li><span class="d">2021.03</span><span>ZホールディングスとLINEの経営統合が完了 ／ PayPayとのコード連携開始</span></li>
+      <li class="hi"><span class="d">2021.10</span><span><b>決済手数料を 0% → 2.45% へ改定</b>（無料期間の終了＝獲得フェーズの終了）</span></li>
+      <li><span class="d">2023.10</span><span>LINEヤフー株式会社 発足（組織統合）</span></li>
+      <li class="hi"><span class="d">2024.06.13</span><span>国内サービス終了を発表</span></li>
+      <li><span class="d">2025.04.30</span><span>国内サービス終了。2026年3月にLINEヤフーへ吸収合併</span></li>
+    </ul>
+
+    <h4>表の理由（終了告知の原文）</h4>
+    <blockquote class="omote">
+      <p>「LINE Payを取り巻く環境の変化やLINEヤフーグループとしての最適な経営資源の配分などを検討した結果、国内の送金・決済サービス領域は『PayPay』に一本化し、国内における『LINE Pay』サービスを終了することとしました。」</p>
+      <cite>出典：<a href="https://www.lycorp.co.jp/ja/news/release/008628/">LINEヤフー株式会社 ニュースリリース（2024年6月13日）</a></cite>
+    </blockquote>
+
+    <h4>裏の理由</h4>
+    <ul class="ev">
+      <li><span class="g gA">A</span><b>累積赤字の規模</b>。官報決算公告ベースで 2017/12期▲27.4億／2018/12期▲54.0億／<span class="hl">2019/12期▲208.2億</span>／2021/3期▲61.2億／2022/3期▲17.7億／2023/3期▲9.3億。2023年3月期時点の利益剰余金は<b>▲189.9億円</b>。</li>
+      <li><span class="g gA">A</span>＋<span class="g gC">C</span>「300億円祭」の年（2019年12月期）の損失は前期の約4倍。大規模還元のコストが一期で顕在化（因果の紐付けは推論）。</li>
+      <li><span class="g gB">B</span><b>グループ内カニバリゼーション</b>。2021年3月の統合でPayPayとLINE Payが同一グループ内に併存。重複投資の解消は構造的必然。</li>
+      <li><span class="g gB">B</span><b>実利用率の低さ</b>。登録者4,400万人に対し<span class="hl">実利用率6.5%</span>、決済サービス内で7位（2024年3月調査）。登録だけされて使われない状態。</li>
+      <li><span class="g gC">C</span>コード決済は両面ネットワーク効果が強く、同一グループ内で2つ維持する合理性がない。</li>
+    </ul>
+
+    <div class="callout" style="margin-top:16px">
+      <h4>この事例の核心：「損失が改善しているのに終了する」</h4>
+      <p style="margin:0">純損失は2019/12期の▲208億円から改善を続け、<b>終了直前期の2025年3月期には＋11億7,797万円と初の黒字転換</b>。撤退コスト削減とキャンペーン停止による「終了黒字」。<b>事業KPIの改善は、親会社戦略転換型では安全シグナルにならない。</b></p>
+    </div>
+
+    <h4>早期警告指標</h4>
+    <ul class="warn">
+      <li data-lead="T–33ヶ月">料金ページの改定（手数料0円→2.45%）。<b>本カタログで最もリードタイムが長い観測可能指標。</b></li>
+      <li data-lead="T–31ヶ月">競合（PayPay）とのコード連携開始＝自社網の価値を競合に開放。統合の地ならし。</li>
+      <li data-lead="T–24ヶ月">決算で販促費など営業費用が大幅減（損失▲61億→▲24億へ「改善」）＝投資の引き上げ。</li>
+      <li data-lead="T–8ヶ月">親会社の組織統合（LINEヤフー発足）。</li>
+    </ul>
+  </div>
+</article>
+
+<!-- ========== 03 LINE CLOVA ========== -->
+<article class="case" id="c03">
+  <div class="case-hd">
+    <div class="case-no">03</div>
+    <div class="case-ttl"><h3>LINE CLOVA（個人向けスマートスピーカー）</h3><p class="meta">LINE株式会社 ／ 2017.10 – 2023.03.30 ／ AIアシスタント・ハードウェア</p></div>
+    <div class="case-tags"><span class="tag p1">P1 資本力勝負</span><span class="tag p6">P6 ブーム依存</span><span class="tag p5">P5 親会社の戦略転換</span><span class="tag p8">P9 サイレント消滅</span></div>
+  </div>
+  <div class="case-body">
+    <figure class="shot">
+      <img src="https://k-tai.watch.impress.co.jp/img/ktw/list/1450/970/sub.png" alt="LINE CLOVA デバイス販売終了の報道画像" loading="lazy" onerror="this.closest('.shot').classList.add('fail')">
+      <div class="ph">［画像：CLOVAデバイス群］<br>出典 ケータイWatch「LINEの『CLOVA』搭載デバイスがサービス終了へ」</div>
+      <figcaption>CLOVAデバイス群／出典：<a href="https://k-tai.watch.impress.co.jp/docs/news/1450970.html">ケータイWatch</a></figcaption>
+    </figure>
+
+    <h4>概要・提供価値・収益モデル・資金源</h4>
+    <p>CLOVA WAVE／Friends／Friends mini／Desk のスマートスピーカー群。Google Home・Amazon Echoに対する唯一の構造的差別化は<b>LINEのメッセージを音声で送受信できること</b>。加えてブラウン・サリー等のキャラクターIP×ハードという日本市場特化戦略。資金源はLINE本体の自己資本。</p>
+
+    <h4>年表</h4>
+    <ul class="tl">
+      <li><span class="d">2017.10</span><span>CLOVA WAVE 一般販売開始</span></li>
+      <li><span class="d">2018–2019</span><span>CLOVA Friends／mini／Desk を順次投入（以後、新モデルの投入は停止）</span></li>
+      <li class="hi"><span class="d">2020.11</span><span><b>スマートスピーカー市場シェア 26.3%（ピーク）</b></span></li>
+      <li class="hi"><span class="d">2021.03</span><span>「ABEMAスキル」提供終了 ← <b>サードパーティ連携の剥落が開始</b></span></li>
+      <li class="hi"><span class="d">2021.04〜</span><span><b>市場シェアが1%未満〜1%台に急落し、以後継続</b></span></li>
+      <li><span class="d">2021.09</span><span>「イベント情報スキル」提供終了</span></li>
+      <li class="hi"><span class="d">2022.10.26</span><span>デバイス販売終了およびサービス提供終了を発表</span></li>
+      <li><span class="d">2023.03.30</span><span>CLOVA Assistant サービス終了（以後Bluetoothスピーカーのみ）。以降CLOVAはB2B（OCR／Note等）へ転換</span></li>
+    </ul>
+
+    <h4>表の理由（終了告知の原文）</h4>
+    <blockquote class="omote">
+      <p>「【重要】CLOVAデバイス販売終了およびサービス提供終了のお知らせ」（2022年10月26日）</p>
+      <cite>出典：<a href="https://notice2.line.me/ClovaJP/ios/document/notice">LINE CLOVA 公式お知らせ</a>／報道：<a href="https://news.mynavi.jp/article/20221026-2494313/">マイナビニュース</a></cite>
+    </blockquote>
+    <p style="margin-top:10px;font-size:13.5px;color:var(--ink2)"><b>注記：Origami同様、終了理由の説明が公式に存在しない。</b>ITmediaも「LINEは詳細を公表していない」と明記。</p>
+
+    <h4>裏の理由</h4>
+    <ul class="ev">
+      <li><span class="g gA">A</span><b>市場シェアの壊滅的崩壊</b>。BCNの実売データで<span class="hl">2020年11月26.3% → 2021年4月以降1%未満〜1%台</span>。18ヶ月間ほぼゼロシェアのまま販売を継続していた。</li>
+      <li><span class="g gB">B</span><b>グローバルプラットフォーマーとの体力差</b>。「ハードウェアとサービスの両面で独自の強みを持つAmazon、Google、Appleに対抗できなかった」（BCN分析）。</li>
+      <li><span class="g gA">A</span><b>B2Bへの事業シフト</b>。CLOVA OCR／CLOVA Note等の法人向けAIは継続し、個人向けハードのみ切り離し。現在 clova.line.me は完全にB2B AIソリューションのサイト。</li>
+      <li><span class="g gC">C</span>「LINEを音声で送れる」という唯一の強みが、スマホで済む行為であり、スピーカーを買う理由にならなかった。</li>
+      <li><span class="g gC">C</span>ハードウェア事業は在庫・保証・サポートを抱える一方で粗利が薄く、Zホールディングス統合後の非中核事業として優先度が下がった。</li>
+    </ul>
+
+    <div class="callout" style="margin-top:16px">
+      <h4>本カタログで最も再現性の高い先行指標</h4>
+      <p style="margin:0">ハード＋プラットフォーム型では、<b>サードパーティのスキル／連携サービスが一つずつ終了していく</b>のが最も信頼できる兆候。CLOVAでは終了の<b>19ヶ月前</b>から剥落が始まり、<b>18ヶ月前</b>には外部の実売データ（BCNランキング）でシェア崩壊が公開情報として観測できた。</p>
+    </div>
+
+    <h4>早期警告指標</h4>
+    <ul class="warn">
+      <li data-lead="T–19ヶ月">サードパーティスキルの提供終了（ABEMA）。</li>
+      <li data-lead="T–18ヶ月">外部実売データでの市場シェア崩壊（26.3%→1%台）。</li>
+      <li data-lead="T–13ヶ月">連携スキルのさらなる終了＝エコシステムの縮退。</li>
+      <li data-lead="継続">新モデルの投入停止（CLOVA Desk以降の新ハードなし）。</li>
+    </ul>
+  </div>
+</article>
+
+<!-- ========== 04+05 foodpanda / DiDi Food ========== -->
+<article class="case" id="c04">
+  <div class="case-hd">
+    <div class="case-no">04</div>
+    <div class="case-ttl"><h3>foodpanda 日本撤退 ／ DiDi Food 日本撤退</h3><p class="meta">Delivery Hero SE ／ 滴滴出行 ｜ 2020–2022 ｜ フードデリバリー</p></div>
+    <div class="case-tags"><span class="tag p1">P1 資本力勝負</span><span class="tag p5">P5 親会社の戦略転換</span><span class="tag p2">P2 UE不成立</span></div>
+  </div>
+  <div class="case-body">
+    <div class="shots2">
+      <figure class="shot">
+        <img src="https://www.deliveryhero.com/wp-content/uploads/2021/12/PR-Header.jpg" alt="Delivery Hero 公式リリース画像" loading="lazy" onerror="this.closest('.shot').classList.add('fail')">
+        <div class="ph">［画像：Delivery Hero 公式リリース］<br>foodpanda Japan 売却計画の発表（2021年12月22日）</div>
+        <figcaption>Delivery Hero SE 公式リリース／出典：<a href="https://www.deliveryhero.com/newsroom/delivery-hero-scales-down-foodpanda-germany-and-announces-the-planned-divestiture-of-foodpanda-japan/">deliveryhero.com</a></figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="https://www.watch.impress.co.jp/img/ipw/list/1404/402/didi01.jpg" alt="DiDi Food 日本撤退の報道画像" loading="lazy" onerror="this.closest('.shot').classList.add('fail')">
+        <div class="ph">［画像：DiDi Food 日本撤退］<br>出典 Impress Watch（2022年4月20日）</div>
+        <figcaption>DiDi Food 日本撤退／出典：<a href="https://www.watch.impress.co.jp/docs/news/1404402.html">Impress Watch</a></figcaption>
+      </figure>
+    </div>
+
+    <h4>概要・提供価値・収益モデル・資金源</h4>
+    <p><b>foodpanda</b>：独Delivery Hero SE傘下。2020年9月に日本参入し、クイックコマース「pandamart」と二正面展開。地方都市を含む広域カバーと大量クーポンが特徴。<b>DiDi Food</b>：中国・滴滴出行傘下。2019年11月設立、2020年に大阪から開始。<b>東京を避けた西日本特化</b>という明確な地域戦略で、沖縄では全国初のタクシー配達も実施。両社とも日本単独の外部調達はなく、親会社の連結資本に依存。</p>
+
+    <h4>年表</h4>
+    <ul class="tl">
+      <li><span class="d">2019.11</span><span>DiDiフードジャパン株式会社 設立</span></li>
+      <li><span class="d">2020.09</span><span>foodpanda 日本参入</span></li>
+      <li><span class="d">2021.06〜</span><span>滴滴出行がNY上場直後に中国当局のサイバーセキュリティ審査を受け、アプリ配信停止 ← <b>親会社危機の公開情報</b></span></li>
+      <li class="hi"><span class="d">2021.12.22</span><span>Delivery Hero が foodpanda Japan の売却計画を発表（同日、ドイツ本国6都市からも撤退）</span></li>
+      <li><span class="d">2021.12.23–24</span><span>ライダー拠点を全閉鎖／期間限定キャンペーンを終了</span></li>
+      <li><span class="d">2022.01.31</span><span>foodpanda 日本サービス終了（売却先が見つからず解散）。<b>発表から約40日</b></span></li>
+      <li class="hi"><span class="d">2022.01.19</span><span><b>DiDi Food が静岡県へ新規エリア拡大</b>（＝撤退3ヶ月前に拡大）</span></li>
+      <li class="hi"><span class="d">2022.04.20</span><span>DiDi Food 日本撤退・サービス終了を発表</span></li>
+      <li><span class="d">2022.05.25</span><span>DiDi Food サービス終了。<b>発表から35日</b>（2023年8月に清算結了）</span></li>
+    </ul>
+
+    <h4>表の理由（終了告知の原文）</h4>
+    <blockquote class="omote">
+      <p>foodpanda：“In order to focus on other growth priorities within the group, Delivery Hero plans to divest its Japanese entity.”</p>
+      <p>日本語報道での説明：「日本市場での競合環境が著しく変化し、他社の参入増加したことや<b>配達員の安定確保が困難になった</b>ことで、今後のビジネスに大きな影響を及ぼした」</p>
+      <cite>出典：<a href="https://www.deliveryhero.com/newsroom/delivery-hero-scales-down-foodpanda-germany-and-announces-the-planned-divestiture-of-foodpanda-japan/">Delivery Hero SE</a>／<a href="https://www.itmedia.co.jp/news/articles/2112/23/news100.html">ITmedia NEWS</a></cite>
+    </blockquote>
+    <blockquote class="omote" style="margin-top:10px">
+      <p>DiDi Food：「今般の日本市場の変化に際し、今後の事業継続を検討した結果、同サービスを終了することを決定した」</p>
+      <cite>出典：<a href="https://www.itmedia.co.jp/news/articles/2204/20/news177.html">ITmedia NEWS（2022年4月20日）</a>　※主語のない抽象表現のみで、自社の競争力への言及は一切ない</cite>
+    </blockquote>
+
+    <h4>裏の理由</h4>
+    <ul class="ev">
+      <li><span class="g gA">A</span><b>本社のポートフォリオ整理</b>。Delivery Heroは同日にドイツ本国6都市からも撤退しベルリンに集約。日本固有の問題ではなく全社の資本配分見直しの一環。DiDiは「傘下のDiDiモビリティジャパンが展開するタクシー配車に経営資源を集中」＝<b>日本撤退ではなくフードのみ切り離し</b>。</li>
+      <li><span class="g gB">B</span><b>配達員（サプライサイド）の確保困難</b>。Uber Eats・出前館とのインセンティブ単価引き上げ競争に耐えられなかった。</li>
+      <li><span class="g gB">B</span><b>売却の失敗</b>。foodpandaは買い手がつかず解散。事業としての資産価値がほぼゼロと市場に評価された。</li>
+      <li><span class="g gC">C</span>親会社・滴滴出行の経営危機（中国当局の審査、米国上場廃止）と時期が完全に一致。因果の直接証拠はない。</li>
+      <li><span class="g gC">C</span>Uber Eats・出前館・Wolt・menu・DiDi Food・foodpandaの6社同時消耗戦。日本市場は上位2社以外が利益を出せない構造。</li>
+    </ul>
+
+    <div class="callout" style="margin-top:16px">
+      <h4>本カタログで最も反直感的な発見</h4>
+      <p style="margin:0">DiDi Foodは<b>終了3ヶ月前に新規エリア（静岡）を拡大していた</b>。<b>現地の事業活動レベルの指標（エリア拡大・採用・出店）は、外資子会社ではまったく先行指標にならない。</b>見るべきは親会社側の財務・規制・上場ステータスで、DiDiの場合は10ヶ月前から公開情報として観測できた。加えて、競合foodpandaの撤退（2022年1月31日）は、DiDi撤退のわずか3ヶ月前に出ていた業界構造の警告だった。</p>
+    </div>
+
+    <h4>早期警告指標</h4>
+    <ul class="warn">
+      <li data-lead="T–10ヶ月">親会社の危機（上場ステータス、規制当局の審査、株価下落）。</li>
+      <li data-lead="T–3ヶ月">同一セグメントの競合が先に撤退する。</li>
+      <li data-lead="T+0日">本社の資本配分決定が下りた瞬間に発表。<b>発表から終了まで35〜40日</b>。</li>
+      <li data-lead="逆信号">エリア拡大・新規出店は安全シグナルではない。</li>
+    </ul>
+  </div>
+</article>
+
+<!-- ========== 06 Chompy ========== -->
+<article class="case" id="c06">
+  <div class="case-hd">
+    <div class="case-no">05</div>
+    <div class="case-ttl"><h3>Chompy（フードデリバリー）</h3><p class="meta">株式会社Chompy（旧 SYN株式会社） ／ 2020.08 – 2023.05.15 ／ フードデリバリー</p></div>
+    <div class="case-tags"><span class="tag p2">P2 UE不成立</span><span class="tag p1">P1 資本力勝負</span></div>
+  </div>
+  <div class="case-body">
+    <div class="shots2">
+      <figure class="shot">
+        <img src="https://prtimes.jp/i/62766/1/resize/d62766-1-642353-0.png" alt="Chompy 正式ローンチのプレスリリース画像" loading="lazy" onerror="this.closest('.shot').classList.add('fail')">
+        <div class="ph">［画像：Chompy 正式ローンチ／らくとく便］<br>PR TIMES（2020年8月6日）</div>
+        <figcaption>正式ローンチ・「らくとく便」開始／出典：<a href="https://prtimes.jp/main/html/rd/p/000000001.000062766.html">PR TIMES</a></figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="https://asset.watch.impress.co.jp/img/ipw/docs/1493/823/cho1_s.jpg" alt="Chompy サービス終了の報道画像" loading="lazy" onerror="this.closest('.shot').classList.add('fail')">
+        <div class="ph">［画像：Chompy 5月15日終了］<br>Impress Watch（2023年4月14日）</div>
+        <figcaption>デリバリー終了の報道／出典：<a href="https://www.watch.impress.co.jp/docs/news/1493823.html">Impress Watch</a></figcaption>
+      </figure>
+    </div>
+
+    <h4>概要・提供価値・収益モデル・資金源</h4>
+    <p>渋谷駅3km圏から始めた国内発フードデリバリー。創業者は元DeNAトラベル代表の大見周平氏。差別化は<b>「らくとく便」＝1時間前注文で送料無料</b>で、中継拠点に軽バンを置くハブアンドスポーク方式により1配達あたりの配達員コストを圧縮する設計。料金は<b>ユーザー一律300円＋飲食店は購入金額の30%</b>。累計調達 約17億円（ANRI、Coral Capital、DCM、Delight Ventures、GO Fund、藤田ファンド、Sony Innovation Fund）。</p>
+
+    <h4>年表</h4>
+    <ul class="tl">
+      <li><span class="d">2019.06</span><span>創業・シード調達</span></li>
+      <li><span class="d">2020.08.06</span><span>正式ローンチ。6.5億円調達（累計約9億円）、加盟店約400・会員2.5万人</span></li>
+      <li><span class="d">2021.06.30</span><span>約7.8億円調達（累計約17億円）、「第二創業期」宣言</span></li>
+      <li class="hi"><span class="d">2021.08.26</span><span><b>飲食店向け公式アプリ/WEB無料開設サービスを開始</b> ← ピボット先を1年8ヶ月前から並走</span></li>
+      <li class="hi"><span class="d">2022.09.15</span><span><b>Wolt Driveと連携＝自社配達網から他社配達網へ移行</b>（コア資産の外部化）</span></li>
+      <li class="hi"><span class="d">2023.04.13</span><span>デリバリー終了を告知</span></li>
+      <li><span class="d">2023.05.15</span><span>最終注文。約3年4ヶ月で終了。以後モバイルオーダーSaaSへ集中</span></li>
+    </ul>
+
+    <h4>表の理由（終了告知の原文）</h4>
+    <blockquote class="omote">
+      <p>「フードデリバリーサービス『Chompy』は、2023年5月15日(月) 14:00をもってサービスを終了いたします。」</p>
+      <p>「<b>デリバリー市場におけるプラットフォーマー各社の競争激化など、競合環境や市場の成長性等に鑑み</b>」経営資源をAll in Oneモバイルオーダーサービスに集中投下する</p>
+      <cite>出典：<a href="https://chompy.jp/internal/announce/20230413/user/">Chompy公式お知らせ</a>／<a href="https://chompy-inc.com/news/20230413/">株式会社Chompy ニュース（2023年4月13日）</a></cite>
+    </blockquote>
+
+    <h4>裏の理由</h4>
+    <ul class="ev">
+      <li><span class="g gB">B</span>＋<span class="g gC">C</span><b>1配達の変動費が収入を構造的に上回る</b>。大見氏「フードデリバリー業界全体で、<b>1配達につき配達員に約800円を報酬として支払っていると言われています</b>。この分を、ユーザーと飲食店が負担している状況です」。公開料率からの再構成：<code style="font-family:var(--mono);font-size:12.5px">粗利 = 300円 + 0.3X − 800円</code> → <span class="hl">損益分岐の客単価 X = 1,667円</span>。送料無料の「らくとく便」では<span class="hl">2,667円</span>に跳ね上がる。しかもこれは配達員報酬のみで、決済手数料・CS・開発・マーケは一切含まない。</li>
+      <li><span class="g gB">B</span><b>資金力の絶対差</b>。累計17億円に対し、Uber Eats・出前館（Zホールディングス）・Woltは数百億円規模の販促。日経ビジネスの見出しはそのまま「料理宅配競争、資金力で大手に敗北」。</li>
+      <li><span class="g gA">A</span><b>配送網の自前保有を放棄</b>（2022年9月のWolt Drive連携）。この時点で「デリバリープラットフォーマー」であることをやめている。</li>
+      <li><span class="g gC">C</span>渋谷3km圏で密度を作る戦略は正しいが、<b>密度が出る前に大手が全国投下で同エリアを塗りつぶした</b>。局所最適が守れない市場。</li>
+      <li><span class="g gA">A</span>市場成長の頭打ち。終了理由に「市場の成長性」と明記。</li>
+    </ul>
+
+    <div class="callout" style="margin-top:16px">
+      <h4>撤退の巧拙という観点では最良の事例</h4>
+      <p style="margin:0">ピボット先（モバイルオーダーSaaS）を<b>終了の1年8ヶ月前から並走させ</b>、終了リリースで移行先を明示した。在庫も配達員も持たないB2B SaaSへ資産を移して存続。<b>撤退リリースの情報量が最も多く、かつ事業が生き残った唯一の例。</b></p>
+    </div>
+
+    <h4>早期警告指標</h4>
+    <ul class="warn">
+      <li data-lead="起点">1配達の変動費 ÷ 平均注文額が40%を超える（800円÷2,000円＝40%）。飲食店が許容する手数料上限（30%前後）を超えると値上げ余地がない。</li>
+      <li data-lead="起点">「送料無料」を成長施策の中心に置く。変動費が最大コストの事業で、その変動費をユーザーに請求しない設計は密度依存の賭け。</li>
+      <li data-lead="T–8ヶ月">コア資産を他社に外部委託し始める（Wolt Drive連携）。垂直統合が経済性の源泉のはずの事業で水平化＝差別化の放棄。</li>
+      <li data-lead="T–20ヶ月">プレスリリースの主語がtoC機能からtoB加盟店ツールへ移る。重心移動は1〜2年前から社外から観測できる。</li>
+    </ul>
+  </div>
+</article>
+
+<!-- ========== 07 グノシーQ ========== -->
+<article class="case" id="c07">
+  <div class="case-hd">
+    <div class="case-no">06</div>
+    <div class="case-ttl"><h3>グノシーQ</h3><p class="meta">株式会社Gunosy（6047） ／ 2018.02.24 – 2021.08.31 ／ ライブクイズ番組</p></div>
+    <div class="case-tags"><span class="tag p6">P6 ブーム依存</span><span class="tag p2">P2 UE不成立</span><span class="tag p8">P9 サイレント消滅</span></div>
+  </div>
+  <div class="case-body">
+    <div class="shots2">
+      <figure class="shot">
+        <img src="https://prtimes.jp/i/31854/14/resize/d31854-14-166878-0.png" alt="12時間耐久グノシーQ 賞金総額300万円の告知画像" loading="lazy" onerror="this.closest('.shot').classList.add('fail')">
+        <div class="ph">［画像：12時間耐久グノシーQ 賞金総額300万円］<br>PR TIMES（2019年3月）</div>
+        <figcaption>「平成最後のクイズ王決定戦」賞金総額300万円／出典：<a href="https://prtimes.jp/main/html/rd/p/000000014.000031854.html">PR TIMES</a></figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="https://prtimes.jp/i/22933/248/resize/d22933-248-354670-0.jpg" alt="グノシーQoo10 コラボの告知画像" loading="lazy" onerror="this.closest('.shot').classList.add('fail')">
+        <div class="ph">［画像：グノシーQoo10コラボ］<br>PR TIMES（2021年5月）</div>
+        <figcaption>末期のコラボ企画（終了3ヶ月前）／出典：<a href="https://prtimes.jp/main/html/rd/p/000000248.000022933.html">PR TIMES</a></figcaption>
+      </figure>
+    </div>
+
+    <h4>概要・提供価値・収益モデル・資金源</h4>
+    <p>ニュースアプリ「グノシー」<b>アプリ内</b>で配信するユーザー参加型ライブクイズ番組。全問正解者で賞金山分け。米HQ Trivia型。別アプリではなく既存アプリ内の動画コンテンツとして実装された点が最大の構造的特徴。収益は<b>タイアップ広告</b>——動画事業責任者の逐語発言「タイアップ広告商品として動画ライブ配信を提供しています」「<b>1日1回の配信で数百万円という提案です</b>」。資金源は上場企業の自己資金。</p>
+
+    <h4>年表</h4>
+    <ul class="tl">
+      <li><span class="d">2018.02.24</span><span>初回配信。3月1日から毎日21:30配信</span></li>
+      <li><span class="d">2019.03.24</span><span>12時間耐久「平成最後のクイズ王決定戦」賞金総額300万円（最大規模）</span></li>
+      <li class="hi"><span class="d">2019.09.30</span><span><b>競合ワイキュー終了、JAMライブ毎日配信終了</b>＝ライブクイズ市場全体の崩壊</span></li>
+      <li class="hi"><span class="d">2020.06.08</span><span><b>配信日を毎日 → 月〜木の週4日に縮小</b></span></li>
+      <li><span class="d">2021.05.31</span><span>Qoo10コラボ「グノシーQoo10」</span></li>
+      <li class="hi"><span class="d">2021.08.31</span><span>最終回。約3年6ヶ月。<b>公式の終了リリース・IR開示は存在しない</b></span></li>
+    </ul>
+
+    <h4>表の理由（終了告知の原文）</h4>
+    <blockquote class="omote">
+      <p><b>公式の終了告知は存在しない。</b>番組内およびSNSでの告知のみで、一次ソースは現存せず。ファンサイト経由の間接引用が上限。</p>
+      <cite>「グノシーQは2021年8月末をもって終了します」<span class="g gC" style="margin-left:8px">C</span>／二次情報</cite>
+    </blockquote>
+    <p style="margin-top:10px;font-size:13.5px;color:var(--ink2)"><b>上場企業が3年半続けた番組を、IR開示も終了リリースもなく畳んでいる。</b>これ自体が「事業としての位置づけが番組止まりだった」ことの証拠であり、P9 サイレント消滅の極端な例。</p>
+
+    <h4>裏の理由</h4>
+    <ul class="ev">
+      <li><span class="g gB">B</span><b>ファネルが極端に細い</b>。「視聴者は40〜50万人で、<span class="hl">1問目のクイズに参加するのは1万5,000人ほど</span>です」＝参加率3.0〜3.75%。</li>
+      <li><span class="g gB">B</span><b>母数がHQ Triviaの1/10以下</b>。「HQトリビアは参加者が100〜200万人規模なので、グノシーQももっと多くの参加者を集めたい」。</li>
+      <li><span class="g gC">C</span><b>賞金＝変動費、広告＝固定単価</b>。賞金は全問正解者数で膨らむが広告枠収入は1日数百万円が上限。<b>ヒットするほど利益が削れる構造</b>。</li>
+      <li><span class="g gB">B</span>広告主教育コストが高く枠が埋まらない。「ライブ配信の価値を理解していただけるように丁寧に提案を続けてきました」「商品価格に対する理解は少しずつではありますが得られている」——ヘッジ表現の多さ自体が未成熟の指標。</li>
+      <li><span class="g gA">A</span><b>より安いチャネルに代替された</b>。2019年5月期2Q決算説明資料は「クーポンの拡充」がDAU・MAUの積み上げに貢献と記載する一方、グノシーQは「定期開催」との記述のみで<b>数値KPIの開示が一度もない</b>。</li>
+      <li><span class="g gB">B</span>ユーザー層のミスマッチ。若年獲得が狙いのはずが「視聴・参加者は年代がやや高めで30〜40代が多い」。</li>
+    </ul>
+
+    <h4>早期警告指標</h4>
+    <ul class="warn">
+      <li data-lead="起点">視聴→参加のコンバージョン率が5%を切る＝コンテンツを消費しているだけで、ゲームに参加していない。</li>
+      <li data-lead="継続">公式リリースが「コラボ番組の告知」ばかりで、DAU・継続率などの実績数値を一度も出さない。</li>
+      <li data-lead="T–23ヶ月">カテゴリ内の競合が先に終了する（ワイキュー／JAMライブ）。</li>
+      <li data-lead="T–14ヶ月">配信頻度の削減（毎日→週4）。</li>
+      <li data-lead="継続">決算説明資料の記述が「実施しています」という活動報告のまま、KPI表に昇格しない。</li>
+    </ul>
+  </div>
+</article>
+<!-- ========== 07 メルカリ アッテ ========== -->
+<article class="case" id="c08">
+  <div class="case-hd">
+    <div class="case-no">07</div>
+    <div class="case-ttl"><h3>メルカリ アッテ</h3><p class="meta">株式会社ソウゾウ（メルカリ100%子会社） ／ 2016.03 – 2018.05.31 ／ 地域クラシファイド</p></div>
+    <div class="case-tags"><span class="tag p2">P2 UE不成立</span><span class="tag p5">P5 親会社の戦略転換</span></div>
+  </div>
+  <div class="case-body">
+    <figure class="shot">
+      <img src="https://storage.googleapis.com/prd-about-asset/2016/03/atte_web_top_1.png" alt="メルカリ アッテ 公式スクリーンショット" loading="lazy" onerror="this.closest('.shot').classList.add('fail')">
+      <div class="ph">［画像：メルカリ アッテ 公式スクリーンショット］<br>出典 株式会社メルカリ プレスリリース（2016年3月17日）</div>
+      <figcaption>公式スクリーンショット／出典：<a href="https://about.mercari.com/press/news/articles/20160317_mercariatte/">株式会社メルカリ プレスリリース</a></figcaption>
+    </figure>
+
+    <h4>概要・提供価値・収益モデル・資金源</h4>
+    <p>公式リリース原文より：「自分の周りの地域にいるユーザーと、不要品の売買やスキル・サービスの取引、仲間募集などを<b>無料で</b>行うことができます」「位置情報を利用して、自分の近くの情報だけを見ることができます」。<b>ローンチ時点で「使用料は無料です」と明記＝マネタイズ機構が存在しない。</b>決済を挟まない直接取引モデルのため、GMV課金が原理的に立たない。資金源はメルカリ100%出資。有報では「連結業績に与える影響は僅少であるため、事業系統図への記載を省略」。</p>
+
+    <h4>年表</h4>
+    <ul class="tl">
+      <li><span class="d">2015.09</span><span>株式会社ソウゾウ 設立</span></li>
+      <li><span class="d">2016.03.17</span><span>「メルカリ アッテ」提供開始（招待制廃止・本格稼働）</span></li>
+      <li class="hi"><span class="d">2017.05</span><span>姉妹アプリ「メルカリ カウル」投入 ← <b>ソウゾウのリソース分散が開始</b></span></li>
+      <li class="hi"><span class="d">2018.02</span><span>ソウゾウが「メルチャリ」開始 ← 新規事業の重心がシフト</span></li>
+      <li class="hi"><span class="d">2018.03.16</span><span>終了告知</span></li>
+      <li><span class="d">2018.03.29 → 05.31</span><span>新規投稿 → 応募・コメント → 全機能の段階的終了</span></li>
+      <li><span class="d">2019.06.13</span><span>親会社取締役会でソウゾウの解散・清算を決議（債権9億円を放棄）</span></li>
+    </ul>
+
+    <h4>表の理由（終了告知の原文）</h4>
+    <blockquote class="omote">
+      <p>「メルカリグループ全体で<b>経営資源を集中</b>すべく、サービスを終了させていただく」</p>
+      <cite>出典：<a href="https://about.mercari.com/press/news/articles/20180316_atte_close/">株式会社メルカリ（2018年3月16日）</a></cite>
+    </blockquote>
+
+    <h4>裏の理由</h4>
+    <ul class="ev">
+      <li><span class="g gB">B</span><b>成長曲線が本体と比較にならなかった</b>。ソウゾウ元代表・原田氏「メルカリ級のサービスに急成長することを見込んでいました…トラフィックは結構伸びたんですけど、メルカリのような成長曲線は描けなかったのでクローズを決断しました」。</li>
+      <li><span class="g gB">B</span><b>撤退基準が未設定で「辞め時を見失った」</b>。同氏「会社としての勢いはあったものの、事業としては赤字だった。<span class="hl">どこまで赤字事業を続け、どのような状態になれば撤退するか、明確に決めていなかった</span>。辞め時を見失っていた」。</li>
+      <li><span class="g gB">B</span><b>機会費用の明示的認識</b>。ソウゾウ代表（当時）松本龍祐氏「圧倒的に伸びてメルカリグループとして親和性のある新規事業の手段を考えないといけない中で、アッテを存続させるための術を考えていてはフェアじゃない」。</li>
+      <li><span class="g gB">B</span><b>仮説検証の並列化による意思決定不全</b>。PO八木氏「複数の仮説を並列で確認しようとして、さらに確認できないまま次の仮説を確かめる、という状態になってしまった」。</li>
+      <li><span class="g gA">A</span>→<span class="g gC">C</span>手数料無料設計（A）のため、成長しても連結PLに寄与しない構造（C）。</li>
+      <li><span class="g gC">C</span>終了告知（2018年3月）→有価証券届出書提出（5月14日）→上場（6月19日）という時期の符合。ただしメルカリ広報は「上場とは関係がない」と明言しており、<b>推論に留まる</b>。</li>
+    </ul>
+
+    <h4>早期警告指標</h4>
+    <ul class="warn">
+      <li data-lead="起点">ローンチ時点で収益機構が実装されておらず、実装の期限も公表されない。</li>
+      <li data-lead="T–12ヶ月">同一子会社のリソースが姉妹アプリへ分散し始める。</li>
+      <li data-lead="T–3ヶ月">新規事業の重心が別領域（ハードウェア型のメルチャリ）へ移動。</li>
+      <li data-lead="T–0〜2ヶ月">段階的な機能削減（新規投稿→応募・コメント→全機能）。</li>
+      <li data-lead="事後">有報の「事業の内容」本文に一度も列挙されず、事業系統図から「影響僅少」で省略される。</li>
+    </ul>
+  </div>
+</article>
+
+<!-- ========== 08 メルカリ カウル／メゾンズ／NOW／teacha ========== -->
+<article class="case" id="c09">
+  <div class="case-hd">
+    <div class="case-no">08</div>
+    <div class="case-ttl"><h3>メルカリ カウル／メゾンズ／NOW／teacha</h3><p class="meta">株式会社ソウゾウ ／ 2017–2018 ／ 垂直特化フリマ・即時買取・スキルシェア</p></div>
+    <div class="case-tags"><span class="tag p8">P8 機能吸収</span><span class="tag p5">P5 親会社の戦略転換</span></div>
+  </div>
+  <div class="case-body">
+    <div class="shots2">
+      <figure class="shot">
+        <img src="https://storage.googleapis.com/prd-about-asset/2017/05/kauru1-1024x512.png" alt="メルカリ カウル 公式画像" loading="lazy" onerror="this.closest('.shot').classList.add('fail')">
+        <div class="ph">［画像：メルカリ カウル］<br>公式プレスリリース（2017年5月8日）</div>
+        <figcaption>メルカリ カウル／出典：<a href="https://about.mercari.com/press/news/articles/20170508_kauru/">株式会社メルカリ</a></figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="https://storage.googleapis.com/prd-about-asset/2017/11/mercari_now_1.png" alt="メルカリNOW 公式画像" loading="lazy" onerror="this.closest('.shot').classList.add('fail')">
+        <div class="ph">［画像：メルカリNOW］<br>公式プレスリリース（2017年11月27日）</div>
+        <figcaption>メルカリNOW／出典：<a href="https://about.mercari.com/press/news/articles/20171127_mercari_now1/">株式会社メルカリ</a></figcaption>
+      </figure>
+    </div>
+
+    <h4>概要・提供価値・収益モデル・資金源</h4>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>サービス</th><th>開始</th><th>概要</th><th>手数料</th><th>終了</th></tr></thead>
+        <tbody>
+          <tr><td><b>カウル</b></td><td class="n">2017.05</td><td>本・CD・DVD特化フリマ。バーコード読取出品、最安値通知</td><td class="n">販売価格の10%</td><td class="n">2018.12.17</td></tr>
+          <tr><td><b>メゾンズ</b></td><td class="n">2017.08</td><td>ブランド品特化。機械学習で写真から商品情報を自動入力</td><td class="n">販売価格の10%</td><td class="n">2018.08.31</td></tr>
+          <tr><td><b>NOW</b></td><td class="n">2017.11</td><td>即時買取。取引データで査定、上限2万円。在庫を持つBS型</td><td>売買スプレッド</td><td class="n">2018.08.20</td></tr>
+          <tr><td><b>teacha</b></td><td class="n">2017</td><td>スキルシェア</td><td>—</td><td class="n">2018.08.21</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>カウル・メゾンズは本体メルカリと同一の10%手数料</b>＝カニバリゼーション構造。NOWのみ在庫を自社で持つバランスシート型で、本体のマッチング型とモデルが異なる。</p>
+
+    <h4>年表</h4>
+    <ul class="tl">
+      <li><span class="d">2017.05–11</span><span>カウル／メゾンズ／NOW／teacha を相次いで投入</span></li>
+      <li class="hi"><span class="d">2018.06</span><span><b>バーコード出品機能が本体「メルカリ」に実装</b> ← カウルの中核機能の吸収</span></li>
+      <li><span class="d">2018.06.19</span><span>メルカリ 東証マザーズ上場</span></li>
+      <li class="hi"><span class="d">2018.07.20</span><span>NOW・teacha・メゾンズの終了告知（上場1ヶ月後）</span></li>
+      <li class="hi"><span class="d">2018.11.02</span><span>カウル終了告知（同年9月時点で<b>取引数は前年比170%</b>）</span></li>
+      <li><span class="d">2018.12.17</span><span>カウル終了</span></li>
+    </ul>
+
+    <h4>表の理由（終了告知の原文）</h4>
+    <blockquote class="omote">
+      <p>NOW／teacha／メゾンズ：「これらのサービスを終了するとともに一部の機能を『メルカリ』のサービスに追加していくなどの<b>経営資源の再配置</b>を行い、『メルカリ』をはじめとする運営サービスのさらなる品質向上を目指し」ます</p>
+      <cite>出典：<a href="https://about.mercari.com/press/news/articles/20180720_notice/">株式会社メルカリ（2018年7月20日）</a></cite>
+    </blockquote>
+    <blockquote class="omote" style="margin-top:10px">
+      <p>カウル：「バーコード出品や新刊の販売等、<b>『メルカリ カウル』の機能の大部分が『メルカリ』にも追加されたことから</b>、『メルカリ カウル』の提供を終了し『メルカリ』に一本化することとなりました」</p>
+      <cite>出典：<a href="https://about.mercari.com/press/news/articles/20181102_kauru_close/">株式会社メルカリ（2018年11月2日）</a>　※公式リリース自身が機能吸収を原因と明記した稀な例</cite>
+    </blockquote>
+
+    <h4>裏の理由</h4>
+    <ul class="ev">
+      <li><span class="g gA">A</span><b>機能吸収による存在意義の消滅</b>。カウルの中核であるバーコード出品が終了の6ヶ月前に本体実装。<b>垂直特化アプリが本体機能化で無価値化する典型。</b></li>
+      <li><span class="g gB">B</span><b>成長はしたが「規模」に届かなかった</b>。メルカリ広報「利用者や全体の状況は成長していたが、<span class="hl">期待していた規模には至らなかった</span>」（teacha）／「好評をいただいていたが、インパクトのある事業をするためにクローズをした」（NOW・メゾンズ）。</li>
+      <li><span class="g gB">B</span><b>メルペイへの人員シフト</b>。「サービスに関わる人員を、既存のメルカリや（金融の新規事業をする）メルペイなどに当てていきたい」。</li>
+      <li><span class="g gB">B</span><b>メゾンズは事業ではなくR&Dビークルだった</b>。AI査定機能の検証完了後「メルカリに組み込んだ後」終了。</li>
+      <li><span class="g gB">B</span><b>NOWは防衛目的の新規事業</b>。原田氏「『メルカリキラー』と目された他社サービスがありました。<b>メルカリを潰すサービスは、メルカリ自身が生まなくてはいけない</b>」。脅威が消えれば継続理由も消える。</li>
+      <li><span class="g gA">A</span>→<span class="g gC">C</span>手数料体系が本体と同一（A）で、GMVは本体との共食いになる（C）。</li>
+    </ul>
+
+    <div class="callout" style="margin-top:16px">
+      <h4>IR記載の変化：最も追跡価値の高い定点観測</h4>
+      <p>メルカリは<b>単一セグメント開示</b>のため新規事業の損益は原理的に読めない。代替として有報の記述変化が使える。</p>
+      <div class="tblwrap" style="margin-bottom:0">
+        <table>
+          <thead><tr><th>観測点</th><th>第6期有報（2018年9月提出）</th><th>第7期有報（2019年9月提出）</th></tr></thead>
+          <tbody>
+            <tr><td>「事業の内容」本文</td><td>「…『メルカリ』に加えて、<b>本・CD・DVD等に特化したCtoCマーケットプレイス『メルカリ カウル』を運営しております</b>」</td><td><b>カウルの記載が消滅。</b>メルカリ／US／メルペイのみ</td></tr>
+            <tr><td>登録MAUの定義注記</td><td>「日本における『メルカリ』に登録しているユーザ…」</td><td>「登録MAUには…ソウゾウが<b>運営していた</b>『メルカリアッテ』『メルカリカウル』『メルカリメゾンズ』『メルチャリ』『teacha』は<b>含んでおりません</b>」＝<b>過去形での一括除外</b></td></tr>
+            <tr><td>子会社の記載</td><td>ソウゾウ＝「新規事業の企画・開発・運営」、「連結業績に与える影響は僅少」</td><td>「株式会社ソウゾウを解散し清算することを決議いたしました」</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h4>早期警告指標</h4>
+    <ul class="warn">
+      <li data-lead="T–6ヶ月">中核機能が本体アプリに実装される（最も早く、最も確実）。</li>
+      <li data-lead="T–5ヶ月">運営子会社の新規事業重心が別領域へ移動。</li>
+      <li data-lead="起点">本体と手数料体系が同一＝カニバリゼーション構造の存在。</li>
+      <li data-lead="事後">有報「事業の内容」本文からサービス名が消える／KPI定義注記で過去形の一括除外が出る。</li>
+    </ul>
+  </div>
+</article>
+
+<!-- ========== 09 LINE LIVE ========== -->
+<article class="case" id="c10">
+  <div class="case-hd">
+    <div class="case-no">09</div>
+    <div class="case-ttl"><h3>LINE LIVE ／ LINE LIVE-VIEWING</h3><p class="meta">LINE株式会社 ／ 2015.12.10 – 2023.03.31 ／ ライブ配信</p></div>
+    <div class="case-tags"><span class="tag p5">P5 親会社の戦略転換</span><span class="tag p8">P8 機能吸収</span></div>
+  </div>
+  <div class="case-body">
+    <div class="shots2">
+      <figure class="shot">
+        <img src="https://prtimes.jp/i/1594/3266/resize/d1594-3266-0b234fb37b69ae2b6208-0.png" alt="LINE LIVE 新ミッション発表の画像" loading="lazy" onerror="this.closest('.shot').classList.add('fail')">
+        <div class="ph">［画像：LINE LIVE 新ミッション「LIVE FOR FUN」］<br>PR TIMES（2021年8月17日）</div>
+        <figcaption>新ミッション発表・月間売上 前年比約195%（2021年8月）／出典：<a href="https://prtimes.jp/main/html/rd/p/000003266.000001594.html">PR TIMES</a></figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="https://image.itmedia.co.jp/news/articles/2301/13/tm1636144_01132_1_w490.jpg" alt="LINE LIVE 終了告知の報道画像" loading="lazy" onerror="this.closest('.shot').classList.add('fail')">
+        <div class="ph">［画像：LINE LIVE サービス終了］<br>ITmedia NEWS（2023年1月13日）</div>
+        <figcaption>終了の報道／出典：<a href="https://www.itmedia.co.jp/news/articles/2301/13/news136.html">ITmedia NEWS</a></figcaption>
+      </figure>
+    </div>
+
+    <h4>概要・提供価値・収益モデル・資金源</h4>
+    <p>芸能人・公式チャンネル中心の「見る」プラットフォームとして開始し、2016年8月に一般ユーザー配信を開放して「配信する」プラットフォームへ転換。日本・タイ・台湾・インドネシアの4カ国展開。収益は投げ銭（コイン／ギフト）＋インストリーム広告「LIVE Video Ads」＋有料オンラインライブ＋プレミアムチャンネル。資金源はLINE株式会社（2021年3月以降はZホールディングス傘下）。<b>単体損益は非開示</b>。</p>
+
+    <h4>年表</h4>
+    <ul class="tl">
+      <li><span class="d">2015.12.10</span><span>サービス開始。開始1ヶ月で月間ユニーク視聴者1,100万人</span></li>
+      <li><span class="d">2016.08.10</span><span>一般ユーザーへのライブ配信機能を開放（転換点）。同年9月に<b>WAU 620万人／MAU 1,900万人</b></span></li>
+      <li><span class="d">2017.12</span><span>総配信時間 前年比約19倍。うち<b>個人ユーザー配信が全体の約98%</b></span></li>
+      <li class="hi"><span class="d">2018.06.25</span><span>アーカイブ保存を無期限→180日で削除に後退（<b>ストレージコスト削減</b>）</span></li>
+      <li><span class="d">2021.03.01</span><span>ZホールディングスとLINEの経営統合が完了</span></li>
+      <li><span class="d">2021.08.17</span><span>新ミッション「LIVE FOR FUN」発表。<b>月間売上 前年比約195%</b></span></li>
+      <li class="hi"><span class="d">2021.11</span><span><b>LINEアプリ内でLINE VOOM（縦型ショート動画）提供開始</b> ← 社内競合の出現・配布チャネルの割り当て変更</span></li>
+      <li class="hi"><span class="d">2023.01.13</span><span>終了告知。3日後にZHDが「GYAO!」終了も発表し、動画資源をLINE VOOMへ集中と明言</span></li>
+      <li><span class="d">2023.03.31</span><span>サービス終了（同日17時にGYAO!も終了）</span></li>
+    </ul>
+
+    <h4>表の理由（終了告知の原文）</h4>
+    <blockquote class="omote">
+      <p>「昨今のインターネット市場の変化に伴い、<b>経営資源の集中</b>を行うべく」</p>
+      <cite>出典：<a href="https://line-ja.officialblog.jp/archives/21113914.html">LINE公式ブログ</a>／<a href="https://notice2.line.me/LINE_LIVE/ios/document/notice?documentId=20212016&lang=ja">アプリ内お知らせ</a></cite>
+    </blockquote>
+    <blockquote class="omote" style="margin-top:10px">
+      <p>グループ側（3日後）：「2023年3月31日をもって無料動画配信サービス『GYAO!』を終了」し、「縦型ショート動画サービス『LINE VOOM』に<b>動画領域のグループ経営資源等を集中</b>していきます」</p>
+      <cite>出典：<a href="https://www.lycorp.co.jp/news/archive/Z/ja/ja20230116.pdf">Zホールディングス（2023年1月16日）</a></cite>
+    </blockquote>
+
+    <h4>裏の理由</h4>
+    <ul class="ev">
+      <li><span class="g gA">A</span><b>動画ポートフォリオの一括整理</b>。GYAO!とLINE LIVEが<b>同日終了</b>。単体判断ではない。</li>
+      <li><span class="g gA">A</span><b>社内後継プロダクトへのチャネル移譲</b>。LINEアプリという最大の配布チャネルを、独立アプリのLINE LIVEではなくVOOMに割り当てた時点で、LINE LIVEはチャネル劣位に置かれた。</li>
+      <li><span class="g gA">A</span>ヤフー×LINE統合（2021年3月）による動画領域の重複。</li>
+      <li><span class="g gB">B</span><b>アーカイブのストレージコスト</b>。終了時のエンジニアリング記事に「アーカイブとして残しているデータの割合が非常に大きい」。2018年の保存期間短縮も同方向。</li>
+      <li><span class="g gC">C</span>17LIVE／Pococha／TikTok LIVE等の専業との競合。2017年時点で総配信時間の98%が個人配信＝実態は一般ライバー型サービスであり、その領域では専業が先行していた。</li>
+      <li><span class="g gC">C</span>公式チャンネル運営・渋谷のスタジオ等、固定費型の投資がスケールしなかった。</li>
+    </ul>
+
+    <h4>早期警告指標</h4>
+    <ul class="warn">
+      <li data-lead="T–57ヶ月">仕様の後退がコスト都合で入る（アーカイブ無期限→180日削除）。</li>
+      <li data-lead="T–24ヶ月">親会社の経営統合完了＝重複サービス整理の前提成立。</li>
+      <li data-lead="T–17ヶ月"><b>本体アプリ内に競合機能が実装される（LINE VOOM）。</b></li>
+      <li data-lead="T–17ヶ月">大型プレスリリースの発信が途絶える。</li>
+      <li data-lead="T–1ヶ月">アプリ新規ダウンロード停止。</li>
+    </ul>
+  </div>
+</article>
+
+<!-- ========== 10 Yahoo!ジオシティーズ／Yahoo!ブログ ========== -->
+<article class="case" id="c11">
+  <div class="case-hd">
+    <div class="case-no">10</div>
+    <div class="case-ttl"><h3>Yahoo!ジオシティーズ ／ Yahoo!ブログ</h3><p class="meta">ヤフー株式会社 ／ 2000–2019.03.31 ／ 2005–2019.12.15 ／ 無料HP・ブログ</p></div>
+    <div class="case-tags"><span class="tag p8" style="opacity:.7">P10 レガシー採算割れ</span><span class="tag p5">P5 親会社の戦略転換</span></div>
+  </div>
+  <div class="case-body">
+    <div class="shots2">
+      <figure class="shot">
+        <img src="https://image.itmedia.co.jp/news/articles/1904/01/l_ki_1609376_geocities01.jpg" alt="Yahoo!ジオシティーズ 終了の画面" loading="lazy" onerror="this.closest('.shot').classList.add('fail')">
+        <div class="ph">［画像：Yahoo!ジオシティーズ 終了後の画面］<br>ITmedia NEWS（2019年4月1日）</div>
+        <figcaption>終了直後の画面／出典：<a href="https://www.itmedia.co.jp/news/articles/1904/01/news095.html">ITmedia NEWS</a></figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="https://image.itmedia.co.jp/news/articles/1904/01/l_ki_1609376_geocities02.png" alt="Yahoo!ジオシティーズ 終了告知" loading="lazy" onerror="this.closest('.shot').classList.add('fail')">
+        <div class="ph">［画像：Yahoo!ジオシティーズ 終了告知］<br>ITmedia NEWS（2019年4月1日）</div>
+        <figcaption>終了告知／出典：<a href="https://www.itmedia.co.jp/news/articles/1904/01/news095.html">ITmedia NEWS</a></figcaption>
+      </figure>
+    </div>
+
+    <h4>概要・提供価値・収益モデル・資金源</h4>
+    <p><b>ジオシティーズ</b>：米GeoCities（1994年創業）を起源とする無料ホームページ作成・ホスティング。無料プラン（広告）＋有料オプションのフリーミアム。<b>Yahoo!ブログ</b>：2005年1月開始の無料ブログ。完全に広告収益モデルでユーザー課金なし。いずれも単体損益は非開示。</p>
+
+    <h4>年表</h4>
+    <ul class="tl">
+      <li><span class="d">2000 / 2005</span><span>ジオシティーズ運営開始 ／ Yahoo!ブログ ベータ開始</span></li>
+      <li class="hi"><span class="d">2009</span><span><b>米国版GeoCitiesがサービス終了</b> ← 日本版のみ残存し孤立化（10年前の先行シグナル）</span></li>
+      <li><span class="d">2017</span><span>Yahoo!ブログ リニューアル版（β）提供開始</span></li>
+      <li class="hi"><span class="d">2018.10.01</span><span>ジオシティーズ 終了告知</span></li>
+      <li class="hi"><span class="d">2018.11.09</span><span><b>ヤフー公式「2019年3月末日までに提供を終了するアプリ／サービスについて」を一括公表</b></span></li>
+      <li><span class="d">2019.01.10</span><span>ジオシティーズ 有料プランの購入・変更受付終了（収益動線の停止）</span></li>
+      <li class="hi"><span class="d">2019.02.28</span><span>Yahoo!ブログ 終了告知</span></li>
+      <li><span class="d">2019.03.31</span><span>ジオシティーズ ホームページ表示終了</span></li>
+      <li class="hi"><span class="d">2019.04.15</span><span><b>Yahoo!ブログ リニューアル版βを真っ先に打ち切り</b>＝投資回収の断念</span></li>
+      <li><span class="d">2019.05.09 → 12.15</span><span>新規開設終了 → 投稿・編集終了（read-only化）→ 全ブログ閉鎖</span></li>
+    </ul>
+
+    <h4>表の理由（終了告知の原文）</h4>
+    <blockquote class="omote">
+      <p>ジオシティーズ：「<b>採算面</b>や、今後システムを維持するためのテクノロジーに関する複数の課題などを総合的に判断した結果、これ以上の継続は難しいという判断に至りました」</p>
+      <cite>出典：<a href="https://www.watch.impress.co.jp/docs/news/1145646.html">Impress Watch</a>／<a href="https://netatopi.jp/article/1145683.html">ネタとぴ</a>（公式発表の引用、複数媒体で文言一致）</cite>
+    </blockquote>
+    <blockquote class="omote" style="margin-top:10px">
+      <p>Yahoo!ブログ：「サービスを取り巻く現在の市場環境や技術的な運用課題、今後の事業方針など、様々な要因をふまえ総合的に検討した結果、継続が難しいと判断した」</p>
+      <cite>出典：<a href="https://www.watch.impress.co.jp/docs/news/1172191.html">Impress Watch</a>　※ジオシティーズにあった「採算面」が<b>消えている</b></cite>
+    </blockquote>
+
+    <h4>裏の理由</h4>
+    <ul class="ev">
+      <li><span class="g gA">A</span><b>採算割れの公式明言</b>。本カタログ27サービス中、<b>「採算面」を終了理由の第一に挙げたのはジオシティーズのみ</b>。</li>
+      <li><span class="g gA">A</span><b>技術的負債</b>。「今後システムを維持するためのテクノロジーに関する複数の課題」＝レガシースタック（旧HTML、独自FTP基盤、Wiki文法、トラックバック）の保守不能。</li>
+      <li><span class="g gA">A</span><b>刷新の失敗</b>。Yahoo!ブログは2017年開始のリニューアル版βを、終了告知の直後（2019年4月15日）に真っ先に打ち切った。</li>
+      <li><span class="g gB">B</span>米GeoCitiesの先行終了（2009年）による孤立。基盤・ノウハウの共有先を失っていた。</li>
+      <li><span class="g gA">A</span>ヤフーが2018年11月9日に終了サービスを<b>一括公表</b>＝ノンコア資産の面的整理。2019年10月にZホールディングスへ商号変更。</li>
+      <li><span class="g gC">C</span>移行先を他社（Ameba／ライブドア／Seesaa／はてな）に委ねた＝<b>カテゴリそのものからの撤退</b>。内部吸収型（カウル、LINE LIVE）とは対照的。</li>
+    </ul>
+
+    <h4>早期警告指標</h4>
+    <ul class="warn">
+      <li data-lead="T–10年">本家・海外版の先行終了。</li>
+      <li data-lead="T–24ヶ月">刷新版βが本移行しないまま停滞する。</li>
+      <li data-lead="T–4〜5ヶ月">親会社が「終了するアプリ／サービス一覧」を一括公表する。</li>
+      <li data-lead="T–2.5ヶ月">有料プランの購入・変更受付終了（収益動線の停止）。</li>
+      <li data-lead="T–3.5ヶ月">投稿・編集機能の停止＝read-only化。</li>
+      <li data-lead="判定軸">移行先が社内か社外か。社外ならカテゴリからの完全撤退。</li>
+    </ul>
+  </div>
+</article>
+
+<!-- ========== 11 VALU ========== -->
+<article class="case" id="c12">
+  <div class="case-hd">
+    <div class="case-no">11</div>
+    <div class="case-ttl"><h3>VALU</h3><p class="meta">株式会社VALU ／ 2017.05.31 – 2020.03.31 ／ 個人の疑似株式売買</p></div>
+    <div class="case-tags"><span class="tag p3">P3 規制未整備</span><span class="tag p6">P6 ブーム依存</span><span class="tag p7">P7 ブランド毀損</span></div>
+  </div>
+  <div class="case-body">
+    <div class="shots2">
+      <figure class="shot">
+        <img src="https://prtimes.jp/i/25867/22/resize/d25867-22-434273-0.png" alt="VALU VA売買サービス終了のリリース画像" loading="lazy" onerror="this.closest('.shot').classList.add('fail')">
+        <div class="ph">［画像：VA売買サービス終了と暗号資産返却］<br>PR TIMES（2020年1月15日）</div>
+        <figcaption>VA売買終了・暗号資産返却の告知／出典：<a href="https://prtimes.jp/main/html/rd/p/000000022.000025867.html">PR TIMES</a></figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="https://prtimes.jp/i/25867/26/resize/d25867-26-228781-0.png" alt="VALU サービス終了のリリース画像" loading="lazy" onerror="this.closest('.shot').classList.add('fail')">
+        <div class="ph">［画像：VALUサービス終了のお知らせ］<br>PR TIMES（2020年3月31日）</div>
+        <figcaption>サービス終了／出典：<a href="https://prtimes.jp/main/html/rd/p/000000026.000025867.html">PR TIMES</a></figcaption>
+      </figure>
+    </div>
+
+    <h4>概要・提供価値・収益モデル・資金源</h4>
+    <p>個人が自分の疑似株式「VA」を発行し、支援者がビットコイン建てで売買する。「個人の価値の可視化・流動化」を掲げた。<b>BTCの預託（カストディ）が運営の根幹</b>。収益はVA売買時の取引手数料（BTC建て）。資金源：PARTY・家入一真が出資、堀江貴文が取締役就任。2018年7月に千葉功太郎氏から4,500万円、2019年1月にグローバル・ブレイン6号から<b>5億円</b>の第三者割当増資。</p>
+
+    <h4>年表（グレー先行 → 当局見解 → モデル崩壊）</h4>
+    <ul class="tl">
+      <li><span class="d">2017.05.31</span><span>β版リリース（グレーゾーン先行）</span></li>
+      <li><span class="d">2017.07</span><span>VA発行者数 約1万2,000人</span></li>
+      <li class="hi"><span class="d">2017.08.15</span><span><b>ヒカル氏らが告知なく全VAを売却しVA暴落</b>（ヒカル騒動）。VALU社は出金停止・売買注文全キャンセル</span></li>
+      <li class="hi"><span class="d">2017.09.04</span><span><b>金融庁が取引動向を注視していると報道。担当者コメント公表</b></span></li>
+      <li class="hi"><span class="d">2018年中</span><span><b>VA優待を段階的に廃止</b>（集団投資スキーム該当リスクの回避）＝中核価値の自己毀損</span></li>
+      <li><span class="d">2019.01.21</span><span>5億円調達</span></li>
+      <li class="hi"><span class="d">2019.05.31</span><span><b>改正資金決済法 可決</b>（暗号資産カストディ業務規制の新設）</span></li>
+      <li class="hi"><span class="d">2020.01.15</span><span>VA売買サービス終了・暗号資産返却を告知（<b>法改正の可決から7.5ヶ月後</b>）</span></li>
+      <li><span class="d">2020.03.31</span><span>サービス終了。同日、小川晃平代表がnote「VALUの終わりに」公開</span></li>
+    </ul>
+
+    <h4>表の理由（終了告知の原文）</h4>
+    <blockquote class="omote">
+      <p>「改正資金決済法に含まれる『暗号資産カストディ業務に対する規制』に対応するべく……<b>力及ばず、VALUにおける暗号資産カストディに関わる業務を断念することになりました。</b>」</p>
+      <cite>出典：<a href="https://prtimes.jp/main/html/rd/p/000000022.000025867.html">株式会社VALU プレスリリース（2020年1月15日）</a></cite>
+    </blockquote>
+
+    <h4>当局の動き（行政処分はなし／見解表明のみ）</h4>
+    <blockquote class="omote">
+      <p>金融庁担当者コメント（2017年9月4日報道）：「どのような取引が行われているのか情報を収集し、<b>実態として有価証券に該当する権利などが売買されているのであれば、監督対象として登録を求めることもありうる</b>」「所管する法律のもとで登録を受けているわけではないため、<b>現状ではVALUは監督対象ではないが、まったく無関係とも言えない</b>」</p>
+      <cite>出典：<a href="https://www.businessinsider.jp/article/104250/">Business Insider Japan（2017年9月4日）</a></cite>
+    </blockquote>
+    <p style="margin-top:10px;font-size:13.5px;color:var(--ink2)"><b>「監督対象ではないが、まったく無関係とも言えない」型の担当者コメントは、規制リスクの最も早い公開シグナル。</b>本件では終了の約29ヶ月前に出ていた。</p>
+
+    <h4>裏の理由</h4>
+    <ul class="ev">
+      <li><span class="g gA">A</span><b>カストディ規制が事業の根幹を直撃</b>。BTC預託をやめると決済・売買の仕組み自体が成立しない設計だった。</li>
+      <li><span class="g gB">B</span><b>ライセンス取得コストの爆発</b>。小川氏note「コインチェック等の事件後、暗号資産交換業ライセンス取得コストが<span class="hl">約1億円 → 20億円程度</span>に高騰し、スタートアップには不可能になった」。</li>
+      <li><span class="g gB">B</span><b>買収・追加出資先が見つからなかった</b>。「多くの投資家や買収先候補にお話しにいき…賛同いただける方を見つけることができませんでした」。</li>
+      <li><span class="g gB">B</span>→<span class="g gC">C</span><b>「優待」廃止でプロダクトの中核価値が抜けた</b>。集団投資スキーム該当リスクの回避で優待を外した結果、VAは純粋な投機対象になり購入動機が消失（価値消失の因果は推論）。</li>
+      <li><span class="g gB">B</span><b>ヒカル騒動で構造的欠陥が露呈</b>。小川氏「こうした行為が、とてもやりやすい仕組みになっていた。プラットフォーム側にも責任がある」。自主規制で取引量制限→流動性低下→利用者は「感覚的だが半分ぐらいになった」。</li>
+      <li><span class="g gC">C</span>グレーゾーンに立脚したため、当局が態度を決めた瞬間に選択肢が「登録するか撤退するか」の二択に収斂した。</li>
+    </ul>
+
+    <h4>早期警告指標</h4>
+    <ul class="warn">
+      <li data-lead="起点">利用規約に金商法・資金決済法の位置づけが書かれていない。</li>
+      <li data-lead="T–29ヶ月">当局担当者の「監督対象ではないが、無関係とも言えない」型コメントが報道に出る。</li>
+      <li data-lead="起点">顧客資産（暗号資産・前払残高）を自社で預かる設計で、分別管理・コールドウォレット体制の説明が公開されていない。</li>
+      <li data-lead="T–29ヶ月">著名人の参入→短期急騰→売り抜けが1件でも発生（設計上不可避であることの実証）。</li>
+      <li data-lead="T–18ヶ月"><b>中核機能を規制回避目的で自主的に削り始める。</b>規制に触れる自覚の証拠かつプロダクト価値の自己毀損。</li>
+      <li data-lead="T–7.5ヶ月">業界横断の法改正が可決（可決から施行まで約10ヶ月＝撤退判断のデッドライン）。</li>
+    </ul>
+  </div>
+</article>
+
+<!-- ========== 12 タイムバンク ========== -->
+<article class="case" id="c13">
+  <div class="case-hd">
+    <div class="case-no">12</div>
+    <div class="case-ttl"><h3>タイムバンク（→ Let）</h3><p class="meta">株式会社メタップス → 株式会社タイムバンク ／ 2017.09.11 – 2020 ／ 時間の売買</p></div>
+    <div class="case-tags"><span class="tag p3">P3 規制未整備</span><span class="tag p6">P6 ブーム依存</span><span class="tag p8">P9 サイレント消滅</span></div>
+  </div>
+  <div class="case-body">
+    <div class="shots2">
+      <figure class="shot">
+        <img src="https://www.atpress.ne.jp/releases/137406/img_137406_1.jpg" alt="タイムバンク iPhoneアプリ提供開始の画像" loading="lazy" onerror="this.closest('.shot').classList.add('fail')">
+        <div class="ph">［画像：タイムバンク iPhoneアプリ］<br>@Press（2017年9月11日）</div>
+        <figcaption>iPhoneアプリ提供開始／出典：<a href="https://www.atpress.ne.jp/news/137406">@Press</a></figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="https://www.atpress.ne.jp/releases/133001/img_133001_1.png" alt="タイムバンク サービス図解" loading="lazy" onerror="this.closest('.shot').classList.add('fail')">
+        <div class="ph">［画像：タイムバンク サービス図解］<br>@Press（2017年7月18日）</div>
+        <figcaption>時間発行者の事前募集／サービス図解／出典：<a href="https://www.atpress.ne.jp/news/133001">@Press</a></figcaption>
+      </figure>
+    </div>
+
+    <h4>概要・提供価値・収益モデル・資金源</h4>
+    <p>専門家・著名人が自分の時間を<b>10秒単位</b>で発行・販売し、購入者はリワードに使うか<b>市場で転売</b>できる「時間取引所」。VALUと同じ"個人の疑似証券化"クラスタ。価格例：坪田信貴氏 22.3円/秒、経沢香保子氏 72.3円/秒。収益はメタップスの決済事業（年間1,000億円超を処理）を通じた決済仲介。東証マザーズ上場のメタップス社内資金で立ち上げ、外部VC調達なし。</p>
+
+    <h4>年表</h4>
+    <ul class="tl">
+      <li><span class="d">2017.09.11</span><span>iOS版β提供開始</span></li>
+      <li class="hi"><span class="d">2017.11.02</span><span><b>テックビューロ「COMSA」でのICO実施検討を発表</b>（上場企業として国内初）← 規制グレーゾーンへの踏み込み</span></li>
+      <li><span class="d">2018年</span><span>ICOは実施されず（COMSA自体が金融庁の圧力下で頓挫）</span></li>
+      <li class="hi"><span class="d">2018.10.30</span><span><b>メタップスがタイムバンクのMBOを実施</b>＝上場親会社がリスク資産を切り離し</span></li>
+      <li class="hi"><span class="d">2019.03〜06</span><span>「99%OFFセール」「1億円キャッシュバック祭」＝<b>物販への出血ピボット</b>。時間トレード価格は急落</span></li>
+      <li><span class="d">2019.12</span><span>スキルシェア機能を削除、入金機能終了を告知</span></li>
+      <li class="hi"><span class="d">2019.12.31</span><span><b>2019年12月期 純損失 31億5,922万円</b>（総資産15.6億円を上回る単年損失）</span></li>
+      <li class="hi"><span class="d">2020.07.22 → 27</span><span>公式メールで名称変更を告知 → 商号を<b>株式会社レット</b>へ変更（官報）</span></li>
+    </ul>
+
+    <h4>表の理由（終了告知の原文）</h4>
+    <blockquote class="omote">
+      <p><b>「サービス終了」という告知は出されていない。</b>名称変更として処理された。</p>
+      <p>「2020年末ごろより下記名称となります。サービス名：Let(レット)。<b>提供サービスに関しましては変更の予定はございません</b>」</p>
+      <cite>公式メール（2020年7月22日）<span class="g gB" style="margin-left:8px">B</span>／全文引用元：<a href="https://timebankshoken.com/timebank-change-to-let-reason-and-background">タイムバンク証券</a></cite>
+    </blockquote>
+
+    <h4>裏の理由</h4>
+    <ul class="ev">
+      <li><span class="g gA">A</span><b>巨額の赤字で事業として成立しなかった</b>。官報決算公告ベースで2019年12月期の<span class="hl">純損失31億5,922万円</span>、利益剰余金▲32.7億円、総資産15.6億円。<b>総資産を上回る単年損失。</b>2023年12月期の利益剰余金は▲45億3,320万円。</li>
+      <li><span class="g gA">A</span><b>上場企業がリスク資産を切り離した</b>。MBOにより東証マザーズ上場のメタップス本体から分離。</li>
+      <li><span class="g gB">B</span><b>ICOによる流動化シナリオが規制環境で消滅</b>し、「時間の二次流通市場」を成立させる出口がなくなった。</li>
+      <li><span class="g gC">C</span><b>供給側の実務が回らない</b>。購入された「時間」は結局、発行者が実際に相談・面談に応じる必要がありスケールしない。転売市場は実需から切り離され純投機化した。</li>
+      <li><span class="g gB">B</span>物販（99%OFFセール・1億円キャッシュバック）への出血ピボットで、時間トレードは事実上放置された。</li>
+      <li><span class="g gA">A</span>「サービス終了」を宣言せず名称変更で処理＝法人・ユーザー資産を残したままブランドだけ捨てる撤退様式。</li>
+    </ul>
+
+    <h4>早期警告指標</h4>
+    <ul class="warn">
+      <li data-lead="T–33ヶ月">ICO／トークン化を「成長の次の一手」として公表する＝現行モデル単体では流動性が足りない自認、かつ規制直撃リスク。</li>
+      <li data-lead="T–21ヶ月"><b>上場親会社が子会社をMBOで切り離す</b>（最も明確な先行指標）。</li>
+      <li data-lead="T–7ヶ月">官報決算公告の単年純損失が資本金・総資産に対して過大。</li>
+      <li data-lead="T–16ヶ月">中核機能を放置したまま、大幅割引・キャッシュバックでGMVを作る。</li>
+      <li data-lead="T–0">サービス名の変更が「提供サービスに変更なし」という説明とセットで出る。</li>
+    </ul>
+  </div>
+</article>
+<!-- ========== 13 ソーシャルレンディング4社 ========== -->
+<article class="case" id="c14">
+  <div class="case-hd">
+    <div class="case-no">13</div>
+    <div class="case-ttl"><h3>ソーシャルレンディング 4社</h3><p class="meta">みんなのクレジット／ラッキーバンク／maneoマーケット／SBIソーシャルレンディング ｜ 2008–2021</p></div>
+    <div class="case-tags"><span class="tag p3">P3 規制未整備</span><span class="tag p4">P4 組織・ガバナンス</span><span class="tag p6">P6 ブーム依存</span></div>
+  </div>
+  <div class="case-body">
+    <div class="callout" style="margin-top:18px">
+      <h4>この4社を1カードにまとめる理由</h4>
+      <p style="margin:0"><b>4社すべてが「虚偽の表示をし、又は重要な事項につき誤解を生ぜしめるべき表示をする行為」という同一条文で処分され、4社すべてが関係会社・親族会社への集中貸付という同一構造を持つ。</b>個社のガバナンス問題ではなく、<b>アセットクラスの構造問題</b>だったことの決定的証拠が、大手グループ（SBI）でも同じことが起きた点。</p>
+    </div>
+
+    <h4>群としての構造</h4>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>フェーズ</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td><b>① グレー先行<br>2014–2017</b></td><td>第二種金融商品取引業の登録のみで匿名組合出資を一般個人に販売。一方、貸金業法の借り手保護を理由に<b>借り手情報の匿名化・複数化が当局指導で事実上義務化</b>。投資家は貸付先を検証できず、構造的な情報非対称が<b>制度によって保護された</b>。利回り8〜14.5%の広告だけで数千億円が集まる。</td></tr>
+          <tr><td><b>② 当局の処分<br>2017–2021</b></td><td>2017.03 みんなのクレジット（勧告→業務停止1ヶ月）／2018.03 ラッキーバンク（勧告→業務改善命令）／2018.07 maneoマーケット（勧告→業務改善命令）／2019.03 ラッキーバンク登録取消／2021.06 SBI SL（業務停止1ヶ月＋業務改善命令）</td></tr>
+          <tr><td><b>③ モデル崩壊<br>2019–2021</b></td><td><b>2019年3月18日、金融庁が借り手匿名化解除の公式見解</b>（ノーアクションレター回答）。開示できない案件は売れなくなり、<b>高利回りの源泉そのものが封じられた</b>。最大手maneoは新規募集終了、SBIは自主廃業。資金は不動産クラウドファンディング（不特法）へ移動。</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>行政処分の原文（一次資料）</h4>
+    <blockquote class="omote">
+      <p>みんなのクレジット（監視委勧告 2017年3月24日）：「ウェブサイトにおいて、ファンドが<b>複数の不動産事業会社等に対し貸付けを予定しているかのような表示をし、貸倒れリスクが分散されているかのような誤解を与える表示</b>を行った」</p>
+      <p>認定された問題：他のファンド出資金の充当／<b>キャンペーン原資への流用</b>／<b>代表者による個人的流用</b>／グループ内での資金の循環充当</p>
+      <cite>出典：<a href="https://www.fsa.go.jp/sesc/news/c_2017/2017/20170324-1.html">証券取引等監視委員会</a>／処分：<a href="https://www.fsa.go.jp/news/28/syouken/20170330-1.html">金融庁（2017年3月30日・業務停止1ヶ月＋業務改善命令）</a></cite>
+    </blockquote>
+    <blockquote class="omote" style="margin-top:10px">
+      <p>ラッキーバンク（監視委勧告 2018年2月20日）：「借入申込者の信用力を厳密に評価します」と表示しながら、実際には<b>財務諸表の水増しを看過し、返済困難な状況を認識後も募集を継続</b>。「正式な不動産鑑定評価」を行っていないにもかかわらず「不動産価格調査報告書」を募集要領に掲載</p>
+      <cite>出典：<a href="https://www.fsa.go.jp/sesc/news/c_2018/2018/20180220-1.html">証券取引等監視委員会</a>／登録取消：<a href="https://www.fsa.go.jp/news/30/shouken/20190314-2.html">金融庁（2019年3月14日）</a></cite>
+    </blockquote>
+    <blockquote class="omote" style="margin-top:10px">
+      <p>SBIソーシャルレンディング（関東財務局 2021年6月8日）：約207億円の甲社案件で「土地購入・建物建築」「太陽光発電事業」などと表示しながら、<b>実際には約129億円（62.4%）が異なる目的に使用</b>された。実効的な「貸付審査とモニタリング」を実施していないにもかかわらず、実施しているかのように表示</p>
+      <cite>出典：<a href="https://lfb.mof.go.jp/kantou/kinyuu/pagekt_cnt_20210512001.html">関東財務局</a>／第三者委員会報告書（2021年4月28日）</cite>
+    </blockquote>
+
+    <h4>表の理由（撤退告知の原文・SBI SL）</h4>
+    <blockquote class="omote">
+      <p>「<b>全既存ファンドの償還を条件として、自主的な廃業およびソーシャルレンディング事業からの撤退を決定</b>」</p>
+      <cite>出典：<a href="https://www.sbigroup.co.jp/news/2021/0524_12472.html">SBIホールディングス（2021年5月24日）</a></cite>
+    </blockquote>
+    <p style="margin-top:10px;font-size:13.5px;color:var(--ink2)"><b>注目すべき時系列：撤退発表（5/24）が行政処分（6/8）より15日早い。</b>処分内容が事前に分かっている状態で「自主廃業」の形を先に取る——上場親会社を持つ場合の典型的な撤退設計。</p>
+
+    <h4>裏の理由（群としての共通構造）</h4>
+    <ul class="ev">
+      <li><span class="g gA">A</span><b>規制が要求した「借り手の匿名化」が、不正の温床そのものになった</b>。投資家は貸付先を検証できず、事業者は表示だけ整えればよかった。4社すべての処分理由が同一条文で一致。</li>
+      <li><span class="g gA">A</span><b>関係会社・親族会社への集中貸付が共通</b>。みんクレ＝親会社グループ、ラッキーバンク＝代表の親族企業、maneo＝GIL関連会社、SBI SL＝甲社1社に383億円。</li>
+      <li><span class="g gA">A</span><b>プラットフォーム型は責任分散が効かなかった</b>。maneoは自ら貸付先を選んでいないのに処分され、「営業者選定・管理の業務運営態勢の再構築」を命じられた＝<b>第二種金商業者は営業者の資金使途確認義務から逃げられない</b>という規範が確立。</li>
+      <li><span class="g gB">B</span>→<span class="g gC">C</span><b>2019年3月18日の匿名化解除見解で、高利回りの源泉が封じられた</b>。開示できる案件＝まともな案件＝利回りが下がる。「8〜11%」という商品性そのものが成立しなくなった。</li>
+      <li><span class="g gA">A</span><b>大手グループでも起きた</b>（SBI）＝個社のガバナンス問題ではなくアセットクラス構造の問題だったことの決定的証拠。</li>
+    </ul>
+
+    <h4>主要数値</h4>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>事業者</th><th>規模</th><th>被害・損失</th><th>結末</th></tr></thead>
+        <tbody>
+          <tr><td>みんなのクレジット</td><td class="n">募集 約34億円</td><td class="n">未償還 約31億円／保全率15%</td><td>2017.08 全業務停止。投資家22人が勝訴（約9,300万円）も回収はほぼ不能</td></tr>
+          <tr><td>ラッキーバンク</td><td class="n">累計募集 125億円超</td><td class="n">投資家損失率 約67.5%（約33億円）</td><td>2019.03 登録取消。投資家45人が2億円請求で提訴</td></tr>
+          <tr><td>maneoマーケット</td><td class="n">成立ローン 約1,170億円</td><td class="n">延滞 約300億円規模</td><td>2019.07 新規募集終了。現在も募集0件で延滞債権一覧のみ稼働（ランオフ）</td></tr>
+          <tr><td>SBI SL</td><td class="n">融資残高 400億円超／投資家5万人</td><td class="n">目的外使用 129億円</td><td>2021.05 自主廃業。SBIHD連結への影響は「軽微」</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>早期警告指標</h4>
+    <ul class="warn">
+      <li data-lead="起点">利回りが同種アセットの市場水準から乖離（8〜14.5%）しているのに、リスクの所在が説明されていない。</li>
+      <li data-lead="起点">キャッシュバック・キャンペーンを募集原資から出している疑い（みんクレの処分理由に明記）。</li>
+      <li data-lead="起点">貸付先が完全匿名かつ、分散を謳いながら実質1グループに集中していることを示唆する表現。</li>
+      <li data-lead="起点">担保の評価根拠が「不動産鑑定評価」ではない。</li>
+      <li data-lead="起点">役員・大株主と貸付先の資本／親族関係（登記・官報で検証可能）。</li>
+      <li data-lead="T–1週">証券取引等監視委員会の「勧告」は処分の約1週間前に出る（3社で一致）＝最終警告。</li>
+      <li data-lead="T–4ヶ月">第三者委員会の設置公表（SBI：設置→報告4/28→撤退5/24→処分6/8）。</li>
+      <li data-lead="継続">同業他社に処分が出たら自社の同一論点を即点検する。<b>本群は2017→2018→2019→2021と、ほぼ同一の条文違反が4年繰り返された＝業界が学習しなかった。</b></li>
+    </ul>
+  </div>
+</article>
+
+<!-- ========== 14 LINE NFT ========== -->
+<article class="case" id="c15">
+  <div class="case-hd">
+    <div class="case-no">14</div>
+    <div class="case-ttl"><h3>LINE NFT ／ DOSI Wallet 等</h3><p class="meta">LINE Xenesis株式会社 ／ 2022.04.13 – 2024.01.05 ／ NFTマーケットプレイス</p></div>
+    <div class="case-tags"><span class="tag p6">P6 ブーム依存</span><span class="tag p5">P5 親会社の戦略転換</span><span class="tag p8">P8 機能吸収</span></div>
+  </div>
+  <div class="case-body">
+    <h4>概要・提供価値・収益モデル・資金源</h4>
+    <p>LINEアカウントで使え、LINE Payでの円決済に対応した国内向けNFT総合マーケットプレイス。「日本最大級のユーザー基盤×NFT」を売りにした。運営はLINE Xenesis（暗号資産交換業者として LINE BITMAX も運営）。資金源はLINEヤフーグループ。</p>
+
+    <h4>年表</h4>
+    <ul class="tl">
+      <li><span class="d">2022.04.13</span><span>「LINE NFT」提供開始（NFT市場のピーク直後）</span></li>
+      <li class="hi"><span class="d">2023.11.15</span><span>LINEヤフーが「DOSIのリニューアルに伴うNFT関連サービス終了」を公表</span></li>
+      <li><span class="d">2024.01.05</span><span>「LINE NFT」「DOSI Wallet」「DOSI Citizen」「ACRZストア」「AVA」を順次終了</span></li>
+      <li class="hi"><span class="d">2024.01.10</span><span>新「DOSI」提供開始。<b>運営主体をLINE Xenesis → LINE NEXT へ変更</b></span></li>
+    </ul>
+
+    <h4>表の理由（終了告知の原文）</h4>
+    <blockquote class="omote">
+      <p>「グローバルNFTプラットフォーム『DOSI』の<b>リニューアルに伴う</b>NFT関連サービス終了のお知らせ」——対象は「LINE NFT」「DOSI Wallet」「DOSI Citizen」「ACRZストア」「AVA」、2024年1月5日より順次終了</p>
+      <cite>出典：<a href="https://www.lycorp.co.jp/ja/news/release/000975/">LINEヤフー株式会社（2023年11月15日）</a></cite>
+    </blockquote>
+
+    <h4>裏の理由</h4>
+    <ul class="ev">
+      <li><span class="g gB">B</span><b>国内向けサービスをグローバル法人（LINE NEXT）へ統合</b>＝日本の暗号資産規制下で国内法人が運営するコストを外す設計変更。</li>
+      <li><span class="g gC">C</span>NFT市場の取引高がグローバルで2022年ピークから急落し、単独運営の採算が取れない。</li>
+      <li><span class="g gC">C</span>LINE Xenesisは暗号資産交換業として別事業を持ち、NFTは規制コスト対比で優先度が低下した。</li>
+    </ul>
+
+    <h4>早期警告指標</h4>
+    <ul class="warn">
+      <li data-lead="型">「終了」ではなく「統合」「リニューアル」という言葉で告知される（タイムバンクと同型）。</li>
+      <li data-lead="型">運営主体の国外法人への移管がセットで発表される＝国内規制コストの切り離し。</li>
+      <li data-lead="型">複数サービスの同時終了（5サービス一括）＝事業ライン全体の撤収。</li>
+    </ul>
+  </div>
+</article>
+
+<!-- ========== 15 WELQ ========== -->
+<article class="case" id="c16">
+  <div class="case-hd">
+    <div class="case-no">15</div>
+    <div class="case-ttl"><h3>WELQ（DeNAキュレーションプラットフォーム）</h3><p class="meta">株式会社ディー・エヌ・エー ／ 2015.10 – 2016.11.29 ／ 医療・健康情報メディア</p></div>
+    <div class="case-tags"><span class="tag p4">P4 組織・ガバナンス</span><span class="tag p7">P7 ブランド毀損</span></div>
+  </div>
+  <div class="case-body">
+    <figure class="shot">
+      <img src="https://dena.com/images/common/ogp.png" alt="DeNA 公式サイトの画像" loading="lazy" onerror="this.closest('.shot').classList.add('fail')">
+      <div class="ph">［画像：DeNA 公式］<br>「当社運営のキュレーションプラットフォームについてのお知らせ」（2016年11月29日）</div>
+      <figcaption>DeNA公式リリース／出典：<a href="https://dena.com/jp/news/3255/">株式会社ディー・エヌ・エー（2016年11月29日）</a></figcaption>
+    </figure>
+
+    <h4>概要・提供価値・収益モデル・資金源</h4>
+    <p>2014年10月のiemo社・ペロリ社（MERY）買収（2社で約50億円）を起点に構築した<b>10サイトのキュレーションプラットフォーム</b>の一角。クラウドソーシングで安価に大量の記事を生産し、SEOで検索上位を占有、流入を広告収益化するモデル。実体は医学的監修のない記事の量産。資金源はDeNA本体のゲーム事業キャッシュフロー。</p>
+
+    <h4>年表</h4>
+    <ul class="tl">
+      <li><span class="d">2014.10</span><span>iemo社・ペロリ社を買収、キュレーション事業に参入</span></li>
+      <li><span class="d">2015.10</span><span>WELQ公開</span></li>
+      <li><span class="d">2016.11中旬〜</span><span>医療記事の信憑性・著作権侵害がネット上で問題化</span></li>
+      <li class="hi"><span class="d">2016.11.29 21時</span><span><b>WELQ全記事を非公開化</b></span></li>
+      <li><span class="d">2016.12.01–07</span><span>他9サイトも順次非公開（MERY含む全10サイト停止）</span></li>
+      <li><span class="d">2016.12.07</span><span>守安功社長・南場智子会長が記者会見、第三者委員会設置を発表</span></li>
+      <li><span class="d">2017.02.08</span><span>第3四半期決算でキュレーション事業の減損（約38億円）を計上</span></li>
+      <li class="hi"><span class="d">2017.03.11–13</span><span>第三者委員会が調査報告書を提出（277ページ）。DeNAが全文を開示</span></li>
+    </ul>
+
+    <h4>表の理由（終了告知の原文）</h4>
+    <blockquote class="omote">
+      <p>「<b>医学的知見を有した専門家による監修がなされていない記事が公開されていた</b>ことに関して」「本日11月29日（火）21時をもって全ての記事を非公開といたしました。」</p>
+      <cite>出典：<a href="https://dena.com/jp/news/3255/">DeNA「当社運営のキュレーションプラットフォームについてのお知らせ」（2016年11月29日）</a>　※著作権侵害・薬機法違反には触れていない</cite>
+    </blockquote>
+
+    <h4>第三者委員会 調査報告書からの原文引用（原因分析）</h4>
+    <blockquote class="omote">
+      <p>「iemo社及びペロリ社の買収によりキュレーション事業へと新規参入する段階で、<b>同事業に関する分析・議論が尽くされず、事業リスクが適切に把握されなかったこと</b>」</p>
+      <p>「キュレーション事業を拡大していく過程においても、同事業のリスクに対するチェックや手当てが十分ではなかったこと」</p>
+      <p>「キュレーション事業においては事業運営に対する<b>『自己修正』を妨げる要因が複数存在していたこと</b>」</p>
+      <p>指摘された論点：<b>「設定された目標・評価基準の問題」（数値偏重）</b>／「法務部の対応」および他部署によるチェック機能の不十分さ／<b>「"反・大企業病"に対する行きすぎた称揚」</b>／「二元論的な思考を持ち込みすぎた結果、多面的な議論や洞察が深まらなかったこと」／「コミュニケーション不全」。再発防止の方向性は<b>「数値偏重から公正な稼ぎ方へ」</b>。</p>
+      <cite>出典：<a href="http://www.daisanshaiinkai.com/cms/wp-content/uploads/2016/12/170313_daisansha2432-2.pdf">第三者委員会調査報告書 関連開示PDF（2017年3月13日）</a>／<a href="https://dena.com/jp/news/3323/">DeNA 対応方針</a></cite>
+    </blockquote>
+
+    <h4>主要数値</h4>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>項目</th><th>数値</th></tr></thead>
+        <tbody>
+          <tr><td>調査対象記事数（10サイト）</td><td class="n">376,671件</td></tr>
+          <tr><td>著作権（複製権・翻案権）侵害の可能性</td><td class="n">1.9〜5.6%（推計 7,516〜21,093本）</td></tr>
+          <tr><td>画像の複製権侵害の可能性</td><td class="n">474万個中 74万個以上</td></tr>
+          <tr><td>WELQ記事の法令違反</td><td class="n">薬機法違反8本／医療法違反1本／健康増進法違反1本</td></tr>
+          <tr><td>調査規模</td><td class="n">委員会26回・ヒアリング134回97名・フォレンジック約520万件</td></tr>
+          <tr><td>減損損失（2017年3月期）</td><td class="n">約38億円</td></tr>
+          <tr><td>経営責任</td><td class="n">CEO守安功 月額報酬50%×6ヶ月減給、執行役員等28名処分</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>裏の理由</h4>
+    <ul class="ev">
+      <li><span class="g gA">A</span><b>KPI設計そのものが不正を誘発した</b>。記事数・DAUという量的KPIのみが厳格に追求され、記事の適正性に関する評価基準が存在しなかった。報告書が「設定された目標・評価基準の問題」として明示。</li>
+      <li><span class="g gA">A</span><b>M&A時のデューデリジェンス不全</b>。買収したビジネスモデルの違法性リスクを未評価のまま全社展開した。</li>
+      <li><span class="g gA">A</span><b>チェック機能の構造的欠落</b>。法務部が事業実態に関与せず、他部署のチェックも機能しなかった。</li>
+      <li><span class="g gA">A</span><b>組織文化が自己修正を阻害</b>。慎重さ・法務的配慮を「大企業病」としてスティグマ化する文化が、内部からの警告を封じた。</li>
+      <li><span class="g gB">B</span>主力ゲーム事業が減速期にあり、「非ゲームの第二の柱」を短期で作る圧力が量的KPIの暴走を許容した。</li>
+      <li><span class="g gC">C</span>SEO依存モデルの本質的脆弱性。検索アルゴリズム1つに収益が依存し、「量を出せば勝つ」構造が品質を犠牲にする方向にしか働かない。</li>
+    </ul>
+
+    <h4>早期警告指標</h4>
+    <ul class="warn">
+      <li data-lead="起点">記事単価・外注単価が、専門的検証工数を構造的に不可能にする水準。<b>原価率から品質リスクが逆算できる。</b></li>
+      <li data-lead="継続">記事本数の月次伸び率が、編集・監修体制の増員率を大きく上回る乖離。<b>監修者1人あたり記事数が青天井に悪化する。</b></li>
+      <li data-lead="継続">医療・健康などセンシティブカテゴリの記事比率上昇 × アフィリエイト広告の組み合わせ。</li>
+      <li data-lead="継続">法務部への事業部からの照会件数がほぼゼロ＝牽制不全の指標。</li>
+      <li data-lead="外形">SEO・ライター界隈で「記事作成マニュアル」（他サイトのリライト指示）が公然と流通する。</li>
+    </ul>
+  </div>
+</article>
+
+<!-- ========== 16 リクナビDMPフォロー ========== -->
+<article class="case" id="c17">
+  <div class="case-hd">
+    <div class="case-no">16</div>
+    <div class="case-ttl"><h3>リクナビDMPフォロー（内定辞退率予測）</h3><p class="meta">株式会社リクルートキャリア ／ 2018.03 – 2019.08.05 ／ HR データサービス</p></div>
+    <div class="case-tags"><span class="tag p7">P7 ブランド毀損</span><span class="tag p4">P4 組織・ガバナンス</span><span class="tag p3">P3 規制未整備</span></div>
+  </div>
+  <div class="case-body">
+    <h4>概要・提供価値・収益モデル・資金源</h4>
+    <p>就職情報サイト「リクナビ」の学生の<b>閲覧・行動履歴からAIで内定辞退率を予測</b>し、契約企業に5段階スコアで提供。企業側の価値は「採用歩留まり予測による内定出しの最適化」。<b>学生本人には一切の便益がなく、本人の不利益に直結し得る予測を本人の与り知らぬところで売買した</b>点が本質的問題。収益は年額400万〜500万円／社 × 38社。</p>
+
+    <h4>年表</h4>
+    <ul class="tl">
+      <li><span class="d">2018.03</span><span>サービス提供開始</span></li>
+      <li><span class="d">2019.07.31</span><span>サービス一時休止</span></li>
+      <li><span class="d">2019.08.01</span><span>日経報道により問題が公表</span></li>
+      <li class="hi"><span class="d">2019.08.05</span><span>学生7,983名の同意取得不備を公表、<b>サービス廃止を発表</b></span></li>
+      <li class="hi"><span class="d">2019.08.26</span><span><b>個人情報保護委員会が勧告・指導（同委員会初の勧告）</b></span></li>
+      <li class="hi"><span class="d">2019.09.06</span><span><b>厚生労働省が職業安定法違反として行政指導</b>（東京労働局経由）</span></li>
+      <li class="hi"><span class="d">2019.12.04</span><span><b>PPCが親会社リクルートにも勧告、利用企業各社にも指導。</b>同意なき提供人数は26,060人に拡大</span></li>
+    </ul>
+
+    <h4>表の理由（終了告知の原文）</h4>
+    <blockquote class="omote">
+      <p>「『リクナビDMPフォロー』における学生7983名を対象とした<b>プライバシーポリシー同意取得の不備</b>と、サービスの廃止につきまして」</p>
+      <cite>出典：<a href="https://www.recruitcareer.co.jp/news/pressrelease/2019/190805-01/">株式会社リクルートキャリア プレスリリース（2019年8月5日）</a>　※問題を「同意取得の不備」という手続き瑕疵に矮小化している</cite>
+    </blockquote>
+
+    <h4>行政の勧告・指導（原文）</h4>
+    <blockquote class="omote">
+      <p>個人情報保護委員会 第1次（令和元年8月26日）：個人情報保護法<b>第20条（安全管理措置）・第23条第1項（第三者提供に係る同意）</b>違反。「リクナビ2020」のDMPフォローにおいて<b>7,983人</b>の個人データを本人同意なく顧客企業に提供。勧告内容は組織体制の見直しと全社的意識改革、新サービスにおける法令順守の徹底。</p>
+      <cite>出典：<a href="https://www.ppc.go.jp/files/pdf/190826_houdou.pdf">個人情報保護委員会（PDF）</a></cite>
+    </blockquote>
+    <blockquote class="omote" style="margin-top:10px">
+      <p>個人情報保護委員会 第2次（令和元年12月4日）：対象を<b>親会社リクルートにも拡大</b>。認定された追加事実に<b>「Cookie突合による『個人情報に該当しない』形式を装う特定回避の試み」</b>、ハッシュ化データの不適切な取扱い。本人同意なく提供された人数は<b>26,060人</b>。</p>
+      <cite>出典：<a href="https://www.ppc.go.jp/files/pdf/191204_houdou.pdf">個人情報保護委員会（PDF）</a>／<a href="https://recruit-holdings.com/ja/newsroom/20191204_18631/">リクルートHD 開示</a></cite>
+    </blockquote>
+    <p style="margin-top:10px;font-size:13.5px;color:var(--ink2)"><b>個人情報保護法（PPC）と職業安定法（厚労省）の二重の規制違反が認定された、日本で極めて稀なケース。</b></p>
+
+    <h4>裏の理由</h4>
+    <ul class="ev">
+      <li><span class="g gA">A</span><b>法的スキームが「脱法設計」として構築されていた</b>。PPCが「Cookie突合による特定回避の試み」を明示的に認定。個人情報該当性を形式的に回避するスキームを意図的に組んでおり、<b>単なる事務ミスではない</b>。</li>
+      <li><span class="g gA">A</span><b>プラットフォームの利益相反構造</b>。学生（無料ユーザー）と企業（有料顧客）の両面市場で、収益は企業側からのみ発生する。学生に不利益な予測を企業に売る設計は、この非対称性の必然的帰結。</li>
+      <li><span class="g gA">A</span><b>親会社の監督不全</b>。第2次勧告で親会社まで対象が拡大し「委託先への監督強化」が勧告項目になったこと自体が、グループガバナンスの欠落を行政が認定したもの。</li>
+      <li><span class="g gB">B</span>就職情報サイト市場で圧倒的シェアを持つがゆえに、既存データ資産のマネタイズ（DMP化）が新規成長源として選ばれた。</li>
+      <li><span class="g gC">C</span>「本人が気づかない」ことが前提の設計は、発覚時に必ず信頼を毀損する。<b>学生に開示も説明もできないビジネスであること自体が、持続不能の証左。</b></li>
+    </ul>
+
+    <h4>早期警告指標</h4>
+    <ul class="warn">
+      <li data-lead="起点"><b>「本人に説明できるか」テストの不通過。</b>サービス内容を対象者本人向けに平易に説明した文書が存在しない／作れない状態は最強の警告シグナル。</li>
+      <li data-lead="起点">法務・プライバシー部門への照会が「個人情報該当性の回避可否」に集中している。<b>適法性ではなく「法の網の外に出る方法」を問うている時点で危険。</b></li>
+      <li data-lead="継続">同意取得状況の定期モニタリングKPIが存在しない（7,983人分の欠落が1年5ヶ月検知されなかった）。</li>
+      <li data-lead="継続">契約企業側の利用目的が当初目的から逸脱していないかの監査が未実施。</li>
+      <li data-lead="外形">対象者側・関係者側での不信の言説が報道前から存在する。</li>
+    </ul>
+  </div>
+</article>
+
+<!-- ========== 17 Yahoo!スコア ========== -->
+<article class="case" id="c18">
+  <div class="case-hd">
+    <div class="case-no">17</div>
+    <div class="case-ttl"><h3>Yahoo!スコア</h3><p class="meta">ヤフー株式会社 ／ 2019.07.01 – 2020.08.31 ／ 信用スコア</p></div>
+    <div class="case-tags"><span class="tag p7">P7 ブランド毀損</span><span class="tag p4">P4 組織・ガバナンス</span></div>
+  </div>
+  <div class="case-body">
+    <h4>概要・提供価値・収益モデル・資金源</h4>
+    <p>Yahoo! JAPAN IDの利用実績から、本人確認度・消費行動・Yahoo! JAPAN利用度などを基にユーザーの「信用度」をスコア化し、パートナー企業（ランサーズ、クラウドワークス等）に提供。収益はBtoB課金。<b>提供期間は約14ヶ月。ユーザー数・売上は一切公表されていない。</b></p>
+
+    <h4>年表</h4>
+    <ul class="tl">
+      <li><span class="d">2019.06.03頃</span><span>Yahoo!スコアの提供方針を公表</span></li>
+      <li class="hi"><span class="d">2019.06.07–16</span><span><b>オプトアウト方式（デフォルトでスコア生成）に批判が集中、炎上。提供開始の3週間以上前。</b></span></li>
+      <li><span class="d">2019.07.01</span><span>提供開始（オプトアウトのまま）</span></li>
+      <li class="hi"><span class="d">2019.10</span><span><b>仕様変更：初期設定で「スコアが作成されない」オプトイン方式へ</b>（＝母集団の激減）</span></li>
+      <li class="hi"><span class="d">2020.06.29</span><span>サービス終了を発表</span></li>
+      <li><span class="d">2020.08.31</span><span>終了。算出済みスコアおよび外部企業提供分をすべて削除</span></li>
+    </ul>
+
+    <h4>表の理由（終了告知の原文）</h4>
+    <blockquote class="omote">
+      <p>「<b>ユーザーとパートナー企業が満足するサービスの提供に至らないと判断</b>」</p>
+      <p>「発表当初、その仕様や説明不足などの点からみなさまに多大なご心配をおかけした」</p>
+      <cite>出典：ヤフー株式会社「『Yahoo!スコア』終了のお知らせ」（2020年6月29日）／引用：<a href="https://www.itmedia.co.jp/news/articles/2006/29/news088.html">ITmedia NEWS</a>・<a href="https://ascii.jp/elem/000/004/017/4017993/">ASCII.jp</a></cite>
+    </blockquote>
+    <p style="margin-top:10px;font-size:13.5px;color:var(--ink2)"><b>行政の勧告・指導は一切なし。</b>行政処分に至る前に、世論の圧力のみで仕様変更→終了に至った点が本件の特徴。</p>
+
+    <h4>裏の理由</h4>
+    <ul class="ev">
+      <li><span class="g gA">A</span><b>オプトイン化により事業の前提が崩壊した</b>。スコアの商品価値は<b>母集団の網羅性</b>にある。デフォルトONで全Yahoo! JAPAN ID保有者をカバーして初めてパートナー企業に売れる商品だった。2019年10月のオプトイン転換で母集団が激減し、BtoB商品としての成立条件を失った。<b>「満足するサービスの提供に至らない」の実質的な意味はこれ。</b></li>
+      <li><span class="g gA">A</span><b>同意設計を後付けで変更せざるを得なかった＝初期設計の欠陥</b>。提供開始前の6月時点で既に専門家から「実質的な同意になっていない」と指摘されていたにもかかわらず、オプトアウトのまま開始した。</li>
+      <li><span class="g gB">B</span>炎上の時期がリクナビ問題（2019年8月）と重なり、「本人の与り知らぬスコアリング」への社会的許容度が急速に低下する局面だった。</li>
+      <li><span class="g gB">B</span>「それがどのように評価されるのか、現時点では自分で確認できない」——<b>本人開示ができない設計は説明責任を果たせない</b>（弁護士ドットコム識者コメント）。</li>
+      <li><span class="g gC">C</span>スコア自体が行動を歪める副作用（「ハイスコアを取るゲーム化」）を持ち、長期的に予測精度を自壊させる構造。</li>
+      <li><span class="g gC">C</span>ヤフー本体の売上に対し無視できる規模であり、社内で守る動機を持つ部門が小さすぎた。日経クロステックは「事実上サービス開始できず」と評価。</li>
+    </ul>
+
+    <h4>早期警告指標</h4>
+    <ul class="warn">
+      <li data-lead="T–13ヶ月"><b>launch前に外部専門家から同意設計への批判が出ている。</b>これ自体がローンチゲートで止める機会であり、本件では提供開始の3週間以上前に出揃っていた。</li>
+      <li data-lead="起点">「自分のスコアを本人が確認できない」という仕様の存在。<b>本人開示ができない設計は、説明責任の欠如を構造的に内包する。</b>設計レビュー段階で検知できる。</li>
+      <li data-lead="T–10ヶ月">オプトアウト率／同意撤回率の急増＝商品母集団の直接的な毀損。</li>
+      <li data-lead="継続">BtoB商品としてパートナー企業数が積み上がらない。</li>
+      <li data-lead="外形">報道が「信用スコア」「中国の社会信用システム」と結びつけて報じ始める言説フレームの成立。</li>
+    </ul>
+  </div>
+</article>
+<!-- ========== 18 J.Score ========== -->
+<article class="case" id="c19">
+  <div class="case-hd">
+    <div class="case-no">18</div>
+    <div class="case-ttl"><h3>J.Score（AIスコア・レンディング）</h3><p class="meta">株式会社J.Score（みずほ銀行×ソフトバンク 50:50） ／ 2017.09 – 2023.01.31</p></div>
+    <div class="case-tags"><span class="tag p5">P5 親会社の戦略転換</span></div>
+  </div>
+  <div class="case-body">
+    <h4>概要・提供価値・収益モデル・資金源</h4>
+    <p>日本初の本格的AIスコア・レンディング。年収・勤務先・生活習慣などを任意で追加入力するとAIが「AIスコア」を算出し、<b>借入前に金利・限度額が判明</b>する。「データを多く提供するほど金利が下がり、限度額が増える」という、情報提供とローン条件を明示的に交換する設計。収益は無店舗型消費者金融としての貸付利息＋スコア・リワード事業。<b>行政処分・勧告は一切なし——本カタログで唯一、行政の関与なく純粋に事業性で消えた事例。</b></p>
+
+    <h4>年表</h4>
+    <ul class="tl">
+      <li><span class="d">2016</span><span>みずほ銀行・ソフトバンクの共同出資で設立</span></li>
+      <li><span class="d">2017.09</span><span>AIスコア・レンディング提供開始</span></li>
+      <li><span class="d">2019.12</span><span>AIスコア登録ユーザー数 累計100万人突破</span></li>
+      <li class="hi"><span class="d">2020</span><span><b>みずほFG・ソフトバンクGが次世代金融サービスで戦略提携（LINE Credit軸へ）</b> ← この時点でグループ内ポジションは実質的に終わっていた</span></li>
+      <li class="hi"><span class="d">2022.12.13</span><span>LINE Creditへの吸収分割方式による事業統合を発表</span></li>
+      <li><span class="d">2023.01.16 → 01.31</span><span>新規会員登録の受付終了 → AIスコアサービス終了。統合完了後に清算</span></li>
+    </ul>
+
+    <h4>表の理由（終了告知の原文）</h4>
+    <blockquote class="omote">
+      <p>「各社が培ってきた金融のノウハウを結集し、一層利便性の高い個人向けローンサービス」を提供し、「<b>経営資源を集約し、シナジーを追求しながら、さらなるサービス品質と利便性の向上を目指し、事業成長の加速を図</b>」る。「現在、J.Scoreにて展開している<b>スコア・リワード事業は終了を予定</b>」</p>
+      <cite>出典：<a href="https://www.softbank.jp/corp/news/press/sbkk/2022/20221213_02/">ソフトバンク株式会社（2022年12月13日）</a></cite>
+    </blockquote>
+    <p style="margin-top:10px;font-size:13.5px;color:var(--ink2)"><b>終了を「失敗」ではなく「統合によるシナジー追求」としてフレーミングした典型例。</b>ネガティブ要因への言及が一切なく、本カタログで最も中立的に構成された終了告知。</p>
+
+    <h4>裏の理由</h4>
+    <ul class="ev">
+      <li><span class="g gA">A</span><b>親会社同士の提携再編によるグループ内重複</b>。2020年にみずほFG×ソフトバンクGがLINEを軸とした次世代金融で提携し、LINE Credit（LINE Financial・みずほ銀行・オリコの合弁）が同一領域を担うことになった。事業自体の失敗というより<b>親会社都合の構造的陳腐化</b>。</li>
+      <li><span class="g gA">A</span>→<span class="g gB">B</span><b>顧客接点の決定的劣位</b>。J.Scoreは独立アプリとして顧客獲得コストを自前で負担。LINE Creditは国内最大級のメッセージングアプリに埋め込まれ、獲得コストがほぼゼロ。<b>J.Scoreは5年超かけて登録100万人（2019年時点）、LINE Creditは2022年3月時点で申込100万件超・累計融資実行額500億円超。</b>同じスコアリング技術でも<b>ディストリビューションで勝負が決していた</b>。</li>
+      <li><span class="g gB">B</span><b>「データを出せば金利が下がる」モデルの需要側の限界</b>。金利低減の見返りに詳細な個人データを入力する行為は、<b>金利に敏感＝信用力が高くない層</b>を引き寄せる逆選択リスクを内包する。信用力の高い層は銀行カードローンでより低金利を得られる。</li>
+      <li><span class="g gC">C</span>銀行（みずほ）と通信（ソフトバンク）という文化も規制環境も異なる50:50合弁は、機動的なピボットが構造的に困難。5年間、基本形から大きく転換できなかった。</li>
+    </ul>
+
+    <h4>早期警告指標</h4>
+    <ul class="warn">
+      <li data-lead="T–34ヶ月"><b>親会社の資本・提携構造の変化。</b>合弁事業では、事業KPIより先に「親会社のポートフォリオ上の位置づけ」が先行指標になる。</li>
+      <li data-lead="継続"><b>グループ内に同一機能の事業体が2つ存在する状態</b>は、統合・清算の予告指標そのもの。</li>
+      <li data-lead="継続">登録ユーザー数は公表されるが、貸付実行ベースの数値が公表されない（＝コンバージョンが低い）。</li>
+      <li data-lead="外形">新機能リリース頻度の低下、大型プロモーションの停止。</li>
+    </ul>
+  </div>
+</article>
+
+<!-- ========== 19 LINEヘルスケア／LINEドクター ========== -->
+<article class="case" id="c20">
+  <div class="case-hd">
+    <div class="case-no">19</div>
+    <div class="case-ttl"><h3>LINEヘルスケア ／ LINEドクター</h3><p class="meta">LINEヘルスケア株式会社（LINE 51%×エムスリー 49%） ／ 2019.12 – 2023.02.02 ／ 2020.11 – 2025.06.10</p></div>
+    <div class="case-tags"><span class="tag p2">P2 UE不成立</span><span class="tag p7">P7 ブランド毀損</span><span class="tag p5">P5 親会社の戦略転換</span></div>
+  </div>
+  <div class="case-body">
+    <figure class="shot">
+      <img src="https://www.lycorp.co.jp/assets/images/ogp_ly_jp_bk_1200_628.png" alt="LINEヤフー 公式リリース画像" loading="lazy" onerror="this.closest('.shot').classList.add('fail')">
+      <div class="ph">［画像：LINEヤフー公式］<br>「LINEドクター」サービス終了のお知らせ（2024年12月10日）</div>
+      <figcaption>LINEドクター終了告知／出典：<a href="https://www.lycorp.co.jp/ja/news/release/016530/">LINEヤフー株式会社（2024年12月10日）</a></figcaption>
+    </figure>
+
+    <h4>概要・提供価値・収益モデル・資金源</h4>
+    <p>LINE上で医師にチャットで健康相談ができるサービス。エムスリーの医師ネットワークとLINEのユーザー基盤を掛け合わせた設計。資本金1.7億円。<b>遠隔健康医療相談であり、診断・処方はできない</b>——これが法的な立て付けであり、同時に本質的な価値の限界だった。収益は相談ごとの従量課金。</p>
+
+    <h4>年表（撤退の二段階構造）</h4>
+    <ul class="tl">
+      <li><span class="d">2019.01.04</span><span>LINEヘルスケア株式会社 設立（LINE 51%／エムスリー 49%、資本金1.7億円）</span></li>
+      <li><span class="d">2019.12</span><span>オンライン健康相談サービス提供開始</span></li>
+      <li class="hi"><span class="d">2020.08.02–03</span><span><b>登録医師の暴言が発覚し炎上。</b>運営が謝罪、当該医師を利用停止</span></li>
+      <li><span class="d">2020.09.24</span><span>「サービス無料提供終了のお知らせ」</span></li>
+      <li><span class="d">2020.11</span><span>オンライン診療「LINEドクター」提供開始</span></li>
+      <li class="hi"><span class="d">2022.03期</span><span><b>純資産 ▲2.88億円（債務超過）、累積損失 ▲12.58億円</b>＝資本金1.7億円の7倍超</span></li>
+      <li class="hi"><span class="d">2022.12.08</span><span>オンライン健康相談の終了を告知（<b>債務超過の9ヶ月後</b>）</span></li>
+      <li><span class="d">2023.02.02</span><span>オンライン健康相談 終了</span></li>
+      <li class="hi"><span class="d">2024.12.10</span><span>LINEヤフーが「LINEドクター」終了を発表</span></li>
+      <li><span class="d">2025.06.10</span><span>全機能停止＝<b>LINEヘルスケア社の全事業が消滅</b></span></li>
+    </ul>
+
+    <h4>表の理由（終了告知の原文）</h4>
+    <blockquote class="omote">
+      <p>健康相談（2022年12月8日）：「オンライン健康相談サービス終了および、『HELPO』のご案内について」——実質的な理由は「LINEドクター」への注力</p>
+      <cite>出典：<a href="https://notice2.line.me/LINE_Healthcare/web/document/notice">LINEヘルスケア お知らせ</a>／<a href="https://www.watch.impress.co.jp/docs/news/1462390.html">Impress Watch</a></cite>
+    </blockquote>
+    <blockquote class="omote" style="margin-top:10px">
+      <p>LINEドクター（2024年12月10日）：「グループシナジーの拡大に向け、<b>グループ内で重複している事業領域を一本化するなど、中核事業へのリソース投下を目的とした選択と集中</b>を進めております」</p>
+      <cite>出典：<a href="https://www.lycorp.co.jp/ja/news/release/016530/">LINEヤフー株式会社</a>　※債務超過には一切触れていない</cite>
+    </blockquote>
+
+    <h4>炎上事案（2020年8月）</h4>
+    <p style="font-size:13.5px;color:var(--ink2)">登録医師が相談者に対し「言葉にできないやつはガキンチョだということですよ」「診断なんかいくらでも付けられますよ。よくいる世間知らずの10代の女の子です」「死ぬのが正解となりますし」等の発言を行い炎上。運営は「利用規約違反の行為が確認された」として当該医師を利用停止、モニタリング体制強化を表明。<span class="g gB" style="margin-left:6px">B</span>（出典：<a href="https://nlab.itmedia.co.jp/nl/articles/2008/03/news064.html">ねとらぼ 2020年8月3日</a>）</p>
+
+    <h4>裏の理由</h4>
+    <ul class="ev">
+      <li><span class="g gA">A</span><b>終了告知時点で既に債務超過</b>。2022年3月期で純資産▲2.88億円、累積損失▲12.58億円（官報決算公告）。<b>「LINEドクターへの注力」という説明は、事業継続能力の喪失を前向きな選択として再フレーミングしたもの。</b></li>
+      <li><span class="g gA">A</span><b>サービス設計の本質的限界：「診断も処方もできない」</b>。遠隔健康医療相談は医療行為ではないため、ユーザーが得られるのは一般的助言のみ。<b>課金に見合う便益を構造的に提供できない。</b></li>
+      <li><span class="g gA">A</span><b>品質管理コストが収益構造に対して過大</b>。低単価チャット相談 × 医師1人1人の発言品質保証は、単位経済性が原理的に成立しない。<b>医師に十分な報酬を払えば赤字、払わなければ品質が落ちる</b>というトレードオフ。</li>
+      <li><span class="g gB">B</span><b>医師側インセンティブの不整合</b>。専門外領域への回答や片手間対応が起きる構造。プラットフォームが供給側の品質を統制する権限を持たない（医師は雇用者ではない）。</li>
+      <li><span class="g gA">A</span>親会社の再編による二段階撤退。LINEヤフー統合後、LINEドクターも「重複している事業領域の一本化」として終了。</li>
+      <li><span class="g gC">C</span>51:49の合弁で、LINEが過半を握る一方、医師供給はエムスリー依存。<b>サービス品質を決定づける資源を、意思決定権を持つ側が支配していない</b>ねじれ。</li>
+    </ul>
+
+    <h4>早期警告指標</h4>
+    <ul class="warn">
+      <li data-lead="起点">医師1人あたりの相談回答数と回答所要時間の分布。<b>極端に短時間・大量回答する供給者の存在は、品質崩壊の直接の先行指標</b>で、炎上前にモニタリングできた。</li>
+      <li data-lead="起点">回答内容の専門領域と相談カテゴリのミスマッチ率（システム上で機械的に算出可能）。</li>
+      <li data-lead="起点">相談あたりの粗利（供給側報酬を差し引いた後）がマイナスまたは極小＝品質向上投資の原資がない。</li>
+      <li data-lead="T–9ヶ月"><b>官報決算公告での純資産・累積損失の推移。</b>資本金に対し累積損失が数倍に達した時点で、継続には追加増資の意思決定が必要になる。</li>
+      <li data-lead="T–27ヶ月">無料提供の終了後に利用量が落ち込む＝課金モデルが成立していない。</li>
+    </ul>
+  </div>
+</article>
+
+<!-- ========== 20 Clubhouse ========== -->
+<article class="case" id="c21">
+  <div class="case-hd">
+    <div class="case-no">20</div>
+    <div class="case-ttl"><h3>Clubhouse（日本ブームの崩壊）</h3><p class="meta">Alpha Exploration Co. ／ 2021.01 日本上陸 – 日本市場で実質休眠 ／ 音声SNS</p></div>
+    <div class="case-tags"><span class="tag p6">P6 ブーム依存</span></div>
+  </div>
+  <div class="case-body">
+    <figure class="shot">
+      <img src="https://asset.watch.impress.co.jp/img/ktw/docs/1304/238/sub_l.png" alt="Clubhouseの認知度調査グラフ" loading="lazy" onerror="this.closest('.shot').classList.add('fail')">
+      <div class="ph">［画像：Clubhouse認知度調査グラフ］<br>ケータイWatch「Clubhouseの認知度は全体の2割ほど、LINEが調査」</div>
+      <figcaption>日本1位アプリだった週の認知度調査（n=1,054）／出典：<a href="https://k-tai.watch.impress.co.jp/docs/news/1304238.html">ケータイWatch</a></figcaption>
+    </figure>
+
+    <h4>概要・提供価値・収益モデル・資金源</h4>
+    <p>招待制・リアルタイム音声SNS。提供価値は<b>招待制による希少性＋著名人との距離のゼロ化</b>。<b>ブーム期の収益モデルはゼロ</b>。2021年1月にa16zリードでシリーズB、企業価値10億ドル。<b>日本法人なし／日本語UIなし。</b>DL世界2位の市場に対し、2021年10月時点でもアプリ表記は英語のみで、9月30日に「日本語ネイティブ対応を検討中」と発表した段階で止まった。</p>
+
+    <h4>年表</h4>
+    <ul class="tl">
+      <li><span class="d">2021.01.23</span><span>日本向けβ運用開始</span></li>
+      <li class="hi"><span class="d">2021.01.28</span><span><b>App Store無料アプリランキング 日本1位</b></span></li>
+      <li class="hi"><span class="d">2021.01.30–31</span><span>LINE調査：<b>認知は全体の2割弱、実利用は全体の2%</b>（日本1位だった週）</span></li>
+      <li class="hi"><span class="d">2021.02</span><span><b>日本MAU 約108万人（ピーク）</b>／日本累計DL 83万件（2/8）→170万件（2/16、+104.8%）</span></li>
+      <li class="hi"><span class="d">2021.04</span><span><b>日本MAU 約21万人（ピークの約1/5、−81%）</b>／全世界DLは2月960万→4月92.2万（−90%）</span></li>
+      <li class="hi"><span class="d">2021.07.21</span><span>招待制を正式廃止（<b>ブーム失速から5ヶ月後</b>）</span></li>
+      <li><span class="d">2021.09.30</span><span>日本語ネイティブ対応を「検討中」と発表（<b>ピークから8ヶ月後</b>）</span></li>
+      <li><span class="d">2023.04.27</span><span>従業員の半数超をレイオフ</span></li>
+      <li><span class="d">2023.09.06</span><span>非リアルタイムの友人間ボイスチャットへピボット</span></li>
+    </ul>
+
+    <h4>表の理由（原文引用）</h4>
+    <blockquote class="omote">
+      <p>招待制廃止（2021年7月21日）：「<b>ジェットコースターのような12カ月を経て、次の章を開けると発表できて嬉しい</b>」</p>
+      <cite>出典：<a href="https://www.itmedia.co.jp/news/articles/2107/22/news032.html">ITmedia NEWS</a></cite>
+    </blockquote>
+    <blockquote class="omote" style="margin-top:10px">
+      <p>レイオフ（2023年4月27日）創業者Paul Davison / Rohan Seth：「<b>パンデミック後に世界が開かれる中で、我々は新しい役割を見つけるために進化する必要がある</b>」</p>
+      <cite>出典：<a href="https://www.itmedia.co.jp/news/articles/2304/28/news131.html">ITmedia NEWS</a></cite>
+    </blockquote>
+
+    <h4>裏の理由</h4>
+    <ul class="ev">
+      <li><span class="g gA">A</span>／<span class="g gC">C</span><b>招待制＝獲得エンジンと定着エンジンの混同</b>。希少性は獲得を加速するが定着には寄与しない。決定的なのは、<span class="hl">MAUが−81%した後に招待制を廃止している</span>点——<b>招待制は失速の原因でも治療でもなかった</b>（数値はA、解釈はC）。</li>
+      <li><span class="g gA">A</span><b>打ち手が5〜8ヶ月遅い</b>。ピーク2月 → 招待制廃止7月 → 日本語対応「検討中」9月。すべて遅行指標に反応している。</li>
+      <li><span class="g gA">A</span><b>日本市場へのローカライズ投資ゼロ</b>。日本法人なし、日本語UIなし、日本語モデレーションなし。<b>DL世界2位なのに、そもそも事業として取りに行っていない。</b></li>
+      <li><span class="g gC">C</span><b>コンテンツが非蓄積型</b>。録音・アーカイブ不可＝再訪理由がない。同時性の要求がリテンションの天井になる。</li>
+      <li><span class="g gB">B</span><b>在宅需要という外部要因への依存</b>。創業者自身が「世界が開かれる中で」と明言。</li>
+      <li><span class="g gB">B</span><b>大手の即時追随</b>。Twitter Spaces（2020.12）、Meta Live Audio Rooms、Spotify Greenroom。機能は模倣容易で、ネットワーク効果より配信力が勝った。</li>
+      <li><span class="g gA">A</span><b>認知が2割で頭打ち</b>。日本1位アプリだった週の調査で認知19%・実利用2%＝<b>「話題」であって「普及」ではなかった。</b></li>
+    </ul>
+
+    <div class="callout" style="margin-top:16px">
+      <h4>本カタログで最も明快な定量シグナル</h4>
+      <p style="margin:0"><b>日本累計DLは83万→170万（+104.8%）と伸び続けている一方、日本MAUは108万→21万（−81%）に崩壊していた。</b>新規獲得は効いていて、リテンションがゼロに近かった。<b>「累計DLは伸びているのにMAUが減る」は、ブーム型サービスの死を最も早く告げる指標。</b></p>
+    </div>
+
+    <h4>早期警告指標</h4>
+    <ul class="warn">
+      <li data-lead="T–5ヶ月"><b>累計DLは伸びているのにMAUが減る</b>（獲得＞離脱の逆転）。Clubhouseでは2月→3月の1ヶ月で起きていた。</li>
+      <li data-lead="T–6ヶ月"><b>「ランキング1位」と「認知2割」の乖離。</b>上位ランク＝一部の濃いクラスタの集中DLであり、市場浸透ではない。</li>
+      <li data-lead="起点">希少性（招待制・順番待ち）が獲得の主因になっている。<b>希少性は在庫を増やせない＝スケールと両立しない。</b></li>
+      <li data-lead="起点">DL世界2位の市場に法人もローカライズもない。</li>
+    </ul>
+  </div>
+</article>
+
+<!-- ========== 21 ゆうちょPay ========== -->
+<article class="case" id="c22">
+  <div class="case-hd">
+    <div class="case-no">21</div>
+    <div class="case-ttl"><h3>ゆうちょPay <span style="font-size:12px;color:var(--ink3);font-weight:400">／ 参考：告知済・2026年12月終了予定</span></h3><p class="meta">株式会社ゆうちょ銀行 ／ 2019 – 2026.12.20（予定） ／ 銀行系コード決済</p></div>
+    <div class="case-tags"><span class="tag p1">P1 資本力勝負</span></div>
+  </div>
+  <div class="case-body">
+    <figure class="shot">
+      <img src="https://www.jp-bank.japanpost.jp/kojin/sokin/yuchopay/images/top/bnr_mv.png" alt="ゆうちょPay 公式メインビジュアル" loading="lazy" onerror="this.closest('.shot').classList.add('fail')">
+      <div class="ph">［画像：ゆうちょPay 公式メインビジュアル］<br>ゆうちょ銀行 公式サイト</div>
+      <figcaption>公式メインビジュアル／出典：<a href="https://www.jp-bank.japanpost.jp/kojin/sokin/yuchopay/kj_sk_yp_index.html">株式会社ゆうちょ銀行</a>（本件はまだ稼働中のため公式画像が生きている）</figcaption>
+    </figure>
+
+    <h4>概要・提供価値・収益モデル・資金源</h4>
+    <p>GMOペイメントゲートウェイの「銀行Pay」基盤を利用したスマホ決済。差別化は<b>ゆうちょ銀行口座からの即時引き落とし</b>（チャージ不要・与信不要）。<b>約1億2,000万口座という圧倒的な潜在母数を持ちながら、これを転換できなかった。</b>登録者数・加盟店数はいずれも非公表。</p>
+
+    <h4>年表</h4>
+    <ul class="tl">
+      <li><span class="d">2019</span><span>サービス開始（銀行Pay基盤）。はまPay、YOKA!Pay、OKI Pay、こいPay等と連携</span></li>
+      <li class="hi"><span class="d">2025.12.15</span><span><b>終了を発表。同日付で新規申込受付を停止</b>（告知と新規停止が同日）</span></li>
+      <li><span class="d">2026.05下旬</span><span>加盟店向け新規申込受付停止</span></li>
+      <li><span class="d">2026.12.20</span><span>決済機能終了・サービス終了（予定）。<b>告知から終了まで約12ヶ月</b></span></li>
+    </ul>
+
+    <h4>表の理由（終了告知の原文）</h4>
+    <blockquote class="omote">
+      <p>「サービス開始当初に<b>強みと考えていた『口座即時引き落とし機能』など銀行が提供するサービスとしての特色を十分に活かすことができず</b>、お客さまのご利用状況に鑑み、終了することといたしました。」</p>
+      <cite>出典：<a href="https://www.jp-bank.japanpost.jp/aboutus/press/2025/pdf/pr25121501.pdf">株式会社ゆうちょ銀行 プレスリリース（2025年12月15日・PDF）</a></cite>
+    </blockquote>
+    <p style="margin-top:10px;font-size:13.5px;color:var(--ink2)"><b>本カタログ27サービス中、唯一「自社の戦略仮説が成立しなかった」ことを一次資料で明示的に認めた事例。</b>「強みと考えていた〜活かすことができず」という自己批判的表現は極めて稀。<b>表の理由と裏の理由が一致する唯一の例外。</b></p>
+
+    <h4>裏の理由</h4>
+    <ul class="ev">
+      <li><span class="g gA">A</span><b>差別化要素が差別化にならなかった</b>。「口座即時引き落とし」は、PayPay等がオートチャージ・後払いを実装した結果、ユーザーにとっての優位性を喪失。公式が自認。</li>
+      <li><span class="g gB">B</span>他社との競争で登録者数が伸び悩んだ。約1億2,000万口座の基盤を活かせず。</li>
+      <li><span class="g gC">C</span><b>還元競争への不参加</b>。銀行としての健全性要請から大規模ばらまきができず、ユーザー獲得手段が存在しなかった。</li>
+      <li><span class="g gA">A</span><b>銀行Pay陣営全体の敗退</b>。ゆうちょPay単独ではなく、はまPay・YOKA!Pay・OKI Pay・こいPay等の<b>地銀系銀行Payが同時終了</b>。プラットフォーム全体の崩壊。</li>
+      <li><span class="g gC">C</span>銀行ごとに別アプリという設計自体が、ユーザーの学習コストと加盟店の対応コストを積み上げた。ことら送金等の共通インフラ登場も個別行アプリの存在意義を希薄化した。</li>
+    </ul>
+
+    <h4>早期警告指標</h4>
+    <ul class="warn">
+      <li data-lead="T–0"><b>終了告知と新規申込受付停止が同日。</b>銀行・公的機関系は事前兆候がほぼ出ない。</li>
+      <li data-lead="継続">登録者数・加盟店数を一度も公表しない（＝出せる数字がない）。</li>
+      <li data-lead="継続">大型キャンペーンの不在が恒常化している。</li>
+      <li data-lead="継続">同一基盤に乗る他プレイヤーが増えていない（銀行Pay陣営の停滞）。</li>
+      <li data-lead="型">告知〜終了まで<b>約12ヶ月</b>と長い（B2B契約の解消手続きがあるため）。民間スタートアップ（Origami：4ヶ月）と対照的。</li>
+    </ul>
+  </div>
+</article>
+
+  </div>
+</section>
+<section class="blk" id="control">
+  <div class="wrap">
+    <p class="sec-no">05</p>
+    <h2>対照群 — 同じ罠を踏んで生き残った6件</h2>
+    <p class="lead">パターンを「必然」として語らないための反証。同じ市場・同じ罠に入りながら生存した側を並べると、<b>生死を分けたのは市場でも技術でもなく、資本構造・制度対応・収益源の置き場所</b>だったことが見える。</p>
+
+    <!-- PayPay -->
+    <article class="case">
+      <div class="case-hd">
+        <div class="case-no">A</div>
+        <div class="case-ttl"><h3>PayPay <span style="font-size:12px;color:var(--ink3);font-weight:400">vs Origami Pay / LINE Pay</span></h3><p class="meta">対照パターン：P1 資本力勝負 ／ 2018.10 –（2026.03 Nasdaq上場）</p></div>
+        <div class="case-tags"><span class="tag p1">P1を克服</span></div>
+      </div>
+      <div class="case-body">
+        <figure class="shot">
+          <img src="https://about.paypay.ne.jp/assets/pr/20211020_01_img_users.png" alt="PayPay 登録者数の推移グラフ" loading="lazy" onerror="this.closest('.shot').classList.add('fail')">
+          <div class="ph">［画像：PayPay 登録者数の推移］<br>PayPay公式「実施した主な取り組みと主要指標の推移」</div>
+          <figcaption>登録者数の推移（公式PR本文中のグラフ）／出典：<a href="https://about.paypay.ne.jp/pr/20211020/01/">PayPay株式会社</a></figcaption>
+        </figure>
+
+        <h4>なぜ同じ罠にかかりながら生き残ったのか</h4>
+        <ul class="ev">
+          <li><span class="g gA">A</span><b>親会社の連結耐久力。</b>ソフトバンク＋ヤフーの合弁として、<span class="hl">累計営業赤字 約2,800億円</span>（2019/3期〜2024/3期のJGAAP単体合算）を「連結の一事業ライン」として吸収できた。Origamiは独立系で、同じ規模の出血を支えるバランスシートがなかった。</li>
+          <li><span class="g gA">A</span><b>還元設計の可変性。</b>第1弾100億円キャンペーン（1回上限5万円）は<b>10日間で燃え尽きた</b>。第2弾は<b>1回上限を50分の1の1,000円</b>に切り下げ、期間を3ヶ月に引き延ばした。同じ100億円で「10日間の祭り」から「3ヶ月の習慣形成」へ、<b>予算の時間分散</b>に切り替えている。</li>
+          <li><span class="g gA">A</span><b>無料化→課金の順序。</b>3年間無料で344万カ所のネットワーク効果を作り切ってから、2021年10月に1.60%（マイストア ライトプラン加入時）へ移行。MMD研究所調査では<b>解約意向計21.8%</b>が出たが、<b>実績としては離脱していない</b>——加盟店数は2021年9月の344万カ所超から2025年7月に1,000万カ所超へ純増。<b>課金時点で加盟店にとっての代替コストが既に高すぎた。</b></li>
+          <li><span class="g gA">A</span><b>薄いテイクレートで黒字化できる原価構造。</b>1取引あたりコスト<span class="hl">0.773円</span>、処理能力1,250 TPSの内製基盤（F-1記載）。</li>
+          <li><span class="g gA">A</span><b>決済→金融へのテイクレート移行。</b>PayPayカード1,600万枚、PayPay銀行970万口座・預金2.28兆円、PayPay証券154万口座。高テイクレートのオンラインGMV比率を7%（FY2023）→14%（FY2025）へ倍増。<b>決済単体では儲からないことを前提に、収益源を隣接領域へずらした。</b></li>
+        </ul>
+
+        <h4>決定的だった意思決定</h4>
+        <p><b>2019年2月：キャンペーン設計の全面変更。</b>第1弾の「10日で100億円が蒸発」という失敗を、次の四半期に構造として反映した。<b>2021年10月：手数料有料化。</b>解約意向2割を承知のうえで課金に踏み切り、実際には離脱が起きないことを検証した。</p>
+
+        <h4>数値</h4>
+        <div class="tblwrap">
+          <table>
+            <thead><tr><th>指標</th><th>数値</th><th>時点</th></tr></thead>
+            <tbody>
+              <tr><td>登録者／MTU</td><td class="n">約7,200万人／約4,000万人</td><td class="n">2025.12</td></tr>
+              <tr><td>決済回数</td><td class="n">78億回（取引CAGR 65%）</td><td class="n">FY2025</td></tr>
+              <tr><td>Payment GMV</td><td class="n">15.39兆円（GMV CAGR 76%）</td><td class="n">FY2025</td></tr>
+              <tr><td>営業損益</td><td class="n">▲834.6億円 → <b>＋355億円（利益率12%）</b></td><td class="n">2020/3期 → 2025/3期</td></tr>
+              <tr><td>黒字化</td><td class="n">2025年3月期に通期初黒字（四半期初黒字は2024年4–6月期）</td><td class="n">F-1記載</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout">
+          <h4>失敗事例との対比</h4>
+          <p style="margin:0"><b>Origami Payは「同じ還元戦を、体力ゲージ1本で戦った」。LINE Payは体力ではなく親の統合判断で消えた。</b>つまりPayPayの勝因の一部は、競合が自社グループに吸収されたことそのものである。<b>資本力勝負は、努力ではなく参入判断で勝敗が決まる。</b></p>
+        </div>
+      </div>
+    </article>
+
+    <!-- LUUP -->
+    <article class="case">
+      <div class="case-hd">
+        <div class="case-no">B</div>
+        <div class="case-ttl"><h3>LUUP <span style="font-size:12px;color:var(--ink3);font-weight:400">vs VALU / 規制未整備で消えた各社</span></h3><p class="meta">対照パターン：P3 規制未整備 ／ 2018 – 稼働中</p></div>
+        <div class="case-tags"><span class="tag p3">P3を克服</span></div>
+      </div>
+      <div class="case-body">
+        <figure class="shot">
+          <img src="https://s3.ap-northeast-1.amazonaws.com/sc.luup/wp-content/uploads/2025/11/C-1_251126.png" alt="Luup 資金調達リリースの画像" loading="lazy" onerror="this.closest('.shot').classList.add('fail')">
+          <div class="ph">［画像：Luup 44億円調達リリース］<br>株式会社Luup 公式（2025年11月27日）</div>
+          <figcaption>総額44億円の調達（累計約214億円）／出典：<a href="https://luup.sc/news/2025-11-27-fundraising/">株式会社Luup</a></figcaption>
+        </figure>
+
+        <h4>規制を「待つ」のではなく「作りに行った」3段階</h4>
+        <div class="tblwrap">
+          <table>
+            <thead><tr><th>時期</th><th>制度</th><th>内容</th></tr></thead>
+            <tbody>
+              <tr><td class="n">2019.10.20</td><td><b>規制のサンドボックス</b><br>（新技術等実証制度）</td><td><b>モビリティ分野で国内初の認定。</b>横浜国立大学の疑似公道で約3ヶ月間、走行条件データを取得し<b>関係省庁へ提出</b></td></tr>
+              <tr><td class="n">2020.10–<br>2021.03</td><td><b>産業競争力強化法<br>新事業特例制度</b></td><td>公道実証（約6ヶ月）。事業所管＝経済産業省、<b>規制所管＝国家公安委員会・国土交通省</b>。約100台、千代田・新宿・渋谷・世田谷</td></tr>
+              <tr><td class="n">2022.04成立<br>2023.07.01施行</td><td><b>改正道路交通法</b></td><td><b>「特定小型原動機付自転車」を新設</b>（最高速度20km/h、16歳以上、免許不要）。自社リリースは「電動アシスト自転車認可以来30年ぶりの大きな変更」と位置づけ</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4>なぜ生き残ったのか</h4>
+        <ul class="ev">
+          <li><span class="g gA">A</span><b>3段階の公的な制度階段を登った。</b>各段階で国からの認定という形式的正当性を持って次に進んでいる。VALUのように「法がないから禁止でもない」でスケールしていない。</li>
+          <li><span class="g gA">A</span><b>規制所管官庁を最初から当事者にした。</b>新事業特例では国家公安委員会・国土交通省が規制所管として実証に関与。<b>取り締まる側が実証の設計に入っている</b>ため、法改正時に「知らない事業者が既成事実を作った」構図にならなかった。</li>
+          <li><span class="g gA">A</span><b>実証を自社の利益ではなくデータ提供として設計。</b>2019年サンドボックスの目的が「社会実装に必要な走行条件データを取得し関係省庁に提出」と明記。<b>立法事実の供給者</b>として立った。</li>
+          <li><span class="g gA">A</span><b>制度確定前に本格展開しなかった。</b>シェアリングの本格提供開始は2021年4月で、新事業特例の枠組みが確立した後。</li>
+          <li><span class="g gA">A</span><b>規制強化を受け入れる側に回った。</b>法施行時に交通ルールテスト全問連続正解必須・年齢確認書類提出必須という<b>法定要件を上回る自主規制</b>を課した。</li>
+        </ul>
+
+        <h4>数値</h4>
+        <p>2023年7月：7都市・ポート3,500カ所以上 → <b>2025年11月27日時点：ポート15,500カ所以上、アプリ500万DL、累計調達額 約214億円</b>（同日44億円調達。エクイティ9社＋三井住友銀行・みずほ銀行アレンジのグリーンローン）。未上場のため損益は非開示。</p>
+
+        <div class="callout">
+          <h4>失敗事例との対比</h4>
+          <p style="margin:0"><b>VALUは「規制当局が来る前に既成事実を積む」戦略で、金商法・資金決済法の解釈が固まった瞬間に退場した。LUUPは逆に、当局に一緒に線を引いてもらってから走った。</b>同じ「法の空白」でも、空白を利用するか空白を埋めに行くかで生死が分かれている。</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- note -->
+    <article class="case">
+      <div class="case-hd">
+        <div class="case-no">C</div>
+        <div class="case-ttl"><h3>note <span style="font-size:12px;color:var(--ink3);font-weight:400">vs WELQ</span></h3><p class="meta">対照パターン：P4 組織・ガバナンス／P7 ブランド毀損 ／ 2014 –（2022.12 東証グロース上場）</p></div>
+        <div class="case-tags"><span class="tag p4">P4を克服</span><span class="tag p7">P7を克服</span></div>
+      </div>
+      <div class="case-body">
+        <figure class="shot">
+          <img src="https://prcdn.freetls.fastly.net/release_image/17890/160/17890-160-8d2156772a0bfa496e2ce0a99c2ae63e-1200x630.png" alt="note 東証グロース市場上場のリリース画像" loading="lazy" onerror="this.closest('.shot').classList.add('fail')">
+          <div class="ph">［画像：note 東証グロース市場 上場］<br>PR TIMES（2022年12月）</div>
+          <figcaption>東証グロース市場への上場／出典：<a href="https://prtimes.jp/main/html/rd/p/000000160.000017890.html">note株式会社</a></figcaption>
+        </figure>
+
+        <h4>なぜ同じCGMでありながら品質崩壊しなかったのか</h4>
+        <ul class="ev">
+          <li><span class="g gB">B</span><b>収益モデルが広告ではなく課金。</b>加藤貞顕CEO「noteの運営者としての我々は、あくまでもプラットフォームであり、メディアをつくろうとしているのではない」。広告モデルでないため、<b>PVを稼ぐために大量の低品質SEO記事を量産するインセンティブが構造的に存在しない。</b>WELQの崩壊は「PV＝収益」がクラウドソーシングによる無責任な大量生産を駆動したことが根因であり、noteはその駆動輪を持っていない。</li>
+          <li><span class="g gC">C</span><b>記名・単体課金＝責任の所在が個人に帰属する。</b>WELQは匿名ライターが企業ブランドの下で書き、責任が拡散した。noteは記事がクリエイター個人に紐づき、課金が発生する。書き手が自分の名前と売上を賭けている。</li>
+          <li><span class="g gA">A</span><b>返金機能を先に作った（2019年12月11日）。</b>有料コンテンツの品質不良に対して、モデレーションではなく<b>経済的な是正手段</b>を用意した。プラットフォームが全記事を審査する必要がない。</li>
+          <li><span class="g gA">A</span><b>危機の都度、事前に手を打った。</b>COVID-19関連記事への注意書き表示を<b>2020年1月29日</b>——国内での本格的な情報混乱が起きる前——に実装。</li>
+          <li><span class="g gA">A</span><b>発注経路そのものを明文で規律した（2021年6月28日）。</b>「企業・団体がクリエイターにコンテンツ制作を依頼するときのガイドライン」「クリエイターが第三者からの依頼で制作するときのガイドライン」を同時公開。<b>WELQ型の崩壊は「企業→クラウドワーカー→大量記事」という発注経路で起きた。</b>noteは同じ経路がプラットフォーム上に生まれることを見越し、上流に設計介入した。</li>
+        </ul>
+
+        <h4>数値（2025年11月期 通期）</h4>
+        <p>売上高 <b>41.4億円</b>（前年比+25.0%）、<b>営業利益 2.5億円</b>（+384.7%）、当期純利益 4.40億円（+345.4%）。会員登録 <b>1,114万人</b>、MAU <b>8,660万</b>、PVは前年4Q比1.6倍。2Q時点の流通総額 5,205百万円（+24.7%）、note pro有料契約 865件。</p>
+
+        <div class="callout">
+          <h4>失敗事例との対比</h4>
+          <p style="margin:0"><b>WELQは「トラフィックを最大化する仕組み」を作り、noteは「書き手が報われる仕組み」を作った。同じCGMでも、報酬の出所が広告主かユーザーかで、生成されるコンテンツの品質分布が正反対に決まる。</b></p>
+        </div>
+      </div>
+    </article>
+
+    <!-- ラクマ -->
+    <article class="case">
+      <div class="case-hd">
+        <div class="case-no">D</div>
+        <div class="case-ttl"><h3>楽天ラクマ <span style="font-size:12px;color:var(--ink3);font-weight:400">vs メルカリ アッテ等のC2C新規事業</span></h3><p class="meta">対照パターン：P5 親会社の戦略転換 ／ 2012（フリル）／2014（ラクマ）– 稼働中</p></div>
+        <div class="case-tags"><span class="tag p5">P5を克服</span></div>
+      </div>
+      <div class="case-body">
+        <figure class="shot">
+          <img src="https://www.watch.impress.co.jp/img/ipw/list/1400/555/rr001.jpg" alt="楽天ラクマ リブランドの報道画像" loading="lazy" onerror="this.closest('.shot').classList.add('fail')">
+          <div class="ph">［画像：楽天ラクマ リブランド／公式ショップ開始］<br>Impress Watch（2022年4月5日）</div>
+          <figcaption>「楽天ラクマ」へリブランド、BtoCへ拡大／出典：<a href="https://www.watch.impress.co.jp/docs/news/1400555.html">Impress Watch</a></figcaption>
+        </figure>
+
+        <h4>なぜ生き残ったのか</h4>
+        <ul class="ev">
+          <li><span class="g gA">A</span><b>自社で戦わず、2位を買った。</b>2016年9月5日、楽天がフリル運営のFablicを完全子会社化。C2Cは流動性が勝負なので、<b>2つの中規模市場を1つにするのが唯一の非対称手</b>だった。2018年2月26日に新「ラクマ」へ一本化し、年間流通総額1,000億円超に。</li>
+          <li><span class="g gA">A</span><b>手数料を「武器」として段階的に使った。</b>統合直後は<b>無料</b> → 2018年6月に<b>3.5%</b> → 2021年1月に<b>6.0%</b>。メルカリ10%に対し<b>常に明確な価格差を維持しながら粗利を段階的に回収</b>した。一気に10%へ揃えず、差分をユーザー獲得原資として温存し続けた。</li>
+          <li><span class="g gA">A</span><b>楽天経済圏という外部補助。</b>ポイント経済圏に接続され、<b>単体でCACを回収する必要がない</b>。グループのリテンション装置として存在できる。</li>
+          <li><span class="g gA">A</span><b>戦場をずらした（2022年4月5日）。</b>「楽天ラクマ」へリブランドし「ラクマ公式ショップ」を開始、リユース事業者130社以上と連携。<b>メルカリと同じ土俵で個人出品者を奪い合うのをやめ</b>、プロの検品・真贋判定による「安心安全」へ差別化軸を置き換えた。2025年に公式ショップが前年比約142%成長。</li>
+          <li><span class="g gC">C</span><b>単体の損益を問われない位置に居続けた。</b>楽天はラクマ単体のGMVすら開示せず、国内EC流通総額6兆3,452億円（2025年度）の構成要素として括っている。<b>独立採算のKPIで評価されないことが、10年単位で耐久する許可証になっている</b>（開示形態からの推論）。</li>
+        </ul>
+
+        <div class="callout">
+          <h4>失敗事例との対比</h4>
+          <p style="margin:0"><b>同じ親会社傘下の新規事業でも、メルカリ アッテは独立サービスとして単体の成長性を問われ、ラクマは楽天経済圏の一機能として問われなかった。C2C新規事業の生死を分けたのは市場規模ではなく、親会社がその事業に課すKPIの種類である。</b></p>
+        </div>
+      </div>
+    </article>
+
+    <!-- ココナラ -->
+    <article class="case">
+      <div class="case-hd">
+        <div class="case-no">E</div>
+        <div class="case-ttl"><h3>ココナラ <span style="font-size:12px;color:var(--ink3);font-weight:400">vs teacha / タイムバンク</span></h3><p class="meta">対照パターン：P2 UE不成立／P6 ブーム依存 ／ 2012 –（2021.03 東証マザーズ上場）</p></div>
+        <div class="case-tags"><span class="tag p2">P2を克服</span></div>
+      </div>
+      <div class="case-body">
+        <figure class="shot">
+          <img src="https://www.coconala.co.jp/wp-content/themes/coconala-theme/images/og_image.png" alt="ココナラ 公式画像" loading="lazy" onerror="this.closest('.shot').classList.add('fail')">
+          <div class="ph">［画像：ココナラ 公式］<br>株式会社ココナラ</div>
+          <figcaption>公式サイト共通画像／出典：<a href="https://www.coconala.co.jp/">株式会社ココナラ</a></figcaption>
+        </figure>
+
+        <h4>なぜ生き残ったのか</h4>
+        <ul class="ev">
+          <li><span class="g gA">A</span><b>テイクレート約30%を維持している。</b>一般的なマーケットプレイスの2〜3倍。27.6%（FY2024 1Q）→ 28.1%（FY2025 1Q）→ 29.1%（FY2025 3Q）→ 約30%（FY2025通期）と<b>4四半期連続で上昇</b>。これは<b>取引がプラットフォーム内で完結し、外部への離脱が起きていない</b>ことの証拠。スキルシェアの典型的な死因は「一度マッチングしたら次から直接取引される」だが、ココナラはこれを抑え込んでいる。</li>
+          <li><span class="g gC">C</span><b>「時間」ではなく「成果物」を売った。</b>teacha／タイムバンク型が「人の時間枠」を商材にしたのに対し、ココナラは760種類以上のカテゴリで<b>納品物単位の取引</b>を扱う。<b>時間枠は日時が合わないと消滅する腐る在庫だが、成果物の依頼は非同期で成立する。流動性要件が根本的に緩い。</b></li>
+          <li><span class="g gA">A</span><b>供給側を先に厚く積んだ。</b>スキル登録者は毎四半期+32〜37%で伸び<b>120万人超</b>。購入UUが16万人前後で横ばいでも、1出品者あたりの取引依存度が低いため供給が離脱しない。<b>需要が細っても供給が崩れないマーケットプレイスは死なない。</b></li>
+          <li><span class="g gA">A</span><b>法人需要へ軸足を移した。</b>法人属性会員50万人超、法律相談セグメント+15.9%。個人間のスポット取引から反復・高単価の法人発注へ収益構造を移した。</li>
+          <li><span class="g gA">A</span><b>AIによる低単価需要の蒸発を認めた上で、AIを流入チャネルにした。</b>購入UU数のマイナスをAI影響として公式に説明しつつ、2026年に「ココナラ for ChatGPT」「ココナラ for Claude」を投入。<b>自分を殺しに来た技術を流入経路に変換した。</b></li>
+        </ul>
+
+        <h4>数値（2025年8月期 通期）</h4>
+        <p>売上高 前年同期比<b>+42.8%</b>（過去最高）、<b>営業利益 約2.5億円（営業黒字）</b>。マーケットプレイス（法律相談除く）：流通総額+4.6%、売上高+8.3%、<b>テイクレート約30%を維持</b>。スキル登録者120万人超、会員登録累計500万人超。※連結の高成長はM&A（ココナラテック）寄与が大きく、マーケットプレイスのオーガニック成長は+8%台。</p>
+
+        <div class="callout">
+          <h4>失敗事例との対比</h4>
+          <p style="margin:0"><b>タイムバンク型は「有名人の時間」という供給が構造的に有限で、しかも時間枠は売れ残ると消滅する在庫だった。ココナラは供給を無名の120万人に分散し、商材を腐らない成果物にした。</b>同じ「スキルを売る」でも、在庫が時間か納品物かで、流動性の要求水準が一桁違う。</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Adam byGMO -->
+    <article class="case">
+      <div class="case-hd">
+        <div class="case-no">F</div>
+        <div class="case-ttl"><h3>Adam byGMO <span style="font-size:12px;color:var(--ink3);font-weight:400">vs LINE NFT / VALU</span></h3><p class="meta">対照パターン：P6 ブーム依存／P3 規制未整備 ／ 2021.08 – 稼働中</p></div>
+        <div class="case-tags"><span class="tag p6">P6を克服</span><span class="tag p3">P3を克服</span></div>
+      </div>
+      <div class="case-body">
+        <figure class="shot">
+          <img src="https://group.gmo/public/pr/ja/images/8477/1689038568334.png" alt="Adam byGMO ユーザー数10万人突破のリリース画像" loading="lazy" onerror="this.closest('.shot').classList.add('fail')">
+          <div class="ph">［画像：Adam byGMO ユーザー数10万人突破］<br>GMOインターネットグループ（2023年7月）</div>
+          <figcaption>ユーザー数10万人突破／出典：<a href="https://group.gmo/news/article/8477/">GMOインターネットグループ</a></figcaption>
+        </figure>
+
+        <h4>なぜNFTバブル崩壊を生き延びたのか</h4>
+        <ul class="ev">
+          <li><span class="g gA">A</span><b>円建て決済で暗号資産規制を回避。</b>クレジットカード・銀行振込に対応し、暗号資産を持たないユーザーに開かれた。VALUが倒れた「カストディを持つ」設計を最初から避けている。</li>
+          <li><span class="g gA">A</span><b>投機ではなくリアル体験の権利証へ転換。</b>2025年9月時点で酒蔵ツアー参加権付きNFTチケット等、<b>役務提供の裏付けがある商材</b>へ完全ピボット。VALUが規制回避のために削った「優待」を、Adamは実体を持たせて中核に置いた。</li>
+          <li><span class="g gC">C</span>金融グループ傘下で規制対応コストを吸収できた。</li>
+        </ul>
+        <p style="margin-top:12px">ユーザー数10万人突破（2023年7月）、流通アイテム5万4千点超。2026年9月現在も稼働中。</p>
+
+        <div class="callout">
+          <h4>失敗事例との対比</h4>
+          <p style="margin:0"><b>VALUが失敗した「カストディを持たない」「優待に実体を持たせる」の2点を、Adam byGMOは成功させている。</b>ブーム依存からの脱出は、ブーム後に残る実需に商材を接続できるかで決まる。</p>
+        </div>
+      </div>
+    </article>
+
+    <div class="callout" style="margin-top:28px">
+      <h4>対照群からの反証：パターンは「運命」ではない</h4>
+      <p style="margin:0 0 8px">6件すべてが、失敗側とまったく同じ罠に入っている。生死を分けたのは以下の4点で、いずれも<b>プロダクトの巧拙ではなく、事業構造の置き方</b>である。</p>
+      <ul style="margin:0;padding-left:1.2em;font-size:13.8px">
+        <li><b>資本の深さと、その深さに見合った参入判断</b>（PayPay vs Origami）</li>
+        <li><b>制度を利用するか、埋めに行くか</b>（LUUP vs VALU）</li>
+        <li><b>報酬の出所が広告主かユーザーか</b>（note vs WELQ）</li>
+        <li><b>親会社が課すKPIの種類——単独採算か、経済圏のリテンション装置か</b>（ラクマ vs メルカリ アッテ）</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="signals">
+  <div class="wrap">
+    <p class="sec-no">06</p>
+    <h2>早期警告指標マトリクス</h2>
+    <p class="lead">27サービスから抽出した兆候を、<b>リードタイム</b>と<b>信頼度</b>で整理。上位ほど早く、外部から観測できる。</p>
+
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>順位</th><th>指標</th><th>先行期間</th><th>信頼度</th><th>実証事例</th><th>観測方法</th></tr></thead>
+        <tbody>
+          <tr><td class="n">1</td><td><b>料金ページの改定（無料施策の終了）</b></td><td class="n">24–33ヶ月</td><td>高</td><td>LINE Pay（0%→2.45%の33ヶ月後に終了）</td><td>Wayback Machineでの料金ページ差分監視</td></tr>
+          <tr><td class="n">2</td><td><b>サードパーティ連携・スキルの逐次終了</b></td><td class="n">12–19ヶ月</td><td>高</td><td>LINE CLOVA（ABEMAスキル終了の19ヶ月後）</td><td>公式お知らせ一覧のRSS監視</td></tr>
+          <tr><td class="n">3</td><td><b>外部実売データでのシェア崩壊</b></td><td class="n">18ヶ月</td><td>高</td><td>LINE CLOVA（26.3%→1%台）</td><td>BCNランキング等の公開データ</td></tr>
+          <tr><td class="n">4</td><td><b>本体アプリへの競合機能実装</b></td><td class="n">6–17ヶ月</td><td>高</td><td>カウル（6ヶ月）、LINE LIVE→VOOM（17ヶ月）</td><td>本体アプリのリリースノート</td></tr>
+          <tr><td class="n">5</td><td><b>最終調達からの経過時間（18ヶ月ルール）</b></td><td class="n">18ヶ月</td><td>高</td><td>Origami Pay</td><td>INITIAL等の調達データベース</td></tr>
+          <tr><td class="n">6</td><td><b>累計DLは伸びているのにMAUが減る</b></td><td class="n">1–5ヶ月</td><td>高</td><td>Clubhouse（DL+104.8%、MAU−81%）</td><td>Sensor Tower／ヴァリューズ等</td></tr>
+          <tr><td class="n">7</td><td><b>販促費・キャンペーンの急縮小</b></td><td class="n">12–24ヶ月</td><td>高</td><td>LINE Pay（損失が「改善」する）</td><td>官報決算公告・決算説明資料</td></tr>
+          <tr><td class="n">8</td><td><b>上場親会社によるMBO・子会社切り離し</b></td><td class="n">21ヶ月</td><td>高</td><td>タイムバンク</td><td>適時開示</td></tr>
+          <tr><td class="n">9</td><td><b>官報の決算公告（純損失／総資産、累積損失／資本金）</b></td><td class="n">9–12ヶ月</td><td>高</td><td>LINEヘルスケア（債務超過の9ヶ月後に告知）、タイムバンク</td><td>官報決算データベース</td></tr>
+          <tr><td class="n">10</td><td><b>監視委の「勧告」公表</b></td><td class="n">約1週間</td><td>確定</td><td>みんクレ／ラッキーバンク／maneoの3社で一致</td><td>証券取引等監視委員会サイト</td></tr>
+          <tr><td class="n">11</td><td><b>親会社の危機・他国での同時撤退</b></td><td class="n">3–10ヶ月</td><td>中〜高</td><td>DiDi Food（親会社審査の10ヶ月後）、foodpanda（独と同日）</td><td>親会社のIR・海外報道</td></tr>
+          <tr><td class="n">12</td><td><b>「終了サービス一覧」の一括公表</b></td><td class="n">4–5ヶ月</td><td>高</td><td>Yahoo!ジオシティーズ／Yahoo!ブログ</td><td>親会社のプレスリリース</td></tr>
+          <tr><td class="n">13</td><td><b>コア資産の外部委託開始</b></td><td class="n">8ヶ月</td><td>中</td><td>Chompy（Wolt Drive連携）</td><td>公式ニュース</td></tr>
+          <tr><td class="n">14</td><td><b>提供頻度・機能の削減</b></td><td class="n">3–14ヶ月</td><td>中</td><td>グノシーQ（毎日→週4）、LINE LIVE（アーカイブ短縮）</td><td>アプリ内告知</td></tr>
+          <tr><td class="n">15</td><td><b>新規開設・新規受付の停止／read-only化</b></td><td class="n">1–7ヶ月</td><td>確定</td><td>Yahoo!ブログ、ゆうちょPay（同日）</td><td>公式告知</td></tr>
+          <tr><td class="n">16</td><td>採用停止・リストラ</td><td class="n">1–3ヶ月</td><td>中（手遅れ）</td><td>Origami Pay（9割リストラ）</td><td>報道</td></tr>
+          <tr style="background:linear-gradient(90deg,rgba(184,85,63,.07),transparent)"><td class="n">✕</td><td><b>エリア拡大・新規出店・コラボ告知</b></td><td>—</td><td><b>逆シグナルになりうる</b></td><td>DiDi Food（終了3ヶ月前に静岡へ拡大）、グノシーQ（終了3ヶ月前にコラボ）</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid2" style="margin-top:22px">
+      <div class="panel">
+        <h3>ローンチ前に判定できる指標（最も価値が高い）</h3>
+        <ul style="margin:0;padding-left:1.2em;font-size:13.8px">
+          <li><b>「本人に説明できるか」テスト</b>：対象者本人向けの説明文が書けるか（リクナビ、Yahoo!スコア）</li>
+          <li><b>損益分岐の客単価</b>：1取引の変動費÷平均単価が40%を超えないか（Chompy）</li>
+          <li><b>最も保守的な同意設計（オプトイン）で事業が成立するか</b>（Yahoo!スコア）</li>
+          <li><b>収益機構の実装期限</b>が成長KPIと同格に置かれているか（メルカリ アッテ）</li>
+          <li><b>撤退基準が数値で先に決まっているか</b>（ソウゾウ「辞め時を見失っていた」）</li>
+          <li><b>中核機能が本体アプリに実装されうるものでないか</b>（カウル）</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>取引先・パートナー側のモニタリング設計</h3>
+        <ul style="margin:0;padding-left:1.2em;font-size:13.8px">
+          <li><b>四半期ごと</b>：料金ページのWayback差分、公式お知らせ一覧、アプリ更新履歴</li>
+          <li><b>半期ごと</b>：官報決算公告（純損失／総資産比率）、有報の記述変化、調達履歴</li>
+          <li><b>イベント駆動</b>：親会社の統合発表、同業他社への行政処分、カテゴリ内の他社撤退</li>
+          <li><b>依存先の選定基準</b>：単独KPIが一度も公表されていないサービスを基幹業務の依存先にしない</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="lexicon">
+  <div class="wrap">
+    <p class="sec-no">07</p>
+    <h2>終了告知の語彙辞典</h2>
+    <p class="lead">「表の理由」の原文を横断すると、日本企業の終了告知は<b>問題の粒度を一段下げて記述する</b>という共通則を持つ。構造的欠陥を、手続き的ミス・市場環境・戦略的選択のいずれかに翻訳する。</p>
+
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>公式表現</th><th>出現</th><th>実際に意味していること</th><th>実態との距離</th></tr></thead>
+        <tbody>
+          <tr><td><b>「経営資源を集中／再配置」</b></td><td>メルカリ アッテ、メルカリNOW他、LINE LIVE、LINEドクター</td><td>グループの資本配分判断。事業単体の成否とは無関係</td><td>遠い</td></tr>
+          <tr><td><b>「選択と集中」「一本化」</b></td><td>LINE Pay、LINEドクター、カウル</td><td>グループ内カニバリゼーションの解消</td><td>やや遠い</td></tr>
+          <tr><td><b>「市場の変化」「競合環境」</b></td><td>DiDi Food、Chompy、Yahoo!ブログ</td><td>資本力で負けた、または本社が資本を引いた</td><td>遠い</td></tr>
+          <tr><td><b>「同意取得の不備」</b></td><td>リクナビDMPフォロー</td><td>脱法スキームの設計そのものが問題（PPCが「特定回避の試み」と認定）</td><td><b>最も遠い</b></td></tr>
+          <tr><td><b>「満足するサービスの提供に至らない」</b></td><td>Yahoo!スコア</td><td>自社のオプトイン化で母集団が消滅し、商品が成立しなくなった</td><td>遠い</td></tr>
+          <tr><td><b>「シナジーを追求」「事業成長の加速」</b></td><td>J.Score</td><td>競争劣位とグループ重複。ネガティブ要因への言及ゼロ</td><td>遠い</td></tr>
+          <tr><td><b>「リニューアルに伴う」</b></td><td>LINE NFT</td><td>国内法人から国外法人への移管＝規制コストの切り離し</td><td>遠い</td></tr>
+          <tr><td><b>「名称変更します／提供内容に変更はありません」</b></td><td>タイムバンク→Let</td><td>旧モデルの敗北を認めない形の撤退。同年度に総資産を上回る純損失</td><td><b>最も遠い</b></td></tr>
+          <tr><td><b>（日程の羅列のみ／告知なし）</b></td><td>Origami Pay、LINE CLOVA、グノシーQ</td><td>説明すれば破綻・不正・非公式性に触れざるを得ない</td><td><b>測定不能</b></td></tr>
+          <tr><td><b>「規制に対応できず断念」</b></td><td>VALU</td><td>ほぼそのとおり（ライセンスコスト高騰、買収先なし）</td><td>近い</td></tr>
+          <tr><td><b>「機能の大部分が本体にも追加されたことから」</b></td><td>メルカリ カウル</td><td>そのとおり。公式が機能吸収を原因と明記</td><td><b>一致</b></td></tr>
+          <tr><td><b>「採算面や、システム維持のテクノロジーに関する複数の課題」</b></td><td>Yahoo!ジオシティーズ</td><td>そのとおり。「採算面」を挙げた唯一の例</td><td><b>一致</b></td></tr>
+          <tr><td><b>「強みと考えていた機能を十分に活かすことができず」</b></td><td>ゆうちょPay</td><td>そのとおり。戦略仮説の不成立を自認した唯一の例</td><td><b>一致</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <h4>読み解きの原則</h4>
+      <p style="margin:0"><b>公式文言と、官報決算公告・行政処分公表文・有報との差分こそが分析対象。</b>「経営資源の集中」と書かれていたら、その時点の純損失・累積損失・親会社の統合発表を必ず突き合わせる。そして<b>何も書かれていない撤退が、最も深い毀損を隠している。</b></p>
+    </div>
+  </div>
+</section>
+<section class="blk" id="checklist">
+  <div class="wrap">
+    <p class="sec-no">08</p>
+    <h2>実務チェックリスト</h2>
+    <p class="lead">新規サービスの企画・投資判断・撤退設計、および取引先の継続性評価に使う。各項目は本カタログの事例に紐づく。</p>
+
+    <div class="grid2">
+      <div class="panel">
+        <h3>A. 企画ゲート（ローンチ前）</h3>
+        <ul style="margin:0;padding-left:1.2em;font-size:13.8px">
+          <li>対象者<b>本人向け</b>の説明文を1ページ書けるか。書けないなら作らない <span class="note">→ リクナビ／Yahoo!スコア</span></li>
+          <li>損益分岐の客単価を1本の式で書き、市場の実勢単価と比較したか <span class="note">→ Chompy</span></li>
+          <li>最も保守的な同意設計（オプトイン）で事業が成立するか <span class="note">→ Yahoo!スコア</span></li>
+          <li>収益機構の実装期限が、成長KPIと同格のマイルストーンに置かれているか <span class="note">→ メルカリ アッテ</span></li>
+          <li>中核機能が「本体アプリに実装されたら終わるもの」でないか <span class="note">→ メルカリ カウル</span></li>
+          <li>該当業法の位置づけを利用規約に書けるか。書けないなら制度階段を先に登る <span class="note">→ VALU／LUUP</span></li>
+          <li>勝者総取り市場に、2番手の資本で入っていないか <span class="note">→ Origami Pay</span></li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <h3>B. 運営ゲート（四半期レビュー）</h3>
+        <ul style="margin:0;padding-left:1.2em;font-size:13.8px">
+          <li>量的KPIに対する<b>同格の質的ゲート</b>が設定されているか（監修者1人あたり生産量の上限等） <span class="note">→ WELQ</span></li>
+          <li>法務部への事業部からの照会件数を、牽制機能の稼働指標として経営が見ているか <span class="note">→ WELQ</span></li>
+          <li>供給側の1人あたり処理数・所要時間の分布に異常値がないか <span class="note">→ LINEヘルスケア</span></li>
+          <li>累計獲得は伸びているのにアクティブが減っていないか <span class="note">→ Clubhouse</span></li>
+          <li>視聴／閲覧→実参加のコンバージョンが5%を割っていないか <span class="note">→ グノシーQ</span></li>
+          <li>1取引の変動費÷平均単価が40%を超えていないか <span class="note">→ Chompy</span></li>
+          <li>単独KPIが決算資料・IRに昇格しているか。活動報告のままなら、社内でその事業は存在していない <span class="note">→ グノシーQ</span></li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <h3>C. 撤退設計（判断の前後）</h3>
+        <ul style="margin:0;padding-left:1.2em;font-size:13.8px">
+          <li><b>撤退基準を立ち上げ時に数値で決めたか</b>。決めていなければ「辞め時を見失う」 <span class="note">→ ソウゾウ</span></li>
+          <li>ピボット先を並走させているか。Chompyは終了の1年8ヶ月前から <span class="note">→ Chompy</span></li>
+          <li>移行先が社内か社外か。社外ならカテゴリからの完全撤退である <span class="note">→ Yahoo!ブログ</span></li>
+          <li>処分が見込まれる場合、自主的な撤退を先出しするか（SBI SLは処分の15日前） <span class="note">→ SBI SL</span></li>
+          <li>終了リリースに理由を書けるか。<b>書けない撤退は、後の再挑戦の信用も失う</b> <span class="note">→ Origami／CLOVA／グノシーQ</span></li>
+          <li>ユーザー資産・債権の管理義務を、終了スケジュールに織り込んだか <span class="note">→ VALU／maneo</span></li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <h3>D. 取引先・依存先の継続性評価</h3>
+        <ul style="margin:0;padding-left:1.2em;font-size:13.8px">
+          <li>四半期：料金ページのWayback差分、公式お知らせ一覧、アプリ更新履歴</li>
+          <li>半期：官報決算公告（純損失／総資産）、有報の記述変化、調達履歴</li>
+          <li>イベント駆動：親会社の統合発表、同業他社への行政処分、カテゴリ内の他社撤退</li>
+          <li>外資子会社なら、現地ではなく<b>親会社の株価・規制・上場ステータス・他国での撤退</b>を見る <span class="note">→ foodpanda／DiDi Food</span></li>
+          <li><b>単独KPIが一度も公表されていないサービスを、基幹業務の依存先にしない</b></li>
+          <li>「エリア拡大」「新規出店」「大型コラボ」を安全シグナルとして読まない</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout">
+      <h4>新サービス設計への含意：3つの問い</h4>
+      <p style="margin:0 0 8px">27件の失敗と6件の生存を貫く問いは、結局この3つに収束する。</p>
+      <ul style="margin:0;padding-left:1.2em;font-size:14px">
+        <li><b>①「この事業は、誰の資本で、何ヶ月生きられるか」</b>——資本力勝負の市場に入るなら、勝つ側の資本を持っているか、持っている側と組むか、そもそも入らないかの三択しかない。</li>
+        <li><b>②「制度の空白を、利用するのか埋めるのか」</b>——利用する側は当局が態度を決めた瞬間に二択（登録か撤退か）へ収斂する。埋める側は制度そのものを参入障壁にできる。</li>
+        <li><b>③「親会社は、この事業に何のKPIを課すのか」</b>——単独採算を課される新規事業は「絶対規模と機会費用」で切られ、経済圏のリテンション装置として位置づけられた事業は10年単位で生きる。<b>この設計は、プロダクトを作る前に決まる。</b></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="limits">
+  <div class="wrap">
+    <p class="sec-no">09</p>
+    <h2>調査上の制約と主要出典</h2>
+
+    <div class="callout">
+      <h4>制約（正直な記載）</h4>
+      <ul style="margin:8px 0 0;padding-left:1.2em;font-size:13.8px">
+        <li><b>Wayback Machine（web.archive.org）は調査環境からブロックされた。</b>設計書にあった「Waybackでの料金・機能ページ変遷」は、公式リリース・報道・官報・有報で代替している。料金改定の事実（LINE Pay 0%→2.45%、ラクマ 無料→3.5%→6.0%）は一次資料で確認済み。<b>継続的な定点観測としてのWayback差分監視は、実務側で別途セットアップすることを推奨。</b></li>
+        <li><b>App Store／Google Playの更新停止時期は、公開データとして取得できなかった。</b>代替として「新規ダウンロード停止」「配信頻度削減」「新モデル投入停止」の公式告知で兆候を代替している。</li>
+        <li><b>robots.txt等で一次ソースに直接到達できなかったもの</b>：リクルートキャリア、about.yahoo.co.jp、promo-blog.yahoo.co.jp、info-geocities.yahoo.co.jp、jscore.co.jp、linehealthcarecorp.com、LINE CLOVA公式ブログ。これらは<b>複数媒体で文言一致を確認した逐語引用</b>で代替し、グレードを落として記載している。</li>
+        <li><b>公式ドメインが失効しているもの</b>：Origami（about.origami.com）、foodpanda日本、DiDi Food日本、みんなのクレジット。画像・原文とも報道経由。</li>
+        <li><b>グノシーQの公式終了告知は存在しない。</b>Gunosyのプレスリリース・IR開示のいずれにも終了告知がなく、二次情報（グレードC）が上限。これは調査不足ではなく、それ自体が事実。</li>
+        <li><b>非公表項目</b>：ゆうちょPayの登録者数・加盟店数、LINE CLOVAの販売台数、foodpanda／DiDi Food日本法人の加盟店数・MAU・損失額、Yahoo!スコアのユーザー数・売上、Yahoo!ブログ／ジオシティーズ／LINE LIVEの終了時MAU、J.Score単体の融資残高・損益、ChompyのGMV・注文数。推測値は入れていない。</li>
+        <li><b>メルカリは単一セグメント開示</b>のため、新規事業の損益は原理的に開示されていない。有報の記述変化とKPI定義注記で代替追跡している。</li>
+        <li><b>P10「レガシー採算割れ」は2件のため候補どまり。</b>3件目の候補を追加検証すれば認定可能。</li>
+        <li><b>PayPayの累計営業赤字 約2,800億円はJGAAP単体の単純合算</b>で、IFRS連結との不連続がある（グレードC）。</li>
+      </ul>
+    </div>
+
+    <h3 style="margin-top:32px;font-size:17px">主要出典（一次資料）</h3>
+    <div class="grid2">
+      <div class="panel">
+        <h3>行政・監督当局</h3>
+        <ul style="margin:0;padding-left:1.2em;font-size:12.8px;line-height:1.9">
+          <li><a href="https://www.fsa.go.jp/sesc/news/c_2017/2017/20170324-1.html">証券取引等監視委員会「みんなのクレジットに対する検査結果に基づく勧告」（2017.3.24）</a></li>
+          <li><a href="https://www.fsa.go.jp/news/28/syouken/20170330-1.html">金融庁「みんなのクレジットに対する行政処分」（2017.3.30）</a></li>
+          <li><a href="https://www.fsa.go.jp/sesc/news/c_2018/2018/20180220-1.html">監視委「ラッキーバンクに対する勧告」（2018.2.20）</a>／<a href="https://www.fsa.go.jp/news/30/shouken/20190314-2.html">登録取消（2019.3.14）</a></li>
+          <li><a href="https://www.fsa.go.jp/sesc/news/c_2018/2018/20180706-1.html">監視委「maneoマーケットに対する勧告」（2018.7.6）</a>／<a href="https://lfb.mof.go.jp/kantou/kinyuu/pagekthp032000761.html">関東財務局 処分</a></li>
+          <li><a href="https://lfb.mof.go.jp/kantou/kinyuu/pagekt_cnt_20210512001.html">関東財務局「SBIソーシャルレンディングに対する行政処分」（2021.6.8）</a></li>
+          <li><a href="https://www.ppc.go.jp/files/pdf/190826_houdou.pdf">個人情報保護委員会 勧告（2019.8.26・PDF）</a>／<a href="https://www.ppc.go.jp/files/pdf/191204_houdou.pdf">同 第2次（2019.12.4・PDF）</a></li>
+          <li><a href="https://www.t2fifa.or.jp/wp-content/themes/base/assets/docs/info20230804.pdf">日本貸金業協会／第二種金融商品取引業協会「貸付型ファンドに関するQ&A 第二版」</a></li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>企業公式・IR・官報</h3>
+        <ul style="margin:0;padding-left:1.2em;font-size:12.8px;line-height:1.9">
+          <li><a href="https://www.lycorp.co.jp/ja/news/release/008628/">LINEヤフー「LINE Payサービス終了」（2024.6.13）</a>／<a href="https://www.lycorp.co.jp/ja/news/release/016530/">「LINEドクター終了」（2024.12.10）</a>／<a href="https://www.lycorp.co.jp/ja/news/release/000975/">「LINE NFT終了」（2023.11.15）</a></li>
+          <li><a href="https://www.lycorp.co.jp/news/archive/Z/ja/ja20230116.pdf">Zホールディングス「GYAO!終了」（2023.1.16・PDF）</a></li>
+          <li><a href="https://about.mercari.com/press/news/articles/20180316_atte_close/">メルカリ「アッテ終了」</a>／<a href="https://about.mercari.com/press/news/articles/20180720_notice/">「一部サービスの提供終了」</a>／<a href="https://about.mercari.com/press/news/articles/20181102_kauru_close/">「カウル終了」</a></li>
+          <li><a href="https://pdf.irpocket.com/C4385/BXIb/gsRg/NODl.pdf">メルカリ 有価証券報告書 第6期（PDF）</a></li>
+          <li><a href="https://dena.com/jp/news/3255/">DeNA「キュレーションプラットフォームについてのお知らせ」（2016.11.29）</a>／<a href="http://www.daisanshaiinkai.com/cms/wp-content/uploads/2016/12/170313_daisansha2432-2.pdf">第三者委員会調査報告書 関連開示（PDF）</a></li>
+          <li><a href="https://prtimes.jp/main/html/rd/p/000000022.000025867.html">VALU「VA売買サービス終了」（2020.1.15）</a>／<a href="https://note.com/okohei/n/n5856c6055629">小川晃平「VALUの終わりに」note</a></li>
+          <li><a href="https://www.sbigroup.co.jp/news/2021/0524_12472.html">SBIホールディングス「SBI SLの今後の事業運営について」（2021.5.24）</a></li>
+          <li><a href="https://www.jp-bank.japanpost.jp/aboutus/press/2025/pdf/pr25121501.pdf">ゆうちょ銀行「ゆうちょPay終了」（2025.12.15・PDF）</a></li>
+          <li><a href="https://chompy-inc.com/news/20230413/">株式会社Chompy「デリバリー終了」（2023.4.13）</a></li>
+          <li><a href="https://www.softbank.jp/corp/news/press/sbkk/2022/20221213_02/">ソフトバンク「J.ScoreとLINE Creditの事業統合」（2022.12.13）</a></li>
+          <li><a href="https://www.deliveryhero.com/newsroom/delivery-hero-scales-down-foodpanda-germany-and-announces-the-planned-divestiture-of-foodpanda-japan/">Delivery Hero SE 公式リリース（2021.12.22）</a></li>
+          <li>官報決算データベース：<a href="https://catr.jp/companies/c65e7/3101">LINE Pay</a>／<a href="https://catr.jp/settlements/d1bca/159214">Origami</a>／<a href="https://catr.jp/companies/83d16/56535">タイムバンク</a>／<a href="https://catr.jp/settlements/50143/146534">LINEヘルスケア</a></li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>対照群</h3>
+        <ul style="margin:0;padding-left:1.2em;font-size:12.8px;line-height:1.9">
+          <li><a href="https://www.sec.gov/Archives/edgar/data/2080845/000119312526085389/d941409df1a.htm">PayPay Form F-1 Amendment No.1（SEC EDGAR）</a>／<a href="https://about.paypay.ne.jp/pr/20211020/01/">PayPay「主要指標の推移」</a></li>
+          <li><a href="https://luup.sc/news/shinjigyou-2020-09-16/">Luup「規制のサンドボックス／新事業特例制度による公道走行実証」</a>／<a href="https://luup.sc/news/2025-11-27-fundraising/">「総額44億円を調達」（2025.11.27）</a></li>
+          <li><a href="https://note.jp/n/na1587644c7c1">note「東証グロース市場への上場」</a>／<a href="https://note.jp/n/n86969233a3b7">「安心して創作できる環境づくりを強化します」（2021.6.28）</a>／<a href="https://note.com/note_ir/n/ncb0591fcb113">2025年11月期 決算</a></li>
+          <li><a href="https://corp.rakuten.co.jp/news/press/2016/0905_01.html">楽天「Fablic社を買収」（2016.9.5）</a>／<a href="https://corp.rakuten.co.jp/investors/assets/doc/documents/25Q4PPT_J.pdf">楽天グループ 2025年度決算説明 補足資料（PDF）</a></li>
+          <li><a href="https://www.coconala.co.jp/0319-2/">ココナラ「東証マザーズ市場への上場」（2021.3.19）</a>／<a href="https://www2.jpx.co.jp/disc/41760/140120250114550592.pdf">2025年8月期 1Q決算説明資料（PDF）</a></li>
+          <li><a href="https://group.gmo/news/article/8477/">GMO「Adam byGMO ユーザー数10万人突破」</a>／<a href="https://adam.jp/">adam.jp（稼働中）</a></li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>当事者発言・主要報道</h3>
+        <ul style="margin:0;padding-left:1.2em;font-size:12.8px;line-height:1.9">
+          <li><a href="https://www.fastgrow.jp/articles/mercari-harada-nobe">FastGrow「ソウゾウはなぜ、すべての事業をクローズしたのか？」（原田氏）</a></li>
+          <li><a href="https://careers.mercari.com/mercan/articles/2018-03-19-121649/">mercan「メルカリ アッテ終了の決断」（松本氏・八木氏）</a></li>
+          <li><a href="https://www.fastgrow.jp/articles/syn-ohmi">FastGrow「フードデリバリーを本質から捉え直す『Chompy』」（大見氏・1配達800円）</a></li>
+          <li><a href="https://www.exchangewire.jp/2018/11/27/interview-gunosy-platform/">ExchangeWire Japan「ライブ配信から広がるGunosyの動画ビジネス」（視聴者数・広告単価）</a></li>
+          <li><a href="https://www.businessinsider.jp/article/104250/">Business Insider Japan「金融庁も取引動向を注視するVALU」（2017.9.4）</a></li>
+          <li><a href="https://www.businessinsider.jp/article/171683/">Business Insider Japan「なぜ？『メルカリNOW』ほか3事業撤退」</a></li>
+          <li><a href="https://manamina.valuesccg.com/articles/1365">マナミナ／ヴァリューズ「音声コンテンツ市場3サービス調査」（Clubhouse日本MAU）</a></li>
+          <li><a href="https://k-tai.watch.impress.co.jp/docs/news/1304238.html">ケータイWatch「Clubhouseの認知度は全体の2割ほど、LINEが調査」</a></li>
+          <li><a href="https://www.bcnretail.com/market/detail/20221130_305901.html">BCN+R「CLOVAデバイス販売終了…直近3年間の販売動向」（市場シェア）</a></li>
+          <li><a href="https://diamond.jp/articles/-/228034">ダイヤモンド・オンライン「メルカリへのオリガミ売却価格は1株1円」</a></li>
+          <li><a href="https://nlab.itmedia.co.jp/nl/articles/2008/03/news064.html">ねとらぼ「LINEヘルスケア、悩む人に…と言い放ち炎上」（2020.8.3）</a></li>
+          <li><a href="https://business.nikkei.com/atcl/NBD/19/00115/00215/">日経ビジネス「料理宅配競争、資金力で大手に敗北 スタートアップのChompy」</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="sp">
+    <p class="note">画像はすべて各出典の公開URLを直接参照しており、本レポートは画像ファイルを再配布していない。商標・ロゴ・スクリーンショットの権利は各権利者に帰属する。本レポートは事例研究を目的とし、特定のサービス・企業への評価を意図しない。数値・引用はいずれも記載の出典時点のものであり、調査時点は2026年9月。</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p style="margin:0 0 6px;font-weight:700;color:var(--ink2)">日本国内toCサービス 撤退パターンカタログ 2015–2025</p>
+    <p style="margin:0">収録27サービス／認定パターン9（仮説7＋新規2）／候補1／対照群6件　—　2026年9月作成</p>
+  </div>
+</footer>
+
+</body>
+</html>
