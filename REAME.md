@@ -46,3 +46,33 @@ Yesを選択
   ➜  Network: use --host to expose
   ➜  press h + enter to show help
   ```
+
+ZedでReactのデバッグ構成の作成
+
+```bash
+mkdir .zed
+touch ./.zed/debug.json
+```
+
+debug.jsonは以下の通り編集
+```json
+[
+  {
+    "label": "Debug React",
+    "adapter": "JavaScript",
+    "type": "chrome",
+    "request": "launch",
+    "url": "http://localhost:5173",
+    "webRoot": "${ZED_WORKTREE_ROOT}/frontend",
+    "skipFiles": ["<node_internals>/**"]
+  }
+]
+```
+
+viteで開発サーバーを起動しておく
+```bash
+cd frontend
+npm run dev
+```
+
+F5でデバッガの起動Chromeが起動する
